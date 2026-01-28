@@ -23,6 +23,7 @@
     "@_sh/strapi-plugin-ckeditor": "6.0.3",
     "@frameless/preview-button": "workspace:*",
     "@frameless/strapi-plugin-env-label": "workspace:*",
+    "@frameless/strapi-plugin-language": "workspace:*",
     "@strapi/design-system": "2.1.2",
     "@strapi/plugin-graphql": "5.33.4",
     "@strapi/plugin-users-permissions": "5.33.4",

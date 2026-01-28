@@ -1,0 +1,15 @@
+{
+  "extends": "@strapi/typescript-utils/tsconfigs/admin",
+  "compilerOptions": {
+     "paths": {
+      "react": ["./node_modules/@types/react"],
+      "react-dom": ["./node_modules/@types/react-dom"]
+    },
+    "target": "ESNext",
+    "strict": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true
+  },
+  "include": ["admin", "src/types", "tests/setupTests.ts", "./jest.config.ts"],
+  "exclude": ["node_modules/", "dist/", "server/", "**/*.test.ts"]
+}

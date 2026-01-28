@@ -33,6 +33,13 @@
         "bijzonderheden",
         "contact"
       ]
+    },
+    "language": {
+      "type": "customField",
+      "customField": "plugin::language.language",
+      "options": {
+        "defaultLanguage": "nl"
+      }
     }
   }
 }
