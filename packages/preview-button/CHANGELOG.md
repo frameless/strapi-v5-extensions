@@ -1,5 +1,11 @@
 # @frameless/preview-button [1.3.0](https://github.com/frameless/strapi/compare/@frameless/preview-button@1.2.0...@frameless/preview-button@1.3.0) (2024-02-02)
 
+## 2.0.0
+
+### Major Changes
+
+- f4b3047: Migrate `@frameless/preview-button` to Strapi version 5
+
 ## 1.2.0
 
 ### Minor Changes
