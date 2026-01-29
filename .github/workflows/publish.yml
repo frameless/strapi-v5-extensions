@@ -158,10 +158,12 @@ jobs:
     needs: [lint, test]
     if: github.ref == 'refs/heads/main'
     environment: publish
+
     env:
       NODE_OPTIONS: "--max-old-space-size=6114"
 
     permissions:
+      contents: read # since GH_TOKEN is provided, we only need 'read'
       id-token: write
 
     steps:
@@ -210,7 +212,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         with:
-          commit: "docs(release): Strapi v5 extensions packages"
+          commit: "docs(release): strapi v5 extensions packages"
           setupGitUser: false
-          title: "docs(release): Strapi v5 extensions packages"
+          title: "docs(release): strapi v5 extensions packages"
           publish: "pnpm run publish:changeset"
