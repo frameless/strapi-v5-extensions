@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git+ssh",
-    "url": "git@github.com:frameless/strapi.git",
+    "url": "git@github.com:frameless/strapi-v5-extensions.git",
     "directory": "packages/preview-button"
   },
   "publishConfig": {

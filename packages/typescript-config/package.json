@@ -7,7 +7,7 @@
   "description": "Frameless TypeScript configuration",
   "repository": {
     "type": "git+ssh",
-    "url": "git@github.com:frameless/kennisbank.git",
+    "url": "git@github.com:frameless/strapi-v5-extensions.git",
     "directory": "packages/typescript-config"
   },
   "publishConfig": {
