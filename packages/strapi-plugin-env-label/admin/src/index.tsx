@@ -32,17 +32,13 @@ export default {
       name: 'env-label',
       Component: StatusBadge,
     });
-    app.getPlugin('content-manager').injectComponent('editView', 'informations', {
-      name: 'env-label',
-      Component: StatusBadge,
-    });
-    app.getPlugin('content-manager').injectComponent('listView', 'deleteModalAdditionalInfos', {
+    app.getPlugin('content-manager').injectComponent('editView', 'right-links', {
       name: 'env-label',
       Component: StatusBadge,
     });
   },
 
-  async registerTranslation({ locales }: { locales: string[] }) {
+  async registerTrads({ locales }: { locales: string[] }) {
     const importedTranslations = await Promise.all(
       locales.map((locale: any) => {
         return import(`./translations/${locale}.json`)

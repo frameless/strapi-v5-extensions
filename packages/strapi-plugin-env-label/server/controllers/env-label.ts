@@ -9,8 +9,8 @@ export default ({ strapi }: { strapi: Core.Strapi }) => ({
       const config = await strapi.plugin(PLUGIN_ID).service('plugin').getConfig();
       ctx.body = config;
     } catch (error) {
-      strapi.log.error('Error fetching Preview button config:', error);
-      ctx.badRequest('Something went wrong with the Preview button config');
+      strapi.log.error('Error fetching environment label config:', error);
+      ctx.badRequest('Something went wrong with the environment label config');
     }
   },
 });

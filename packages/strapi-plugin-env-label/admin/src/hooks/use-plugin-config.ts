@@ -24,7 +24,7 @@ const usePluginConfig = () => {
     const fetchData = async () => {
       try {
         const endpoint = `/${PLUGIN_ID}/config`;
-        const data = await client.get(endpoint, {
+        const { data } = await client.get(endpoint, {
           signal: abortController.signal,
         });
 
