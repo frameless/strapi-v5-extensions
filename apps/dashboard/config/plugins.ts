@@ -62,7 +62,7 @@ export default ({ env }) => ({
       },
 
       server: {
-     port: parseInt(env('METRICS_PORT', '9000'), 10),
+        port: parseInt(env('METRICS_PORT', '9000'), 10),
         host: '0.0.0.0',
         path: '/metrics',
       },
