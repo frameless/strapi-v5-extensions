@@ -1,12 +1,12 @@
 {
-  "key": "plugin_content_manager_configuration_components::components.utrecht-rich-text",
+  "key": "plugin_content_manager_configuration_components::components.metadata",
   "value": {
     "settings": {
       "bulkable": true,
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "label",
+      "mainField": "documentId",
       "defaultSortBy": "documentId",
       "defaultSortOrder": "ASC"
     },
@@ -19,46 +19,60 @@
           "sortable": false
         }
       },
-      "content": {
+      "singleDigitalGateway": {
         "edit": {
-          "label": "content",
+          "label": "Dit product staat ook in de Single Digital Gateway.",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "content",
+          "label": "singleDigitalGateway",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "attachementAdded": {
+        "edit": {
+          "label": "Product heeft een bestand als bijlage",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "attachementAdded",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "contact": {
+        "edit": {
+          "label": "Contactpersoon beheer",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "contact",
           "searchable": false,
           "sortable": false
         }
       },
-      "kennisartikelCategorie": {
+      "eForm": {
         "edit": {
-          "label": "kennisartikelCategorie",
+          "label": "eForm",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "kennisartikelCategorie",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "label": {
-        "edit": {
-          "label": "label",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "label",
-          "searchable": true,
-          "sortable": true
+          "label": "eForm",
+          "searchable": false,
+          "sortable": false
         }
       },
       "documentId": {
@@ -71,27 +85,33 @@
       }
     },
     "layouts": {
+      "list": ["id", "singleDigitalGateway", "attachementAdded", "contact"],
       "edit": [
         [
           {
-            "name": "content",
+            "name": "singleDigitalGateway",
+            "size": 6
+          },
+          {
+            "name": "attachementAdded",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "contact",
             "size": 12
           }
         ],
         [
           {
-            "name": "kennisartikelCategorie",
-            "size": 6
-          },
-          {
-            "name": "label",
-            "size": 6
+            "name": "eForm",
+            "size": 12
           }
         ]
-      ],
-      "list": ["id", "kennisartikelCategorie", "label"]
+      ]
     },
-    "uid": "components.utrecht-rich-text",
+    "uid": "components.metadata",
     "isComponent": true
   },
   "type": "object",

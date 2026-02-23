@@ -1,13 +1,13 @@
 {
-  "key": "plugin_content_manager_configuration_components::components.meta",
+  "key": "plugin_content_manager_configuration_components::components.cim-pdc-product-beschrijving",
   "value": {
     "settings": {
       "bulkable": true,
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "keymatch",
-      "defaultSortBy": "keymatch",
+      "mainField": "taal",
+      "defaultSortBy": "taal",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -19,58 +19,72 @@
           "sortable": false
         }
       },
-      "keymatch": {
+      "taal": {
         "edit": {
-          "label": "Trefwoorden",
-          "description": "Voeg trefwoorden toe voor een betere vindbaarheid. Scheid de trefwoorden met komma's, zoals dit: 'trefwoord1, trefwoord2, trefwoord3'",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "keymatch",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "title": {
-        "edit": {
-          "label": "Verkorte paginatitel",
+          "label": "Taal",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "title",
+          "label": "taal",
           "searchable": true,
           "sortable": true
         }
       },
-      "description": {
+      "productNaam": {
         "edit": {
-          "label": "Korte omschrijving",
-          "description": "Korte samenvatting voor zoekvoorbeelden en delen op sociale media.",
+          "label": "Productnaam",
+          "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "description",
+          "label": "productNaam",
           "searchable": true,
           "sortable": true
         }
       },
-      "ogImage": {
+      "omschrijving": {
         "edit": {
-          "label": "Open Graph-afbeelding",
-          "description": "De Open Graph-afbeelding is de belangrijkste afbeelding die is gekoppeld aan gedeelde inhoud en verbetert de visuele aantrekkingskracht op sociale media en andere platforms. Deze moet minstens 1200 x 630 pixels zijn voor optimale weergave.",
+          "label": "Omschrijving",
+          "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "ogImage",
+          "label": "omschrijving",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "trefwoord": {
+        "edit": {
+          "label": "Trefwoord",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "trefwoord",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "cimPdcProductAspectBeschrijving": {
+        "edit": {
+          "label": "Productaspectbeschrijving",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "cimPdcProductAspectBeschrijving",
           "searchable": false,
           "sortable": false
         }
@@ -85,31 +99,37 @@
       }
     },
     "layouts": {
+      "list": ["id", "taal", "productNaam", "omschrijving"],
       "edit": [
         [
           {
-            "name": "keymatch",
+            "name": "taal",
             "size": 6
           },
           {
-            "name": "title",
+            "name": "productNaam",
             "size": 6
           }
         ],
         [
           {
-            "name": "description",
+            "name": "omschrijving",
             "size": 6
           },
           {
-            "name": "ogImage",
+            "name": "trefwoord",
             "size": 6
           }
+        ],
+        [
+          {
+            "name": "cimPdcProductAspectBeschrijving",
+            "size": 12
+          }
         ]
-      ],
-      "list": ["id", "keymatch", "title", "description"]
+      ]
     },
-    "uid": "components.meta",
+    "uid": "components.cim-pdc-product-beschrijving",
     "isComponent": true
   },
   "type": "object",

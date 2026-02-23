@@ -1,13 +1,13 @@
 {
-  "key": "plugin_content_manager_configuration_content_types::api::product.product",
+  "key": "plugin_content_manager_configuration_components::components.cim-pdc-product-metadata",
   "value": {
     "settings": {
       "bulkable": true,
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "title",
-      "defaultSortBy": "title",
+      "mainField": "productCode",
+      "defaultSortBy": "productCode",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -15,223 +15,204 @@
         "edit": {},
         "list": {
           "label": "id",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "title": {
-        "edit": {
-          "label": "title",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "title",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "slug": {
-        "edit": {
-          "label": "slug",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "slug",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "content": {
-        "edit": {
-          "label": "content",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "content",
           "searchable": false,
           "sortable": false
         }
       },
-      "sections": {
+      "productCode": {
         "edit": {
-          "label": "sections",
+          "label": "Productcode",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "sections",
+          "label": "productCode",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "beoogdResultaat": {
+        "edit": {
+          "label": "Beoogd resultaat",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "beoogdResultaat",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "wettelijkeTermijn": {
+        "edit": {
+          "label": "Wettelijke termijn",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "wettelijkeTermijn",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "servicetermijn": {
+        "edit": {
+          "label": "Servicetermijn",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "servicetermijn",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "afnemer": {
+        "edit": {
+          "label": "Afnemer",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "afnemer",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "uitvoeringsorganisatie": {
+        "edit": {
+          "label": "Uitvoeringsorganisatie",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "uitvoeringsorganisatie",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "grondslag": {
+        "edit": {
+          "label": "Grondslag",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "grondslag",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "soortTaak": {
+        "edit": {
+          "label": "Soort taak",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "soortTaak",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "eigenaar": {
+        "edit": {
+          "label": "Eigenaar",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "eigenaar",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "doelgroep": {
+        "edit": {
+          "label": "Doelgroep",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "doelgroep",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "bestelwijze": {
+        "edit": {
+          "label": "Bestelwijze",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "bestelwijze",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "soortBevoegdGezag": {
+        "edit": {
+          "label": "Soort bevoegd gezag",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "soortBevoegdGezag",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "uplProductNaam": {
+        "edit": {
+          "label": "UPL-productnaam",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "uplProductNaam",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "cimPdcProductBeschrijving": {
+        "edit": {
+          "label": "Taalafhankelijke productbeschrijving",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "cimPdcProductBeschrijving",
           "searchable": false,
           "sortable": false
-        }
-      },
-      "metaTags": {
-        "edit": {
-          "label": "Metadata",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "metaTags",
-          "searchable": false,
-          "sortable": false
-        }
-      },
-      "catalogiMeta": {
-        "edit": {
-          "label": "Samenwerkende Catalogi",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "catalogiMeta",
-          "searchable": false,
-          "sortable": false
-        }
-      },
-      "metadata": {
-        "edit": {
-          "label": "Beheerinformatie",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "metadata",
-          "searchable": false,
-          "sortable": false
-        }
-      },
-      "pdc_metadata": {
-        "edit": {
-          "label": "Product metadata",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "pdc_metadata",
-          "searchable": false,
-          "sortable": false
-        }
-      },
-      "additional_information": {
-        "edit": {
-          "label": "Gekoppelde aanvullende informatie",
-          "description": "Selecteer de aanvullende informatie die bij dit product horen.",
-          "placeholder": "Voeg aanvullende informatie toe.",
-          "visible": true,
-          "editable": true,
-          "mainField": "title"
-        },
-        "list": {
-          "label": "additional_information",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "contact_information_public": {
-        "edit": {
-          "label": "Contactinformatie (openbaar)",
-          "description": "",
-          "placeholder": "Voeg relatie toe",
-          "visible": true,
-          "editable": true,
-          "mainField": "title"
-        },
-        "list": {
-          "label": "contact_information_public",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "price": {
-        "edit": {
-          "label": "Gekoppelde kosten",
-          "description": "Selecteer de kosten die bij dit product horen.",
-          "placeholder": "Voeg productkosten toe.",
-          "visible": true,
-          "editable": true,
-          "mainField": "title"
-        },
-        "list": {
-          "label": "price",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "createdAt": {
-        "edit": {
-          "label": "createdAt",
-          "description": "",
-          "placeholder": "",
-          "visible": false,
-          "editable": true
-        },
-        "list": {
-          "label": "createdAt",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "updatedAt": {
-        "edit": {
-          "label": "updatedAt",
-          "description": "",
-          "placeholder": "",
-          "visible": false,
-          "editable": true
-        },
-        "list": {
-          "label": "updatedAt",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "createdBy": {
-        "edit": {
-          "label": "createdBy",
-          "description": "",
-          "placeholder": "",
-          "visible": false,
-          "editable": true,
-          "mainField": "firstname"
-        },
-        "list": {
-          "label": "createdBy",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "updatedBy": {
-        "edit": {
-          "label": "updatedBy",
-          "description": "",
-          "placeholder": "",
-          "visible": false,
-          "editable": true,
-          "mainField": "firstname"
-        },
-        "list": {
-          "label": "updatedBy",
-          "searchable": true,
-          "sortable": true
         }
       },
       "documentId": {
@@ -244,73 +225,84 @@
       }
     },
     "layouts": {
-      "list": ["id", "title", "slug", "content"],
+      "list": ["id", "productCode", "beoogdResultaat", "wettelijkeTermijn"],
       "edit": [
         [
           {
-            "name": "title",
+            "name": "productCode",
             "size": 6
           },
           {
-            "name": "slug",
+            "name": "beoogdResultaat",
             "size": 6
           }
         ],
         [
           {
-            "name": "content",
-            "size": 12
-          }
-        ],
-        [
-          {
-            "name": "sections",
-            "size": 12
-          }
-        ],
-        [
-          {
-            "name": "additional_information",
+            "name": "wettelijkeTermijn",
             "size": 6
           },
           {
-            "name": "contact_information_public",
+            "name": "servicetermijn",
             "size": 6
           }
         ],
         [
           {
-            "name": "price",
+            "name": "afnemer",
+            "size": 6
+          },
+          {
+            "name": "uitvoeringsorganisatie",
             "size": 6
           }
         ],
         [
           {
-            "name": "metaTags",
+            "name": "grondslag",
+            "size": 6
+          },
+          {
+            "name": "soortTaak",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "eigenaar",
+            "size": 6
+          },
+          {
+            "name": "doelgroep",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "bestelwijze",
+            "size": 6
+          },
+          {
+            "name": "soortBevoegdGezag",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "cimPdcProductBeschrijving",
             "size": 12
           }
         ],
         [
           {
-            "name": "catalogiMeta",
-            "size": 12
-          }
-        ],
-        [
-          {
-            "name": "metadata",
-            "size": 12
-          }
-        ],
-        [
-          {
-            "name": "pdc_metadata",
-            "size": 12
+            "name": "uplProductNaam",
+            "size": 8
           }
         ]
       ]
     },
-    "uid": "api::product.product"
+    "uid": "components.cim-pdc-product-metadata",
+    "isComponent": true
   },
   "type": "object",
   "environment": null,

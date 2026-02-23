@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_components_spatials",
+  "info": {
+    "displayName": "Spatial",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "resourceIdentifier": {
+      "type": "customField",
+      "customField": "plugin::nl-government-fields.gemeente-select",
+      "default": "http://standaarden.overheid.nl/owms/terms/Utrecht_(gemeente)"
+    },
+    "scheme": {
+      "type": "customField",
+      "customField": "plugin::nl-government-fields.authority-select",
+      "required": true,
+      "default": "{http://standaarden.overheid.nl/owms/terms/}Gemeente"
+    }
+  }
+}

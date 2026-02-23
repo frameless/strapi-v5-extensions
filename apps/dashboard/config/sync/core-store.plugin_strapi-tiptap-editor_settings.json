@@ -8,7 +8,7 @@
     "underline": true,
     "code": false,
     "blockquote": true,
-    "highlight": false,
+    "highlight": true,
     "align": [],
     "lists": ["ol", "ul"],
     "disableOrderedListShorthand": false,
@@ -32,7 +32,7 @@
       "allowBase64": false
     },
     "other": {
-      "wordcount": true,
+      "wordcount": false,
       "language": {
         "enabled": true,
         "default": [

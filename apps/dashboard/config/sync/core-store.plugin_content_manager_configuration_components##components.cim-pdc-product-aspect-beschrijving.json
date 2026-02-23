@@ -1,13 +1,13 @@
 {
-  "key": "plugin_content_manager_configuration_components::components.utrecht-rich-text",
+  "key": "plugin_content_manager_configuration_components::components.cim-pdc-product-aspect-beschrijving",
   "value": {
     "settings": {
       "bulkable": true,
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "label",
-      "defaultSortBy": "documentId",
+      "mainField": "onderwerp",
+      "defaultSortBy": "onderwerp",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -19,44 +19,30 @@
           "sortable": false
         }
       },
-      "content": {
+      "onderwerp": {
         "edit": {
-          "label": "content",
+          "label": "Onderwerp",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "content",
-          "searchable": false,
-          "sortable": false
-        }
-      },
-      "kennisartikelCategorie": {
-        "edit": {
-          "label": "kennisartikelCategorie",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "kennisartikelCategorie",
+          "label": "onderwerp",
           "searchable": true,
           "sortable": true
         }
       },
-      "label": {
+      "uitleg": {
         "edit": {
-          "label": "label",
+          "label": "Uitleg",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "label",
+          "label": "uitleg",
           "searchable": true,
           "sortable": true
         }
@@ -74,24 +60,18 @@
       "edit": [
         [
           {
-            "name": "content",
-            "size": 12
-          }
-        ],
-        [
-          {
-            "name": "kennisartikelCategorie",
+            "name": "onderwerp",
             "size": 6
           },
           {
-            "name": "label",
+            "name": "uitleg",
             "size": 6
           }
         ]
       ],
-      "list": ["id", "kennisartikelCategorie", "label"]
+      "list": ["id", "onderwerp", "uitleg"]
     },
-    "uid": "components.utrecht-rich-text",
+    "uid": "components.cim-pdc-product-aspect-beschrijving",
     "isComponent": true
   },
   "type": "object",
