@@ -1,0 +1,52 @@
+{
+  "name": "@frameless/upl",
+  "version": "0.0.0",
+  "sideEffects": true,
+  "private": false,
+  "main": "./dist/main.js",
+  "module": "./dist/main.mjs",
+  "types": "./dist/main.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/main.d.ts",
+      "import": "./dist/main.mjs",
+      "require": "./dist/main.js"
+    }
+  },
+  "keywords": [],
+  "author": "@frameless",
+  "description": "A Nodejs application that convert uniform product list to json",
+  "license": "EUPL-1.2",
+  "files": [
+    "./dist"
+  ],
+  "repository": {
+    "type": "git+ssh",
+    "url": "git@github.com:frameless/strapi-v5-extensions.git",
+    "directory": "packages/upl"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "build": "tsc && node dist/index.js && tsup",
+    "tsc": "tsc",
+    "clean": "rimraf dist src/build",
+    "lint-build": "tsc --noEmit -p tsconfig.json",
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.9",
+    "rimraf": "6.1.3",
+    "tsup": "8.5.1",
+    "@frameless/eslint-config": "workspace:*",
+    "@frameless/typescript-config": "workspace:*"
+  },
+  "engines": {
+    "node": ">=22.0.0 <25",
+    "pnpm": ">=10.0.0"
+  }
+}
