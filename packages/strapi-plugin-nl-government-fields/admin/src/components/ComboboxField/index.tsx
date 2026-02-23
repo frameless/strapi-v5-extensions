@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { Field } from '@strapi/design-system';
 import { useIntl } from 'react-intl';
 import ReactSelect from 'react-select';
@@ -15,13 +16,11 @@ type OrganizationData = {
   prefLabel: string;
 };
 
-export interface Combobox extends InputProps {
+export interface ComboboxProps extends InputProps {
   pluginId?: string;
   placeholderDefaultMessage?: string;
   uplData?: UplData[];
   organizationData?: OrganizationData[];
-  filterValue?: string;
-  onFilterValueChange?: (value: string) => void;
 }
 
 export const ComboboxField = ({
@@ -39,19 +38,22 @@ export const ComboboxField = ({
   uplData,
   placeholderDefaultMessage,
   pluginId,
-}: Combobox) => {
+}: ComboboxProps) => {
   const { formatMessage } = useIntl();
 
-  const options = [
-    ...(organizationData?.map(({ resourceIdentifier, prefLabel }) => ({
-      value: resourceIdentifier,
-      label: prefLabel,
-    })) ?? []),
-    ...(uplData?.map(({ uri, value }) => ({
-      value: uri,
-      label: value,
-    })) ?? []),
-  ];
+  const options = useMemo(
+    () => [
+      ...(organizationData?.map(({ resourceIdentifier, prefLabel }) => ({
+        value: resourceIdentifier,
+        label: prefLabel,
+      })) ?? []),
+      ...(uplData?.map(({ uri, value }) => ({
+        value: uri,
+        label: value,
+      })) ?? []),
+    ],
+    [organizationData, uplData],
+  );
 
   const selectedOption = options.find((option) => option.value === value) ?? null;
 

@@ -71,6 +71,38 @@
       "component": "components.meta",
       "repeatable": false
     },
+    "catalogiMeta": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "components.catalogi-meta",
+      "required": false
+    },
+    "metadata": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "components.metadata",
+      "private": true
+    },
+    "pdc_metadata": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "components.cim-pdc-product-metadata"
+    },
     "additional_information": {
       "type": "relation",
       "relation": "oneToOne",

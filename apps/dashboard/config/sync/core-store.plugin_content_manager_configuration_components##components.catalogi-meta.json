@@ -1,13 +1,13 @@
 {
-  "key": "plugin_content_manager_configuration_components::components.utrecht-link",
+  "key": "plugin_content_manager_configuration_components::components.catalogi-meta",
   "value": {
     "settings": {
       "bulkable": true,
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "textContent",
-      "defaultSortBy": "textContent",
+      "mainField": "documentId",
+      "defaultSortBy": "documentId",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -19,72 +19,72 @@
           "sortable": false
         }
       },
-      "textContent": {
+      "spatial": {
         "edit": {
-          "label": "textContent",
+          "label": "Auteur",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "textContent",
-          "searchable": true,
-          "sortable": true
+          "label": "spatial",
+          "searchable": false,
+          "sortable": false
         }
       },
-      "href": {
+      "authority": {
         "edit": {
-          "label": "href",
+          "label": "Publicerende organisatie",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "href",
-          "searchable": true,
-          "sortable": true
+          "label": "authority",
+          "searchable": false,
+          "sortable": false
         }
       },
-      "icon": {
+      "audience": {
         "edit": {
-          "label": "icon",
+          "label": "Doelgroep",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "icon",
-          "searchable": true,
-          "sortable": true
+          "label": "audience",
+          "searchable": false,
+          "sortable": false
         }
       },
-      "kennisartikelCategorie": {
+      "onlineRequest": {
         "edit": {
-          "label": "kennisartikelCategorie",
+          "label": "Online aanvragen",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "kennisartikelCategorie",
-          "searchable": true,
-          "sortable": true
+          "label": "onlineRequest",
+          "searchable": false,
+          "sortable": false
         }
       },
-      "language": {
+      "abstract": {
         "edit": {
-          "label": "language",
-          "description": "",
+          "label": "Korte omschrijving",
+          "description": "Korte omschrijving van het product.",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "language",
+          "label": "abstract",
           "searchable": true,
           "sortable": true
         }
@@ -99,37 +99,41 @@
       }
     },
     "layouts": {
-      "list": ["id", "textContent", "href", "icon"],
+      "list": ["id", "spatial", "authority", "audience"],
       "edit": [
         [
           {
-            "name": "textContent",
-            "size": 6
-          },
-          {
-            "name": "href",
-            "size": 6
+            "name": "spatial",
+            "size": 12
           }
         ],
         [
           {
-            "name": "icon",
-            "size": 6
-          },
-          {
-            "name": "kennisartikelCategorie",
-            "size": 6
+            "name": "authority",
+            "size": 12
           }
         ],
         [
           {
-            "name": "language",
+            "name": "audience",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "onlineRequest",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "abstract",
             "size": 6
           }
         ]
       ]
     },
-    "uid": "components.utrecht-link",
+    "uid": "components.catalogi-meta",
     "isComponent": true
   },
   "type": "object",

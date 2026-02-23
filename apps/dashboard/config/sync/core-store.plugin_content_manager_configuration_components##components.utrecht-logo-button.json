@@ -89,6 +89,20 @@
           "sortable": true
         }
       },
+      "openFormsEmbed": {
+        "edit": {
+          "label": "openFormsEmbed",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "openFormsEmbed",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "kennisartikelCategorie": {
         "edit": {
           "label": "kennisartikelCategorie",
@@ -142,6 +156,12 @@
           },
           {
             "name": "kennisartikelCategorie",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "openFormsEmbed",
             "size": 6
           }
         ]

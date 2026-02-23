@@ -6,7 +6,7 @@
   "locale": null,
   "permissions": [
     {
-      "documentId": "w2afhngf9ebkapve1picvz49",
+      "documentId": "vm5qltcalzwuhbzd3naijmq9",
       "action": "plugin::content-manager.explorer.create",
       "actionParameters": {},
       "subject": "api::additional-information.additional-information",
@@ -40,7 +40,7 @@
       "locale": null
     },
     {
-      "documentId": "apaoptbaeeb8k4kcmg0xepf8",
+      "documentId": "m5go1mrjlktpvxlzdzx25m5q",
       "action": "plugin::content-manager.explorer.read",
       "actionParameters": {},
       "subject": "api::additional-information.additional-information",
@@ -52,7 +52,7 @@
       "locale": null
     },
     {
-      "documentId": "sefsus9d6drk81o3kqmam1vf",
+      "documentId": "q4oey0xa2a40rfkfvx9g140u",
       "action": "plugin::content-manager.explorer.update",
       "actionParameters": {},
       "subject": "api::additional-information.additional-information",
@@ -303,7 +303,7 @@
       "locale": null
     },
     {
-      "documentId": "mjs161k24vk7mptygy3q9iqr",
+      "documentId": "ii8sb8yrxkos8cq6wygul9rl",
       "action": "plugin::content-manager.explorer.create",
       "actionParameters": {},
       "subject": "api::internal-field.internal-field",
@@ -346,7 +346,7 @@
       "locale": null
     },
     {
-      "documentId": "keq0u88q0okqahbhyeua2dc7",
+      "documentId": "wmqv5rtzo8glozi5ljlm6eec",
       "action": "plugin::content-manager.explorer.read",
       "actionParameters": {},
       "subject": "api::internal-field.internal-field",
@@ -367,7 +367,7 @@
       "locale": null
     },
     {
-      "documentId": "v16y25vnma5dc2h2l0yyaqmc",
+      "documentId": "nnqx2v5nz7ze1ccng5illr5m",
       "action": "plugin::content-manager.explorer.update",
       "actionParameters": {},
       "subject": "api::internal-field.internal-field",
@@ -388,7 +388,7 @@
       "locale": null
     },
     {
-      "documentId": "g5ltoctqmlafu2ryai9weskn",
+      "documentId": "h2lt44pjrmtwp0jbfu71g9yx",
       "action": "plugin::content-manager.explorer.create",
       "actionParameters": {},
       "subject": "api::price.price",
@@ -417,7 +417,7 @@
       "locale": null
     },
     {
-      "documentId": "rblddf3z6wk86rxmh6mr1ug7",
+      "documentId": "xg7703v1mtqlcss1ym4q7rqg",
       "action": "plugin::content-manager.explorer.read",
       "actionParameters": {},
       "subject": "api::price.price",
@@ -428,7 +428,7 @@
       "locale": null
     },
     {
-      "documentId": "x6pz1sqac4maa5dsxoe4med9",
+      "documentId": "cq8vzy9rdbwfux7scnc234hg",
       "action": "plugin::content-manager.explorer.update",
       "actionParameters": {},
       "subject": "api::price.price",
@@ -439,7 +439,7 @@
       "locale": null
     },
     {
-      "documentId": "bno3xdrll6tbvspvoo4euplo",
+      "documentId": "bmtoqt2pt2e8x3ukrhgpdkha",
       "action": "plugin::content-manager.explorer.create",
       "actionParameters": {},
       "subject": "api::product.product",
@@ -455,6 +455,37 @@
           "metaTags.title",
           "metaTags.description",
           "metaTags.ogImage",
+          "catalogiMeta.spatial.resourceIdentifier",
+          "catalogiMeta.spatial.scheme",
+          "catalogiMeta.authority.resourceIdentifier",
+          "catalogiMeta.authority.scheme",
+          "catalogiMeta.audience.type",
+          "catalogiMeta.onlineRequest.type",
+          "catalogiMeta.abstract",
+          "metadata.singleDigitalGateway",
+          "metadata.attachementAdded",
+          "metadata.contact.name",
+          "metadata.contact.email",
+          "metadata.eForm.linkedEForm",
+          "pdc_metadata.productCode",
+          "pdc_metadata.beoogdResultaat",
+          "pdc_metadata.wettelijkeTermijn",
+          "pdc_metadata.servicetermijn",
+          "pdc_metadata.afnemer",
+          "pdc_metadata.uitvoeringsorganisatie",
+          "pdc_metadata.grondslag",
+          "pdc_metadata.soortTaak",
+          "pdc_metadata.eigenaar",
+          "pdc_metadata.doelgroep",
+          "pdc_metadata.bestelwijze",
+          "pdc_metadata.soortBevoegdGezag",
+          "pdc_metadata.uplProductNaam",
+          "pdc_metadata.cimPdcProductBeschrijving.taal",
+          "pdc_metadata.cimPdcProductBeschrijving.productNaam",
+          "pdc_metadata.cimPdcProductBeschrijving.omschrijving",
+          "pdc_metadata.cimPdcProductBeschrijving.trefwoord",
+          "pdc_metadata.cimPdcProductBeschrijving.cimPdcProductAspectBeschrijving.onderwerp",
+          "pdc_metadata.cimPdcProductBeschrijving.cimPdcProductAspectBeschrijving.uitleg",
           "additional_information",
           "contact_information_public",
           "price"
@@ -487,7 +518,7 @@
       "locale": null
     },
     {
-      "documentId": "c1sxd1je57v9hacfyibf9144",
+      "documentId": "wfwanfe1by2vu6f71eshs334",
       "action": "plugin::content-manager.explorer.read",
       "actionParameters": {},
       "subject": "api::product.product",
@@ -503,6 +534,37 @@
           "metaTags.title",
           "metaTags.description",
           "metaTags.ogImage",
+          "catalogiMeta.spatial.resourceIdentifier",
+          "catalogiMeta.spatial.scheme",
+          "catalogiMeta.authority.resourceIdentifier",
+          "catalogiMeta.authority.scheme",
+          "catalogiMeta.audience.type",
+          "catalogiMeta.onlineRequest.type",
+          "catalogiMeta.abstract",
+          "metadata.singleDigitalGateway",
+          "metadata.attachementAdded",
+          "metadata.contact.name",
+          "metadata.contact.email",
+          "metadata.eForm.linkedEForm",
+          "pdc_metadata.productCode",
+          "pdc_metadata.beoogdResultaat",
+          "pdc_metadata.wettelijkeTermijn",
+          "pdc_metadata.servicetermijn",
+          "pdc_metadata.afnemer",
+          "pdc_metadata.uitvoeringsorganisatie",
+          "pdc_metadata.grondslag",
+          "pdc_metadata.soortTaak",
+          "pdc_metadata.eigenaar",
+          "pdc_metadata.doelgroep",
+          "pdc_metadata.bestelwijze",
+          "pdc_metadata.soortBevoegdGezag",
+          "pdc_metadata.uplProductNaam",
+          "pdc_metadata.cimPdcProductBeschrijving.taal",
+          "pdc_metadata.cimPdcProductBeschrijving.productNaam",
+          "pdc_metadata.cimPdcProductBeschrijving.omschrijving",
+          "pdc_metadata.cimPdcProductBeschrijving.trefwoord",
+          "pdc_metadata.cimPdcProductBeschrijving.cimPdcProductAspectBeschrijving.onderwerp",
+          "pdc_metadata.cimPdcProductBeschrijving.cimPdcProductAspectBeschrijving.uitleg",
           "additional_information",
           "contact_information_public",
           "price"
@@ -513,7 +575,7 @@
       "locale": null
     },
     {
-      "documentId": "wwll9alq7htllmkyvba51qn7",
+      "documentId": "g7tk3v7fwnyh8lsz8dsm4l77",
       "action": "plugin::content-manager.explorer.update",
       "actionParameters": {},
       "subject": "api::product.product",
@@ -529,6 +591,37 @@
           "metaTags.title",
           "metaTags.description",
           "metaTags.ogImage",
+          "catalogiMeta.spatial.resourceIdentifier",
+          "catalogiMeta.spatial.scheme",
+          "catalogiMeta.authority.resourceIdentifier",
+          "catalogiMeta.authority.scheme",
+          "catalogiMeta.audience.type",
+          "catalogiMeta.onlineRequest.type",
+          "catalogiMeta.abstract",
+          "metadata.singleDigitalGateway",
+          "metadata.attachementAdded",
+          "metadata.contact.name",
+          "metadata.contact.email",
+          "metadata.eForm.linkedEForm",
+          "pdc_metadata.productCode",
+          "pdc_metadata.beoogdResultaat",
+          "pdc_metadata.wettelijkeTermijn",
+          "pdc_metadata.servicetermijn",
+          "pdc_metadata.afnemer",
+          "pdc_metadata.uitvoeringsorganisatie",
+          "pdc_metadata.grondslag",
+          "pdc_metadata.soortTaak",
+          "pdc_metadata.eigenaar",
+          "pdc_metadata.doelgroep",
+          "pdc_metadata.bestelwijze",
+          "pdc_metadata.soortBevoegdGezag",
+          "pdc_metadata.uplProductNaam",
+          "pdc_metadata.cimPdcProductBeschrijving.taal",
+          "pdc_metadata.cimPdcProductBeschrijving.productNaam",
+          "pdc_metadata.cimPdcProductBeschrijving.omschrijving",
+          "pdc_metadata.cimPdcProductBeschrijving.trefwoord",
+          "pdc_metadata.cimPdcProductBeschrijving.cimPdcProductAspectBeschrijving.onderwerp",
+          "pdc_metadata.cimPdcProductBeschrijving.cimPdcProductAspectBeschrijving.uitleg",
           "additional_information",
           "contact_information_public",
           "price"
@@ -1049,7 +1142,7 @@
       "locale": null
     },
     {
-      "documentId": "nadu2vc2slwx628mhzzc2uxx",
+      "documentId": "kt0do7jvampnay9lj1ghapa2",
       "action": "plugin::strapi-tiptap-editor.settings.read",
       "actionParameters": {},
       "subject": null,
@@ -1058,7 +1151,7 @@
       "locale": null
     },
     {
-      "documentId": "ksaqg46f8bvc27ucglhzgebt",
+      "documentId": "htps3hjxu50qo4gfe73ky77g",
       "action": "plugin::strapi-tiptap-editor.settings.update",
       "actionParameters": {},
       "subject": null,

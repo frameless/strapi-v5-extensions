@@ -1,0 +1,61 @@
+{
+  "collectionName": "components_components_cim_pdc_product_metadata",
+  "info": {
+    "displayName": "Product metadata",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "productCode": {
+      "type": "string",
+      "unique": true
+    },
+    "beoogdResultaat": {
+      "type": "string"
+    },
+    "wettelijkeTermijn": {
+      "type": "string"
+    },
+    "servicetermijn": {
+      "type": "string"
+    },
+    "afnemer": {
+      "type": "string"
+    },
+    "uitvoeringsorganisatie": {
+      "type": "string"
+    },
+    "grondslag": {
+      "type": "string"
+    },
+    "soortTaak": {
+      "type": "string"
+    },
+    "eigenaar": {
+      "type": "string"
+    },
+    "doelgroep": {
+      "type": "enumeration",
+      "enum": ["bedrijven en instellingen", "burgers", "samenwerkingspartners", "interne organisatie"]
+    },
+    "bestelwijze": {
+      "type": "enumeration",
+      "enum": ["informatie", "initiatief bevoegd gezag", "op verzoek"]
+    },
+    "soortBevoegdGezag": {
+      "type": "enumeration",
+      "enum": ["gemeente", "provincie", "rijksoverheid", "waterschap"]
+    },
+    "uplProductNaam": {
+      "type": "customField",
+      "customField": "plugin::nl-government-fields.uniform-product-name"
+    },
+    "cimPdcProductBeschrijving": {
+      "displayName": "CimPDC product beschrijving",
+      "type": "component",
+      "repeatable": true,
+      "component": "components.cim-pdc-product-beschrijving",
+      "min": 1
+    }
+  }
+}

@@ -1,13 +1,13 @@
 {
-  "key": "plugin_content_manager_configuration_components::components.utrecht-rich-text",
+  "key": "plugin_content_manager_configuration_components::components.contact",
   "value": {
     "settings": {
       "bulkable": true,
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "label",
-      "defaultSortBy": "documentId",
+      "mainField": "name",
+      "defaultSortBy": "name",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -19,44 +19,30 @@
           "sortable": false
         }
       },
-      "content": {
+      "name": {
         "edit": {
-          "label": "content",
+          "label": "Naam",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "content",
-          "searchable": false,
-          "sortable": false
-        }
-      },
-      "kennisartikelCategorie": {
-        "edit": {
-          "label": "kennisartikelCategorie",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "kennisartikelCategorie",
+          "label": "name",
           "searchable": true,
           "sortable": true
         }
       },
-      "label": {
+      "email": {
         "edit": {
-          "label": "label",
+          "label": "E-mailadres",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "label",
+          "label": "email",
           "searchable": true,
           "sortable": true
         }
@@ -74,24 +60,18 @@
       "edit": [
         [
           {
-            "name": "content",
-            "size": 12
-          }
-        ],
-        [
-          {
-            "name": "kennisartikelCategorie",
+            "name": "name",
             "size": 6
           },
           {
-            "name": "label",
+            "name": "email",
             "size": 6
           }
         ]
       ],
-      "list": ["id", "kennisartikelCategorie", "label"]
+      "list": ["id", "name", "email"]
     },
-    "uid": "components.utrecht-rich-text",
+    "uid": "components.contact",
     "isComponent": true
   },
   "type": "object",

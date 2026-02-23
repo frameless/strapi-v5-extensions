@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_components_e_forms",
+  "info": {
+    "displayName": "eForm",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "linkedEForm": {
+      "type": "enumeration",
+      "enum": ["ja", "nee"],
+      "private": true
+    }
+  }
+}

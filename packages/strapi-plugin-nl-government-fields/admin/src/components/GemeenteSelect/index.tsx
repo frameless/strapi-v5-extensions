@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import gemeente from '@frameless/catalogi-data';
 
 import { InputProps } from '../../types';
@@ -8,7 +7,6 @@ const allGemeenten = gemeente.cv.value?.filter((item) => !item?.endDate || new D
 
 export const GemeenteSelect = (props: InputProps) => {
   const pluginId = props.attribute.customField?.replace('plugin::nl-government-fields.', '');
-  const [filterValue, setFilterValue] = useState('');
 
   return (
     <ComboboxField
@@ -17,8 +15,6 @@ export const GemeenteSelect = (props: InputProps) => {
       pluginId={pluginId}
       organizationData={allGemeenten}
       placeholderDefaultMessage="Selecteer een gemeente"
-      filterValue={filterValue}
-      onFilterValueChange={setFilterValue}
     />
   );
 };
