@@ -26,6 +26,7 @@
     "@frameless/strapi-plugin-language": "workspace:*",
     "@frameless/strapi-plugin-old-slugs": "workspace:*",
     "@frameless/strapi-plugin-nl-government-fields": "workspace:*",
+    "@frameless/strapi-plugin-notes": "workspace:*",
     "@frameless/strapi-plugin-open-forms-embed": "workspace:*",
     "@frameless/strapi-tiptap-editor": "workspace:*",
     "@strapi/design-system": "2.1.2",

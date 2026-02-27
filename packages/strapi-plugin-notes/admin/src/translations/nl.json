@@ -1,0 +1,19 @@
+{
+  "plugin.name": "Notities",
+  "notification.noteCreated": "Notitie succesvol aangemaakt",
+  "notification.noteUpdated": "Notitie succesvol bijgewerkt",
+  "notification.noteDeleted": "Notitie succesvol verwijderd",
+  "component.loading.notes": "Notities laden…",
+  "component.emptyStateLayout": "Nog geen notities",
+  "component.noteListContent.add.button": "Notitie toevoegen",
+  "component.noteModal.edit.title": "Notitie bewerken",
+  "component.noteModal.create.title": "Notitie aanmaken",
+  "component.noteModal.title.input.label": "Titel",
+  "component.noteModal.title.input.placeholder": "Voer een titel in",
+  "component.noteModal.content.input.label": "Inhoud",
+  "component.noteModal.content.input.placeholder": "Voer notitie-inhoud in",
+  "component.noteModal.actions.save": "Opslaan",
+  "component.noteModal.actions.cancel": "Annuleren",
+  "components.NoteList.edit": "Notitie bewerken",
+  "components.NoteList.delete": "Notitie verwijderen"
+}

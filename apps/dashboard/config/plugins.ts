@@ -5,6 +5,9 @@ export default ({ env }) => ({
       env_label: env('STRAPI_ENV_LABEL'),
     },
   },
+  'entity-notes': {
+		enabled: true,
+	},
   'preview-button': {
     enabled: true,
     config: {
