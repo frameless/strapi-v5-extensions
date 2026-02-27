@@ -1,0 +1,19 @@
+{
+  "plugin.name": "Notes",
+  "notification.noteCreated": "Note created successfully",
+  "notification.noteUpdated": "Note updated successfully",
+  "notification.noteDeleted": "Note deleted successfully",
+  "component.loading.notes": "Loading notes…",
+  "component.emptyStateLayout": "No notes yet",
+  "component.noteListContent.add.button": "Add note",
+  "component.noteModal.edit.title": "Edit note",
+  "component.noteModal.create.title": "Create note",
+  "component.noteModal.title.input.label": "Title",
+  "component.noteModal.title.input.placeholder": "Enter note title",
+  "component.noteModal.content.input.label": "Content",
+  "component.noteModal.content.input.placeholder": "Enter note content",
+  "component.noteModal.actions.save": "Save",
+  "component.noteModal.actions.cancel": "Cancel",
+  "components.NoteList.edit": "Edit note",
+  "components.NoteList.delete": "Delete note"
+}
