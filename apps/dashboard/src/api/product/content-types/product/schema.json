@@ -88,6 +88,14 @@
       "relation": "manyToOne",
       "target": "api::price.price",
       "inversedBy": "products"
+    },
+    "oldSlugs": {
+      "type": "json",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
