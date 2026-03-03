@@ -88,4 +88,14 @@ export default ({ env }) => ({
       embed_url: env('FRONTEND_PUBLIC_URL'),
     },
   },
+  'old-slugs': {
+    enabled: true,
+    config: {
+      contentTypes: [
+        {
+          uid: 'api::product.product',
+        },
+      ],
+    },
+  },
 });
