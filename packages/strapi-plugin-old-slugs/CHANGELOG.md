@@ -1,5 +1,11 @@
 # @frameless/strapi-plugin-old-slugs
 
+## 2.0.0
+
+### Major Changes
+
+- 8e33ee4: Migrate `@frameless/old-slugs` plugin to Strapi version 5
+
 ## 1.0.0
 
 ### Major Changes

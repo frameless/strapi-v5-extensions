@@ -1,5 +1,11 @@
 # @frameless/strapi-plugin-language 1.0.0 (2024-06-10)
 
+## 1.0.0
+
+### Major Changes
+
+- 058af85: Migrate strapi-plugin-language to Strapi 5
+
 ## 0.0.0
 
 ### Minor Changes

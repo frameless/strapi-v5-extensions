@@ -1,5 +1,11 @@
 # @frameless/strapi-plugin-open-forms-embed [1.2.0](https://github.com/frameless/strapi/compare/@frameless/strapi-plugin-open-forms-embed@1.1.0...@frameless/strapi-plugin-open-forms-embed@1.2.0) (2024-06-03)
 
+## 1.0.0
+
+### Major Changes
+
+- 1aed753: Migrate `@frameless/open-forms-embed` plugin to Strapi version 5
+
 ## 0.0.0
 
 ### Patch Changes
