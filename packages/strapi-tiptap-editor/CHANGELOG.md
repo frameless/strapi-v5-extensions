@@ -1,5 +1,11 @@
 # @frameless/strapi-tiptap-editor [2.3.0](https://github.com/frameless/strapi/compare/@frameless/strapi-tiptap-editor@2.2.0...@frameless/strapi-tiptap-editor@2.3.0) (2024-06-12)
 
+## 1.0.0
+
+### Major Changes
+
+- d4d977f: Migrate Strapi TipTap editor to version 5
+
 ## 0.3.2
 
 ### Patch Changes
@@ -22,7 +28,6 @@
 ### Minor Changes
 
 - d96fe22: Voeg Rich Text Voorbeeldfunctionaliteit toe
-
   - Nieuwe functionaliteit toegevoegd voor rich text voorbeeld.
   - Correcte behandeling van spaties en nieuwe regels.
   - Label wordt dynamisch bijgewerkt bij wijziging van de inhoud.
