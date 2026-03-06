@@ -1,0 +1,22 @@
+---
+"@frameless/eslint-config": minor
+---
+
+# ESLint Config Update: New Custom Ignore Functions and Bug Fixes
+
+**Bug Fixes:**
+
+- Added missing `eslint-plugin-json` dependency
+- Removed duplicate config spreading in `react-internal.js`
+- Removed duplicate `import/order` rule definition
+- Fixed inconsistent rule value format
+- Removed `no-inner-declarations` rule (conflicts with TypeScript)
+
+**New Features (Backward Compatible):**
+
+- Added `createConfig()` function for custom ignores
+- Added `createReactConfig()` function for custom ignores
+- Added `createNextConfig()` function for custom ignores
+- Exported `defaultIgnores` array
+
+**Migration:** No changes required. Existing imports continue to work.

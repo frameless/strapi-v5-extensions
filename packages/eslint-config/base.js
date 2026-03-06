@@ -7,6 +7,19 @@ import importPlugin from 'eslint-plugin-import';
 import { jsRules } from './javascript-rules.js';
 import json from 'eslint-plugin-json';
 
+export const defaultIgnores = [
+  'dist/**',
+  '.strapi/**',
+  'node_modules/**',
+  'build/**',
+  'coverage/**',
+  '.tmp/**',
+  '.turbo/**',
+  '.next/**',
+  'types/generated/**',
+  'src/types/**'
+];
+
 /**
  * A shared ESLint configuration for the repository.
  *
@@ -34,18 +47,7 @@ export const config = [
     ...json.configs['recommended'],
   },
   {
-    ignores: [
-      'dist/**',
-      '.strapi/**',
-      'node_modules/**',
-      'build/**',
-      'coverage/**',
-      '.tmp/**',
-      '.turbo/**',
-      '.next/**',
-      'types/generated/**',
-      'src/types/**'
-    ],
+    ignores: defaultIgnores,
   },
   // --- Import Plugin Integration ---
   importPlugin.flatConfigs.recommended,
@@ -65,7 +67,7 @@ export const config = [
       ...jsRules,
       'import/no-unresolved': 'off',
       'import/named': 'off',
-      'import/no-named-as-default': 0,
+      'import/no-named-as-default': 'off',
       'import/order': [
         'warn',
         {
@@ -76,3 +78,15 @@ export const config = [
     },
   },
 ];
+
+/**
+ * Create a custom ESLint configuration with additional ignores.
+ *
+ * @param {string[]} additionalIgnores - Additional patterns to ignore
+ * @returns {import("eslint").Linter.Config[]}
+ */
+export function createConfig(additionalIgnores = []) {
+  return config.map(cfg => 
+    cfg.ignores ? { ...cfg, ignores: [...defaultIgnores, ...additionalIgnores] } : cfg
+  );
+}
