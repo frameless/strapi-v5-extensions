@@ -1,7 +1,7 @@
 {
   "name": "@frameless/typescript-config",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "license": "EUPL-1.2",
   "author": "Frameless",
   "description": "Frameless TypeScript configuration",
