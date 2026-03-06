@@ -30,6 +30,20 @@ export const config = [
   eslintConfigPrettier,
   ...tseslint.configs.recommended,
   {
+    rules: {
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
+          destructuredArrayIgnorePattern: '^_',
+          ignoreRestSiblings: true,
+        },
+      ],
+    },
+  },
+  {
     plugins: {
       turbo: turboPlugin,
     },
@@ -75,6 +89,34 @@ export const config = [
           'newlines-between': 'always',
         },
       ],
+    },
+  },
+  {
+    files: ['**/*.test.{ts,tsx,js,jsx}', '**/*.spec.{ts,tsx,js,jsx}', '**/tests/**/*.{ts,tsx,js,jsx}', '**/setupTests.{ts,js}'],
+    languageOptions: {
+      globals: {
+        describe: 'readonly',
+        it: 'readonly',
+        test: 'readonly',
+        expect: 'readonly',
+        beforeEach: 'readonly',
+        afterEach: 'readonly',
+        beforeAll: 'readonly',
+        afterAll: 'readonly',
+        jest: 'readonly',
+        global: 'readonly',
+      },
+    },
+  },
+  {
+    files: ['**/config/**/*.{ts,tsx,js,jsx}', '**/src/index.{ts,js}', '**/lib/**/*.{ts,tsx,js,jsx}', '**/app/**/*.{ts,tsx,js,jsx}'],
+    languageOptions: {
+      globals: {
+        process: 'readonly',
+        strapi: 'readonly',
+        __dirname: 'readonly',
+        __filename: 'readonly',
+      },
     },
   },
 ];

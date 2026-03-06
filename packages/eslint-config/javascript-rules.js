@@ -73,7 +73,7 @@ export const jsRules = {
   'no-unsafe-negation': 'error',
   'no-unused-expressions': 'error',
   'no-unused-labels': 'error',
-  'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+  'no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
   'no-useless-call': 'error',
   'no-useless-catch': 'error',
   'no-useless-concat': 'error',
