@@ -5,8 +5,15 @@ Shared ESLint configurations for Frameless projects with support for TypeScript,
 ## Installation
 
 ```bash
-npm install --save-dev @frameless/eslint-config eslint
+npm install --save-dev @frameless/eslint-config eslint typescript
 ```
+
+### Peer Dependencies
+
+This package requires:
+
+- `eslint` ^9.0.0
+- `typescript` ^5.0.0
 
 ## Usage
 
