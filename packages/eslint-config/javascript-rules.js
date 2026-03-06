@@ -7,19 +7,6 @@ export const jsRules = {
   eqeqeq: 'error',
   'for-direction': 'error',
   'getter-return': 'error',
-  'import/order': [
-    'error',
-    {
-      alphabetize: { order: 'asc', caseInsensitive: false },
-      groups: [
-        ['builtin', 'external'],
-        ['internal', 'unknown'],
-        ['parent', 'sibling', 'index'],
-      ],
-      'newlines-between': 'never',
-      warnOnUnassignedImports: false,
-    },
-  ],
   'no-alert': 'error',
   'no-async-promise-executor': 'error',
   'no-caller': 'error',
@@ -51,7 +38,6 @@ export const jsRules = {
   'no-implicit-globals': 'error',
   'no-implied-eval': 'error',
   'no-import-assign': 'error',
-  'no-inner-declarations': 'error',
   'no-invalid-regexp': 'error',
   'no-invalid-this': 'error',
   'no-irregular-whitespace': 'error',
