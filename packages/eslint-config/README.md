@@ -85,6 +85,8 @@ The base configuration ignores the following patterns by default:
 - ✅ Next.js specific rules
 - ✅ JSON file linting
 - ✅ All errors converted to warnings
+- ✅ Jest globals for test files
+- ✅ Node.js and browser globals configured
 
 ## License
 

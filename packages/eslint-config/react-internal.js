@@ -16,6 +16,8 @@ export const reactConfig = [
       globals: {
         ...globals.serviceworker,
         ...globals.browser,
+        React: 'readonly',
+        EventListener: 'readonly',
       },
     },
   },
