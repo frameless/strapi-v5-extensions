@@ -1,5 +1,15 @@
 # @frameless/eslint-config
 
+## 1.1.1
+
+### Patch Changes
+
+- 290a15f: # ESLint Config: Dependencies Fix
+
+  **Bug Fixes:**
+  - Moved all ESLint plugins from devDependencies to dependencies
+  - Added peerDependencies for eslint (^9.0.0) and typescript (^5.0.0)
+
 ## 1.1.0
 
 ### Minor Changes
