@@ -36,7 +36,7 @@ const configReducer = produce(
       default:
         return state;
     }
-  }
+  },
 );
 
 export default configReducer;

@@ -16,19 +16,19 @@ All features remain the same as in Strapi v4, with internal code improvements an
 
 All existing features from the Strapi v4 implementation remain unchanged:
 
-- Same editor capabilities  
-- Same extensions  
-- Same output structure  
-- Same authoring experience  
-- Same stored content format  
+- Same editor capabilities
+- Same extensions
+- Same output structure
+- Same authoring experience
+- Same stored content format
 
 ### Improvements in v5 Version
 
-- Cleaner and improved codebase  
-- Updated to Strapi v5 plugin architecture  
-- UI refinements for better usability  
-- Improved performance and maintainability  
-- Better extension structure for future scalability  
+- Cleaner and improved codebase
+- Updated to Strapi v5 plugin architecture
+- UI refinements for better usability
+- Improved performance and maintainability
+- Better extension structure for future scalability
 
 No feature functionality has been removed or altered.
 
@@ -87,7 +87,6 @@ Strapi v5 stores custom fields in schema files.
 Example:
 
 ```json
-
 {
   "attributes": {
     "content": {
@@ -101,7 +100,6 @@ Example:
     }
   }
 }
-
 ```
 
 ## Admin Settings Integration
@@ -163,7 +161,6 @@ Example:
 
 ```html
 <span lang="en" dir="ltr">Some Text</span>
-
 ```
 
 Improves accessibility and multilingual SEO.
@@ -232,49 +229,49 @@ Example output:
 
 ```html
 <figure>
-    <figcaption>Caption</figcaption>
-    <table>
-        <colgroup>
-            <col>
-            <col>
-            <col>
-        </colgroup>
-        <tbody>
-            <tr>
-                <th colspan="1" rowspan="1">
-                    <p>Head</p>
-                </th>
-                <th colspan="1" rowspan="1">
-                    <p>Head</p>
-                </th>
-                <th colspan="1" rowspan="1">
-                    <p>Head</p>
-                </th>
-            </tr>
-            <tr>
-                <td colspan="1" rowspan="1">
-                    <p>Body</p>
-                </td>
-                <td colspan="1" rowspan="1">
-                    <p>Body</p>
-                </td>
-                <td colspan="1" rowspan="1">
-                    <p>Body</p>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="1" rowspan="1">
-                    <p>Body</p>
-                </td>
-                <td colspan="1" rowspan="1">
-                    <p>Body</p>
-                </td>
-                <td colspan="1" rowspan="1">
-                    <p>Bod</p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+  <figcaption>Caption</figcaption>
+  <table>
+    <colgroup>
+      <col />
+      <col />
+      <col />
+    </colgroup>
+    <tbody>
+      <tr>
+        <th colspan="1" rowspan="1">
+          <p>Head</p>
+        </th>
+        <th colspan="1" rowspan="1">
+          <p>Head</p>
+        </th>
+        <th colspan="1" rowspan="1">
+          <p>Head</p>
+        </th>
+      </tr>
+      <tr>
+        <td colspan="1" rowspan="1">
+          <p>Body</p>
+        </td>
+        <td colspan="1" rowspan="1">
+          <p>Body</p>
+        </td>
+        <td colspan="1" rowspan="1">
+          <p>Body</p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1" rowspan="1">
+          <p>Body</p>
+        </td>
+        <td colspan="1" rowspan="1">
+          <p>Body</p>
+        </td>
+        <td colspan="1" rowspan="1">
+          <p>Bod</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </figure>
 ```
 
@@ -286,12 +283,11 @@ Example:
 
 ```html
 <details class="utrecht-details" open="">
-    <summary class="utrecht-details__summary">Title</summary>
-    <div class="utrecht-details__content" data-type="detailsContent">
-        <p>Body</p>
-    </div>
+  <summary class="utrecht-details__summary">Title</summary>
+  <div class="utrecht-details__content" data-type="detailsContent">
+    <p>Body</p>
+  </div>
 </details>
-
 ```
 
 #### Media & Embed Support

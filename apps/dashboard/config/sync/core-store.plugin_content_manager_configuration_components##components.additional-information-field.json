@@ -43,10 +43,7 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "contentBlock"
-      ],
+      "list": ["id", "contentBlock"],
       "edit": [
         [
           {

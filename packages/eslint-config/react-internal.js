@@ -40,7 +40,5 @@ export const reactConfig = [
  * @returns {import("eslint").Linter.Config[]}
  */
 export function createReactConfig(additionalIgnores = []) {
-  return reactConfig.map(cfg => 
-    cfg.ignores ? { ...cfg, ignores: [...defaultIgnores, ...additionalIgnores] } : cfg
-  );
+  return reactConfig.map((cfg) => (cfg.ignores ? { ...cfg, ignores: [...defaultIgnores, ...additionalIgnores] } : cfg));
 }

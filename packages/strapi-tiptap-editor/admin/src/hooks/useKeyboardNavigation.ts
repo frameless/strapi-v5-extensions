@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { TableAction } from '../components/ui/Toolbar/Table/tableActionGroups';
 
-type ActionGroup = any; 
+type ActionGroup = any;
 
 interface UseKeyboardNavigationProps {
   open: boolean;
@@ -15,8 +15,6 @@ interface UseKeyboardNavigationProps {
   goBack: () => void;
   runCommand: (command: string) => void;
 }
-
-
 
 export function useKeyboardNavigation({
   open,
@@ -80,15 +78,5 @@ export function useKeyboardNavigation({
     document.addEventListener('keydown', handleKeyDown);
     // eslint-disable-next-line consistent-return
     return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [
-    open,
-    focusedIndex,
-    currentView,
-    getCurrentItems,
-    setFocusedIndex,
-    setOpen,
-    openGroup,
-    goBack,
-    runCommand,
-  ]);
+  }, [open, focusedIndex, currentView, getCurrentItems, setFocusedIndex, setOpen, openGroup, goBack, runCommand]);
 }

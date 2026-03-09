@@ -17,7 +17,7 @@ export const getCustomExtensions = ({ settings }: CustomExtensionsOptions): Exte
     // Custom text extensions
     LeadParagraph,
     Price,
-    
+
     // Table extensions (always included in your case)
     CustomTable.configure({ resizable: true }),
     TableRow,
@@ -26,11 +26,11 @@ export const getCustomExtensions = ({ settings }: CustomExtensionsOptions): Exte
     TableCaption,
     TableFigure,
   ];
-  
+
   // Language extension (conditional based on enabled flag)
   if (settings.other.language.enabled) {
     extensions.push(Language);
   }
-  
+
   return extensions;
 };

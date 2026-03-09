@@ -1,10 +1,10 @@
 export type RichText = {
   content: string;
 };
-export type LogoVariant = "digid" | "eherkenning" | "eidas" | "without_logo";
+export type LogoVariant = 'digid' | 'eherkenning' | 'eidas' | 'without_logo';
 
 export type LogoButton = {
-  __typename: "ComponentComponentsUtrechtLogoButton";
+  __typename: 'ComponentComponentsUtrechtLogoButton';
   appearance: string;
   href: string;
   label?: string;
@@ -17,19 +17,19 @@ export type LogoButton = {
 ------------------------------ */
 
 export type UtrechtRichTextSection = {
-  __typename: "ComponentComponentsUtrechtRichText";
+  __typename: 'ComponentComponentsUtrechtRichText';
   content: string;
 };
 
 export type UtrechtSpotlightSection = {
-  __typename: "ComponentComponentsUtrechtSpotlight";
+  __typename: 'ComponentComponentsUtrechtSpotlight';
   content: string;
   type?: string;
   logoButton?: LogoButton[];
 };
 
 export type UtrechtMultiColumnsButtonSection = {
-  __typename: "ComponentComponentsUtrechtMultiColumnsButton";
+  __typename: 'ComponentComponentsUtrechtMultiColumnsButton';
   column: {
     id: string;
     title: string;
@@ -38,7 +38,7 @@ export type UtrechtMultiColumnsButtonSection = {
 };
 
 export type ContactInformationPublicSection = {
-  __typename: "ComponentComponentsContactInformationPublic";
+  __typename: 'ComponentComponentsContactInformationPublic';
   contact_information_public: {
     contentBlock: {
       id?: string;
@@ -48,7 +48,7 @@ export type ContactInformationPublicSection = {
 };
 
 export type UtrechtImageSection = {
-  __typename: "ComponentComponentsUtrechtImage";
+  __typename: 'ComponentComponentsUtrechtImage';
   imageData: {
     url: string;
     alternativeText?: string | null;

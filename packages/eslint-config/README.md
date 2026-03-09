@@ -23,7 +23,7 @@ For TypeScript/JavaScript projects:
 
 ```js
 // eslint.config.js
-import { config } from '@frameless/eslint-config/base';
+import { config } from "@frameless/eslint-config/base";
 
 export default config;
 ```
@@ -34,7 +34,7 @@ For React projects:
 
 ```js
 // eslint.config.js
-import { reactConfig } from '@frameless/eslint-config/react-internal';
+import { reactConfig } from "@frameless/eslint-config/react-internal";
 
 export default reactConfig;
 ```
@@ -45,7 +45,7 @@ For Next.js projects:
 
 ```js
 // eslint.config.js
-import { nextJsConfig } from '@frameless/eslint-config/next-js';
+import { nextJsConfig } from "@frameless/eslint-config/next-js";
 
 export default nextJsConfig;
 ```
@@ -56,15 +56,11 @@ You can extend the default ignore patterns using the `createConfig` functions:
 
 ```js
 // eslint.config.js
-import { createConfig } from '@frameless/eslint-config/base';
+import { createConfig } from "@frameless/eslint-config/base";
 // or import { createReactConfig } from '@frameless/eslint-config/react-internal';
 // or import { createNextConfig } from '@frameless/eslint-config/next-js';
 
-export default createConfig([
-  '*.config.js',
-  'scripts/**',
-  'public/**'
-]);
+export default createConfig(["*.config.js", "scripts/**", "public/**"]);
 ```
 
 ## Default Ignore Patterns

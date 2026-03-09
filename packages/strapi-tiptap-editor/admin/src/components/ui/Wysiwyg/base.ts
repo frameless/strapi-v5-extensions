@@ -12,7 +12,6 @@ import { IntlFormatters } from 'react-intl';
 
 import { getTranslation } from '../../../utils';
 
-
 interface BaseExtensionsOptions {
   formatMessage: IntlFormatters['formatMessage'];
 }
@@ -24,7 +23,7 @@ export const getBaseExtensions = ({ formatMessage }: BaseExtensionsOptions): Ext
     TextExtension,
     ParagraphExtension,
     GapcursorExtension,
-    
+
     // Details/Accordion
     Details.configure({
       persist: true,
@@ -42,7 +41,7 @@ export const getBaseExtensions = ({ formatMessage }: BaseExtensionsOptions): Ext
         class: 'utrecht-details__content',
       },
     }),
-    
+
     // Placeholder
     Placeholder.configure({
       includeChildren: true,

@@ -127,12 +127,7 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "vraag",
-        "antwoord",
-        "status"
-      ],
+      "list": ["id", "vraag", "antwoord", "status"],
       "edit": [
         [
           {

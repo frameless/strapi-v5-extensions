@@ -11,11 +11,7 @@
       "actionParameters": {},
       "subject": "api::additional-information.additional-information",
       "properties": {
-        "fields": [
-          "title",
-          "content.contentBlock.content",
-          "product"
-        ]
+        "fields": ["title", "content.contentBlock.content", "product"]
       },
       "conditions": [],
       "locale": null
@@ -26,11 +22,7 @@
       "actionParameters": {},
       "subject": "api::additional-information.additional-information",
       "properties": {
-        "fields": [
-          "title",
-          "content.contentBlock.content",
-          "product"
-        ]
+        "fields": ["title", "content.contentBlock.content", "product"]
       },
       "conditions": [],
       "locale": null
@@ -41,11 +33,7 @@
       "actionParameters": {},
       "subject": "api::additional-information.additional-information",
       "properties": {
-        "fields": [
-          "title",
-          "content.contentBlock.content",
-          "product"
-        ]
+        "fields": ["title", "content.contentBlock.content", "product"]
       },
       "conditions": [],
       "locale": null
@@ -56,11 +44,7 @@
       "actionParameters": {},
       "subject": "api::category.category",
       "properties": {
-        "fields": [
-          "name",
-          "slug",
-          "description"
-        ]
+        "fields": ["name", "slug", "description"]
       },
       "conditions": [],
       "locale": null
@@ -89,11 +73,7 @@
       "actionParameters": {},
       "subject": "api::category.category",
       "properties": {
-        "fields": [
-          "name",
-          "slug",
-          "description"
-        ]
+        "fields": ["name", "slug", "description"]
       },
       "conditions": [],
       "locale": null
@@ -104,11 +84,7 @@
       "actionParameters": {},
       "subject": "api::category.category",
       "properties": {
-        "fields": [
-          "name",
-          "slug",
-          "description"
-        ]
+        "fields": ["name", "slug", "description"]
       },
       "conditions": [],
       "locale": null
@@ -119,12 +95,7 @@
       "actionParameters": {},
       "subject": "api::contact-information-internal.contact-information-internal",
       "properties": {
-        "fields": [
-          "title",
-          "contentBlock.content",
-          "internal_information",
-          "vacs"
-        ]
+        "fields": ["title", "contentBlock.content", "internal_information", "vacs"]
       },
       "conditions": [],
       "locale": null
@@ -135,12 +106,7 @@
       "actionParameters": {},
       "subject": "api::contact-information-internal.contact-information-internal",
       "properties": {
-        "fields": [
-          "title",
-          "contentBlock.content",
-          "internal_information",
-          "vacs"
-        ]
+        "fields": ["title", "contentBlock.content", "internal_information", "vacs"]
       },
       "conditions": [],
       "locale": null
@@ -151,12 +117,7 @@
       "actionParameters": {},
       "subject": "api::contact-information-internal.contact-information-internal",
       "properties": {
-        "fields": [
-          "title",
-          "contentBlock.content",
-          "internal_information",
-          "vacs"
-        ]
+        "fields": ["title", "contentBlock.content", "internal_information", "vacs"]
       },
       "conditions": [],
       "locale": null
@@ -167,13 +128,7 @@
       "actionParameters": {},
       "subject": "api::contact-information-public.contact-information-public",
       "properties": {
-        "fields": [
-          "title",
-          "contentBlock.content",
-          "internal_information",
-          "vacs",
-          "products"
-        ]
+        "fields": ["title", "contentBlock.content", "internal_information", "vacs", "products"]
       },
       "conditions": [],
       "locale": null
@@ -184,13 +139,7 @@
       "actionParameters": {},
       "subject": "api::contact-information-public.contact-information-public",
       "properties": {
-        "fields": [
-          "title",
-          "contentBlock.content",
-          "internal_information",
-          "vacs",
-          "products"
-        ]
+        "fields": ["title", "contentBlock.content", "internal_information", "vacs", "products"]
       },
       "conditions": [],
       "locale": null
@@ -201,13 +150,7 @@
       "actionParameters": {},
       "subject": "api::contact-information-public.contact-information-public",
       "properties": {
-        "fields": [
-          "title",
-          "contentBlock.content",
-          "internal_information",
-          "vacs",
-          "products"
-        ]
+        "fields": ["title", "contentBlock.content", "internal_information", "vacs", "products"]
       },
       "conditions": [],
       "locale": null

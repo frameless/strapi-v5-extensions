@@ -43,4 +43,4 @@ export interface InputProps {
   onChange: (event: unknown) => void;
   onBlur: () => void;
   onFocus: () => void;
-};
+}

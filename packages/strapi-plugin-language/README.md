@@ -76,7 +76,6 @@ Example API response:
 {
   "language": "en"
 }
-
 ```
 
 ## License

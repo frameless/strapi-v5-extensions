@@ -160,12 +160,7 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "title",
-        "contentBlock",
-        "internal_information"
-      ],
+      "list": ["id", "title", "contentBlock", "internal_information"],
       "edit": [
         [
           {

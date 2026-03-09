@@ -130,12 +130,7 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "title",
-        "content",
-        "product"
-      ],
+      "list": ["id", "title", "content", "product"],
       "edit": [
         [
           {

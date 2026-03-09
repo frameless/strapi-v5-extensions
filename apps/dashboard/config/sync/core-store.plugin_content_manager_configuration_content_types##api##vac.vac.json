@@ -145,12 +145,7 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "vac",
-        "title",
-        "contact_information_public"
-      ],
+      "list": ["id", "vac", "title", "contact_information_public"],
       "edit": [
         [
           {

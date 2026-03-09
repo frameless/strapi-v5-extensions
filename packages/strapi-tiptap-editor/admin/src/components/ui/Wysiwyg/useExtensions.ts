@@ -8,7 +8,6 @@ import { getBlockExtensions } from './blocks';
 import { getMediaExtensions } from './media';
 import { getCustomExtensions } from './custom';
 
-
 interface UseExtensionsOptions {
   settings: any; // Replace with your settings type
 }

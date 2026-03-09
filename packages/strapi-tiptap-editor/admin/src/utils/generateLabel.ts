@@ -14,11 +14,7 @@ interface GenerateLabelReturnType {
   content: string;
 }
 
-export const generateLabel = ({
-  name,
-  content,
-  truncateLength = 70,
-}: GenerateLabelData): GenerateLabelReturnType => {
+export const generateLabel = ({ name, content, truncateLength = 70 }: GenerateLabelData): GenerateLabelReturnType => {
   // check if content is empty or just empty HTML tags
   const sanitizedContent = DOMPurify.sanitize(content, {
     ALLOWED_TAGS: [],
@@ -26,14 +22,10 @@ export const generateLabel = ({
   });
 
   const decodedContent =
-    new DOMParser()
-      .parseFromString(sanitizedContent, 'text/html')
-      .documentElement.textContent || '';
+    new DOMParser().parseFromString(sanitizedContent, 'text/html').documentElement.textContent || '';
 
   const plainText = decodedContent
-    .replace(/<[^>]*>|(\s|\u00A0)+/g, (match) => 
-      match.startsWith('<') ? '' : ' '
-    )
+    .replace(/<[^>]*>|(\s|\u00A0)+/g, (match) => (match.startsWith('<') ? '' : ' '))
     .trim();
 
   // if plainText is empty after all processing, return empty
@@ -58,12 +50,7 @@ interface DispatchLabelProps extends GenerateLabelData {
   label: string;
 }
 
-export const dispatchLabel = ({
-  content,
-  label,
-  key,
-  name,
-}: DispatchLabelProps) => {
+export const dispatchLabel = ({ content, label, key, name }: DispatchLabelProps) => {
   try {
     if (typeof window === 'undefined') return;
 
@@ -75,9 +62,6 @@ export const dispatchLabel = ({
     );
   } catch (error) {
     // eslint-disable-next-line no-console
-    console.error(
-      'Error in strapi-preview-button dispatching label update:',
-      error,
-    );
+    console.error('Error in strapi-preview-button dispatching label update:', error);
   }
 };

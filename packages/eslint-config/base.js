@@ -18,8 +18,8 @@ export const defaultIgnores = [
   // Generated types & code
   '**/types/generated/**',
   '**/generated/**',
-  'src/types/**',        // keep if intentionally scoped to root src/
-  'lib/types/**',        // keep if intentionally scoped to root lib/
+  'src/types/**', // keep if intentionally scoped to root src/
+  'lib/types/**', // keep if intentionally scoped to root lib/
 
   // Framework / tool caches
   '**/.next/**',
@@ -112,7 +112,12 @@ export const config = [
     },
   },
   {
-    files: ['**/*.test.{ts,tsx,js,jsx}', '**/*.spec.{ts,tsx,js,jsx}', '**/tests/**/*.{ts,tsx,js,jsx}', '**/setupTests.{ts,js}'],
+    files: [
+      '**/*.test.{ts,tsx,js,jsx}',
+      '**/*.spec.{ts,tsx,js,jsx}',
+      '**/tests/**/*.{ts,tsx,js,jsx}',
+      '**/setupTests.{ts,js}',
+    ],
     languageOptions: {
       globals: {
         describe: 'readonly',
@@ -129,7 +134,13 @@ export const config = [
     },
   },
   {
-    files: ['**/config/**/*.{ts,tsx,js,jsx}', '**/src/index.{ts,js}', '**/lib/**/*.{ts,tsx,js,jsx}', '**/app/**/*.{ts,tsx,js,jsx}', '**/*.config.{ts,js}'],
+    files: [
+      '**/config/**/*.{ts,tsx,js,jsx}',
+      '**/src/index.{ts,js}',
+      '**/lib/**/*.{ts,tsx,js,jsx}',
+      '**/app/**/*.{ts,tsx,js,jsx}',
+      '**/*.config.{ts,js}',
+    ],
     languageOptions: {
       globals: {
         process: 'readonly',
@@ -148,7 +159,5 @@ export const config = [
  * @returns {import("eslint").Linter.Config[]}
  */
 export function createConfig(additionalIgnores = []) {
-  return config.map(cfg =>
-    cfg.ignores ? { ...cfg, ignores: [...defaultIgnores, ...additionalIgnores] } : cfg
-  );
+  return config.map((cfg) => (cfg.ignores ? { ...cfg, ignores: [...defaultIgnores, ...additionalIgnores] } : cfg));
 }

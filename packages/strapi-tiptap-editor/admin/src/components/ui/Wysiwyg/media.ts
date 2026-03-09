@@ -18,7 +18,7 @@ export const getMediaExtensions = ({ settings }: MediaExtensionsOptions): Extens
         HTMLAttributes: {
           rel: settings.links.HTMLAttributes.rel,
         },
-      })
+      }),
     );
   }
 
@@ -46,7 +46,7 @@ export const getMediaExtensions = ({ settings }: MediaExtensionsOptions): Extens
       }).configure({
         inline: settings.image.inline,
         allowBase64: settings.image.allowBase64,
-      })
+      }),
     );
   }
 
@@ -71,7 +71,7 @@ export const getMediaExtensions = ({ settings }: MediaExtensionsOptions): Extens
         },
       }).configure({
         inline: false,
-      })
+      }),
     );
   }
 

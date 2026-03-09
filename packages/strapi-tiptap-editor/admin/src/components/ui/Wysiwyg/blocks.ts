@@ -34,30 +34,30 @@ export const getBlockExtensions = ({ settings }: BlockExtensionsOptions): Extens
         ];
       },
     }),
-    
+
     // Lists
     ListItemExtension,
     BulletListExtension,
     settings.disableOrderedListShorthand ? CustomOrderedList : OrderedListExtension,
   ];
-  
+
   // Other blocks
   if (settings.blockquote) {
     extensions.push(BlockquoteExtension);
   }
-  
+
   if (settings.horizontal) {
     extensions.push(HorizontalRuleExtension);
   }
-  
+
   if (settings.hardbreak) {
     extensions.push(HardBreakExtension);
   }
-  
+
   // Utilities
   if (settings.other.wordcount) {
     extensions.push(CharacterCountExtension.configure());
   }
-  
+
   return extensions;
 };

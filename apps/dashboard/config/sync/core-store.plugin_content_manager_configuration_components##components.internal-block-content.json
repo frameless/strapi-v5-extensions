@@ -44,10 +44,7 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "internal_field"
-      ],
+      "list": ["id", "internal_field"],
       "edit": [
         [
           {

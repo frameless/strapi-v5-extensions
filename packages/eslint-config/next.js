@@ -28,7 +28,7 @@ export const nextJsConfig = [
  * @returns {import("eslint").Linter.Config[]}
  */
 export function createNextConfig(additionalIgnores = []) {
-  return nextJsConfig.map(cfg => 
-    cfg.ignores ? { ...cfg, ignores: [...defaultIgnores, ...additionalIgnores] } : cfg
+  return nextJsConfig.map((cfg) =>
+    cfg.ignores ? { ...cfg, ignores: [...defaultIgnores, ...additionalIgnores] } : cfg,
   );
 }

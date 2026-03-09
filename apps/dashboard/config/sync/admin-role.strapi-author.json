@@ -11,15 +11,9 @@
       "actionParameters": {},
       "subject": "api::additional-information.additional-information",
       "properties": {
-        "fields": [
-          "title",
-          "content.contentBlock.content",
-          "product"
-        ]
+        "fields": ["title", "content.contentBlock.content", "product"]
       },
-      "conditions": [
-        "admin::is-creator"
-      ],
+      "conditions": ["admin::is-creator"],
       "locale": null
     },
     {
@@ -28,15 +22,9 @@
       "actionParameters": {},
       "subject": "api::additional-information.additional-information",
       "properties": {
-        "fields": [
-          "title",
-          "content.contentBlock.content",
-          "product"
-        ]
+        "fields": ["title", "content.contentBlock.content", "product"]
       },
-      "conditions": [
-        "admin::is-creator"
-      ],
+      "conditions": ["admin::is-creator"],
       "locale": null
     },
     {
@@ -45,15 +33,9 @@
       "actionParameters": {},
       "subject": "api::additional-information.additional-information",
       "properties": {
-        "fields": [
-          "title",
-          "content.contentBlock.content",
-          "product"
-        ]
+        "fields": ["title", "content.contentBlock.content", "product"]
       },
-      "conditions": [
-        "admin::is-creator"
-      ],
+      "conditions": ["admin::is-creator"],
       "locale": null
     },
     {
@@ -62,15 +44,9 @@
       "actionParameters": {},
       "subject": "api::category.category",
       "properties": {
-        "fields": [
-          "name",
-          "slug",
-          "description"
-        ]
+        "fields": ["name", "slug", "description"]
       },
-      "conditions": [
-        "admin::is-creator"
-      ],
+      "conditions": ["admin::is-creator"],
       "locale": null
     },
     {
@@ -79,9 +55,7 @@
       "actionParameters": {},
       "subject": "api::category.category",
       "properties": {},
-      "conditions": [
-        "admin::is-creator"
-      ],
+      "conditions": ["admin::is-creator"],
       "locale": null
     },
     {
@@ -90,15 +64,9 @@
       "actionParameters": {},
       "subject": "api::category.category",
       "properties": {
-        "fields": [
-          "name",
-          "slug",
-          "description"
-        ]
+        "fields": ["name", "slug", "description"]
       },
-      "conditions": [
-        "admin::is-creator"
-      ],
+      "conditions": ["admin::is-creator"],
       "locale": null
     },
     {
@@ -107,15 +75,9 @@
       "actionParameters": {},
       "subject": "api::category.category",
       "properties": {
-        "fields": [
-          "name",
-          "slug",
-          "description"
-        ]
+        "fields": ["name", "slug", "description"]
       },
-      "conditions": [
-        "admin::is-creator"
-      ],
+      "conditions": ["admin::is-creator"],
       "locale": null
     },
     {
@@ -124,16 +86,9 @@
       "actionParameters": {},
       "subject": "api::contact-information-internal.contact-information-internal",
       "properties": {
-        "fields": [
-          "title",
-          "contentBlock.content",
-          "internal_information",
-          "vacs"
-        ]
+        "fields": ["title", "contentBlock.content", "internal_information", "vacs"]
       },
-      "conditions": [
-        "admin::is-creator"
-      ],
+      "conditions": ["admin::is-creator"],
       "locale": null
     },
     {
@@ -142,16 +97,9 @@
       "actionParameters": {},
       "subject": "api::contact-information-internal.contact-information-internal",
       "properties": {
-        "fields": [
-          "title",
-          "contentBlock.content",
-          "internal_information",
-          "vacs"
-        ]
+        "fields": ["title", "contentBlock.content", "internal_information", "vacs"]
       },
-      "conditions": [
-        "admin::is-creator"
-      ],
+      "conditions": ["admin::is-creator"],
       "locale": null
     },
     {
@@ -160,16 +108,9 @@
       "actionParameters": {},
       "subject": "api::contact-information-internal.contact-information-internal",
       "properties": {
-        "fields": [
-          "title",
-          "contentBlock.content",
-          "internal_information",
-          "vacs"
-        ]
+        "fields": ["title", "contentBlock.content", "internal_information", "vacs"]
       },
-      "conditions": [
-        "admin::is-creator"
-      ],
+      "conditions": ["admin::is-creator"],
       "locale": null
     },
     {
@@ -178,17 +119,9 @@
       "actionParameters": {},
       "subject": "api::contact-information-public.contact-information-public",
       "properties": {
-        "fields": [
-          "title",
-          "contentBlock.content",
-          "internal_information",
-          "vacs",
-          "products"
-        ]
+        "fields": ["title", "contentBlock.content", "internal_information", "vacs", "products"]
       },
-      "conditions": [
-        "admin::is-creator"
-      ],
+      "conditions": ["admin::is-creator"],
       "locale": null
     },
     {
@@ -197,17 +130,9 @@
       "actionParameters": {},
       "subject": "api::contact-information-public.contact-information-public",
       "properties": {
-        "fields": [
-          "title",
-          "contentBlock.content",
-          "internal_information",
-          "vacs",
-          "products"
-        ]
+        "fields": ["title", "contentBlock.content", "internal_information", "vacs", "products"]
       },
-      "conditions": [
-        "admin::is-creator"
-      ],
+      "conditions": ["admin::is-creator"],
       "locale": null
     },
     {
@@ -216,17 +141,9 @@
       "actionParameters": {},
       "subject": "api::contact-information-public.contact-information-public",
       "properties": {
-        "fields": [
-          "title",
-          "contentBlock.content",
-          "internal_information",
-          "vacs",
-          "products"
-        ]
+        "fields": ["title", "contentBlock.content", "internal_information", "vacs", "products"]
       },
-      "conditions": [
-        "admin::is-creator"
-      ],
+      "conditions": ["admin::is-creator"],
       "locale": null
     },
     {
@@ -244,9 +161,7 @@
           "defaultSeo.shareImage"
         ]
       },
-      "conditions": [
-        "admin::is-creator"
-      ],
+      "conditions": ["admin::is-creator"],
       "locale": null
     },
     {
@@ -255,9 +170,7 @@
       "actionParameters": {},
       "subject": "api::global.global",
       "properties": {},
-      "conditions": [
-        "admin::is-creator"
-      ],
+      "conditions": ["admin::is-creator"],
       "locale": null
     },
     {
@@ -275,9 +188,7 @@
           "defaultSeo.shareImage"
         ]
       },
-      "conditions": [
-        "admin::is-creator"
-      ],
+      "conditions": ["admin::is-creator"],
       "locale": null
     },
     {
@@ -295,9 +206,7 @@
           "defaultSeo.shareImage"
         ]
       },
-      "conditions": [
-        "admin::is-creator"
-      ],
+      "conditions": ["admin::is-creator"],
       "locale": null
     },
     {
@@ -316,9 +225,7 @@
           "contact_information_internal"
         ]
       },
-      "conditions": [
-        "admin::is-creator"
-      ],
+      "conditions": ["admin::is-creator"],
       "locale": null
     },
     {
@@ -337,9 +244,7 @@
           "contact_information_internal"
         ]
       },
-      "conditions": [
-        "admin::is-creator"
-      ],
+      "conditions": ["admin::is-creator"],
       "locale": null
     },
     {
@@ -358,9 +263,7 @@
           "contact_information_internal"
         ]
       },
-      "conditions": [
-        "admin::is-creator"
-      ],
+      "conditions": ["admin::is-creator"],
       "locale": null
     },
     {
@@ -383,9 +286,7 @@
           "contact_information_public"
         ]
       },
-      "conditions": [
-        "admin::is-creator"
-      ],
+      "conditions": ["admin::is-creator"],
       "locale": null
     },
     {
@@ -408,9 +309,7 @@
           "contact_information_public"
         ]
       },
-      "conditions": [
-        "admin::is-creator"
-      ],
+      "conditions": ["admin::is-creator"],
       "locale": null
     },
     {
@@ -433,9 +332,7 @@
           "contact_information_public"
         ]
       },
-      "conditions": [
-        "admin::is-creator"
-      ],
+      "conditions": ["admin::is-creator"],
       "locale": null
     },
     {
@@ -458,9 +355,7 @@
           "contact_information_internal"
         ]
       },
-      "conditions": [
-        "admin::is-creator"
-      ],
+      "conditions": ["admin::is-creator"],
       "locale": null
     },
     {
@@ -469,9 +364,7 @@
       "actionParameters": {},
       "subject": "api::vac.vac",
       "properties": {},
-      "conditions": [
-        "admin::is-creator"
-      ],
+      "conditions": ["admin::is-creator"],
       "locale": null
     },
     {
@@ -494,9 +387,7 @@
           "contact_information_internal"
         ]
       },
-      "conditions": [
-        "admin::is-creator"
-      ],
+      "conditions": ["admin::is-creator"],
       "locale": null
     },
     {
@@ -519,9 +410,7 @@
           "contact_information_internal"
         ]
       },
-      "conditions": [
-        "admin::is-creator"
-      ],
+      "conditions": ["admin::is-creator"],
       "locale": null
     },
     {
@@ -557,9 +446,7 @@
       "actionParameters": {},
       "subject": null,
       "properties": {},
-      "conditions": [
-        "admin::is-creator"
-      ],
+      "conditions": ["admin::is-creator"],
       "locale": null
     },
     {
@@ -577,9 +464,7 @@
       "actionParameters": {},
       "subject": null,
       "properties": {},
-      "conditions": [
-        "admin::is-creator"
-      ],
+      "conditions": ["admin::is-creator"],
       "locale": null
     }
   ]

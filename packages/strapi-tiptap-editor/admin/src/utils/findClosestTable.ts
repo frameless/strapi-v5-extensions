@@ -15,7 +15,10 @@ interface TableNodeResult {
   pos: number;
 }
 
-export const findClosestComponent = ({ selection, nodeType }: FindClosestComponentParameter): TableNodeResult | null => {
+export const findClosestComponent = ({
+  selection,
+  nodeType,
+}: FindClosestComponentParameter): TableNodeResult | null => {
   const { $from, $to } = selection;
 
   let tableNode: TableNodeResult | null = null;

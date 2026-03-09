@@ -71,11 +71,7 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "label",
-        "headingLevel"
-      ],
+      "list": ["id", "label", "headingLevel"],
       "edit": [
         [
           {

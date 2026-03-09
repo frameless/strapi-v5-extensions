@@ -38,13 +38,13 @@ export const useProductPrices = ({ collectionUid, documentId }: Params) => {
   const { toggleNotification } = useNotification();
   const { formatMessage } = useIntl();
   const { setProductPrice, setBusy } = useProductPriceContext();
-  const abortController = new AbortController();  
+  const abortController = new AbortController();
   return useQuery({
     queryKey: ['product-prices', collectionUid, documentId],
     enabled: !!collectionUid && !!documentId,
 
     queryFn: async (): Promise<ProductPrice | null> => {
-    setBusy(true);
+      setBusy(true);
 
       try {
         const relationField = collectionToProductField[collectionUid!];
@@ -82,8 +82,8 @@ export const useProductPrices = ({ collectionUid, documentId }: Params) => {
         if (!product) {
           setProductPrice(null);
           setBusy(false);
-          return null
-        };
+          return null;
+        }
 
         setProductPrice(product.price || null);
         return product.price || null;

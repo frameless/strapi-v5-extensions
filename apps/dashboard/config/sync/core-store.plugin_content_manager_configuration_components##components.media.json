@@ -43,10 +43,7 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "file"
-      ],
+      "list": ["id", "file"],
       "edit": [
         [
           {

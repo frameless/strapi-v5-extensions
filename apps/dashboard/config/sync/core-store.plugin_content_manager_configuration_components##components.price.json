@@ -85,12 +85,7 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "label",
-        "currency",
-        "value"
-      ],
+      "list": ["id", "label", "currency", "value"],
       "edit": [
         [
           {

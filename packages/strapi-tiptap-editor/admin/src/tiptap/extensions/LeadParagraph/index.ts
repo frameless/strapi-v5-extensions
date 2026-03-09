@@ -48,7 +48,7 @@ export const LeadParagraph = Node.create({
         ({ commands }) => {
           return commands.setNode(this.name);
         },
-      
+
       toggleLeadParagraph:
         () =>
         ({ commands }) => {

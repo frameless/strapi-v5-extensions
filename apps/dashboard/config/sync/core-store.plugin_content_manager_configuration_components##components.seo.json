@@ -71,12 +71,7 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "metaTitle",
-        "metaDescription",
-        "shareImage"
-      ],
+      "list": ["id", "metaTitle", "metaDescription", "shareImage"],
       "edit": [
         [
           {

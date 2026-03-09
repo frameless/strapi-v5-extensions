@@ -5,12 +5,11 @@ export const EditorBox = styled(Box)`
   /* ============================================
      BASE EDITOR STYLES
      ============================================ */
-  
 
   /* ============================================
      PROSEMIRROR CANVAS
      ============================================ */
-  
+
   & .utrecht-rich-text-editor-canvas {
     background-color: ${({ theme }) => theme.colors.neutral0};
     border-color: ${({ theme }) => theme.colors.neutral400};
@@ -34,7 +33,7 @@ export const EditorBox = styled(Box)`
     outline: none;
 
     /* Disabled state */
-    &[contenteditable="false"] {
+    &[contenteditable='false'] {
       background-color: ${({ theme }) => theme.colors.neutral150};
       cursor: not-allowed;
     }
@@ -161,7 +160,7 @@ export const EditorBox = styled(Box)`
     & .utrecht-table-widget__button {
       display: var(--_utrecht-table-button-display, none);
       position: absolute;
-      
+
       /* Focus state for accessibility */
       &:focus-visible {
         outline: 2px solid ${({ theme }) => theme.colors.primary600 || '#4945ff'};
@@ -254,10 +253,10 @@ export const EditorBox = styled(Box)`
   /* Toggle button icon */
   .ProseMirror .utrecht-details > button::before {
     background-color: currentColor;
-    content: "";
+    content: '';
     display: inline-block;
     height: 1em;
-    mask-image: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTQgOCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTMgOGMtLjI2IDAtLjUxLS4xLS43MS0uMjlMNyAyLjQxbC01LjI5IDUuM0EuOTk2Ljk5NiAwIDEgMSAuMyA2LjNMNi4yOS4yOWEuOTk2Ljk5NiAwIDAgMSAxLjQxIDBsNiA2YS45OTYuOTk2IDAgMCAxLS43MSAxLjdaIi8+PC9zdmc+");
+    mask-image: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTQgOCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTMgOGMtLjI2IDAtLjUxLS4xLS43MS0uMjlMNyAyLjQxbC01LjI5IDUuM0EuOTk2Ljk5NiAwIDEgMSAuMyA2LjNMNi4yOS4yOWEuOTk2Ljk5NiAwIDAgMSAxLjQxIDBsNiA2YS45OTYuOTk2IDAgMCAxLS43MSAxLjdaIi8+PC9zdmc+');
     mask-position: center;
     mask-repeat: no-repeat;
     mask-size: contain;
@@ -281,7 +280,7 @@ export const EditorBox = styled(Box)`
   }
 
   /* Content area */
-  .ProseMirror .utrecht-details div[data-type="detailsContent"] {
+  .ProseMirror .utrecht-details div[data-type='detailsContent'] {
     padding-block-end: var(--utrecht-details-content-padding-block-end, 8px);
     padding-block-start: var(--utrecht-details-content-padding-block-start, 8px);
   }

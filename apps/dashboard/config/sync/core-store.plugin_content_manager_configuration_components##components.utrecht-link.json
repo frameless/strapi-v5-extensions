@@ -85,12 +85,7 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "textContent",
-        "href",
-        "icon"
-      ],
+      "list": ["id", "textContent", "href", "icon"],
       "edit": [
         [
           {
