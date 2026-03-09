@@ -8,18 +8,38 @@ import { jsRules } from './javascript-rules.js';
 import json from 'eslint-plugin-json';
 
 export const defaultIgnores = [
-  'dist/**',
-  '.strapi/**',
-  'node_modules/**',
-  'build/**',
-  'coverage/**',
-  '.tmp/**',
-  '.turbo/**',
-  '.next/**',
-  'types/generated/**',
-  'src/types/**'
-];
+  // Build outputs
+  '**/dist/**',
+  '**/build/**',
 
+  // Dependencies
+  '**/node_modules/**',
+
+  // Generated types & code
+  '**/types/generated/**',
+  '**/generated/**',
+  'src/types/**',        // keep if intentionally scoped to root src/
+  'lib/types/**',        // keep if intentionally scoped to root lib/
+
+  // Framework / tool caches
+  '**/.next/**',
+  '**/.strapi/**',
+  '**/.turbo/**',
+  '**/.tmp/**',
+  '**/.cache/**',
+  '**/.rollup.cache/**',
+
+  // Coverage & test output
+  '**/coverage/**',
+
+  // Minified files
+  '**/*.min.js',
+
+  // Misc
+  '**/patches/**',
+  '**/sample/**',
+  '**/.strapi-updater.json',
+];
 /**
  * A shared ESLint configuration for the repository.
  *
@@ -109,7 +129,7 @@ export const config = [
     },
   },
   {
-    files: ['**/config/**/*.{ts,tsx,js,jsx}', '**/src/index.{ts,js}', '**/lib/**/*.{ts,tsx,js,jsx}', '**/app/**/*.{ts,tsx,js,jsx}'],
+    files: ['**/config/**/*.{ts,tsx,js,jsx}', '**/src/index.{ts,js}', '**/lib/**/*.{ts,tsx,js,jsx}', '**/app/**/*.{ts,tsx,js,jsx}', '**/*.config.{ts,js}'],
     languageOptions: {
       globals: {
         process: 'readonly',
@@ -128,7 +148,7 @@ export const config = [
  * @returns {import("eslint").Linter.Config[]}
  */
 export function createConfig(additionalIgnores = []) {
-  return config.map(cfg => 
+  return config.map(cfg =>
     cfg.ignores ? { ...cfg, ignores: [...defaultIgnores, ...additionalIgnores] } : cfg
   );
 }
