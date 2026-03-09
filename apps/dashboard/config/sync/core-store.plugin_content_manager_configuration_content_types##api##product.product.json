@@ -202,12 +202,7 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "title",
-        "slug",
-        "content"
-      ],
+      "list": ["id", "title", "slug", "content"],
       "edit": [
         [
           {

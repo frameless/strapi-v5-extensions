@@ -14,13 +14,13 @@ export const addRemoveFromList = <T>(list: T[], val: T): T[] => {
 
     const newList = [...list];
     const index = newList.indexOf(val);
-    
+
     if (index === -1) {
       newList.push(val);
     } else {
       newList.splice(index, 1);
     }
-    
+
     return newList;
   } catch (err) {
     // eslint-disable-next-line no-console

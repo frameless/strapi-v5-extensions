@@ -80,8 +80,7 @@ describe('generateLabel', () => {
   });
 
   it('should truncate long content safely', () => {
-    const content =
-      '<p>This is a very long piece of content that should be truncated safely</p>';
+    const content = '<p>This is a very long piece of content that should be truncated safely</p>';
 
     const result = generateLabel({
       content,
@@ -94,8 +93,7 @@ describe('generateLabel', () => {
   });
 
   it('should not cut words when truncating', () => {
-    const content =
-      '<p>ThisIsAVeryLongWord ThatShouldNotBeCut</p>';
+    const content = '<p>ThisIsAVeryLongWord ThatShouldNotBeCut</p>';
 
     const result = generateLabel({
       content,

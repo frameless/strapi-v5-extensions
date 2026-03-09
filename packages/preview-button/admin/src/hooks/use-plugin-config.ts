@@ -20,7 +20,7 @@ const usePluginConfig = () => {
       return;
     }
     const abortController = new AbortController();
-     
+
     const fetchData = async () => {
       try {
         const endpoint = `/${PLUGIN_ID}/config`;

@@ -1,6 +1,6 @@
 import i18nLanguages from '@cospired/i18n-iso-languages';
-import enI18Json from '@cospired/i18n-iso-languages/langs/en.json'
-import nlI18Json from '@cospired/i18n-iso-languages/langs/nl.json'
+import enI18Json from '@cospired/i18n-iso-languages/langs/en.json';
+import nlI18Json from '@cospired/i18n-iso-languages/langs/nl.json';
 
 import { LanguagesType } from '../types';
 

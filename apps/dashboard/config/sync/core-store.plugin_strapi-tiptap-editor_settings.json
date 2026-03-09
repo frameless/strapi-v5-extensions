@@ -1,14 +1,7 @@
 {
   "key": "plugin_strapi-tiptap-editor_settings",
   "value": {
-    "headings": [
-      "h1",
-      "h2",
-      "h3",
-      "h4",
-      "h5",
-      "h6"
-    ],
+    "headings": ["h1", "h2", "h3", "h4", "h5", "h6"],
     "bold": true,
     "italic": true,
     "strikethrough": true,
@@ -17,15 +10,9 @@
     "blockquote": true,
     "highlight": false,
     "align": [],
-    "lists": [
-      "ol",
-      "ul"
-    ],
+    "lists": ["ol", "ul"],
     "disableOrderedListShorthand": false,
-    "columns": [
-      "two",
-      "three"
-    ],
+    "columns": ["two", "three"],
     "table": true,
     "hardbreak": true,
     "horizontal": true,

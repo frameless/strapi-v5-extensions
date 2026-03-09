@@ -4,7 +4,6 @@ import { findParentNodeOfType } from 'prosemirror-utils';
 
 import { TableFigureWidget } from '../../components/widgets/TableFigureWidget';
 
-
 declare module '@tiptap/core' {
   interface Commands<ReturnType> {
     tableFigure: {
@@ -31,7 +30,7 @@ export const TableFigure = Node.create({
     ];
   },
 
-  renderHTML({ HTMLAttributes }) {    
+  renderHTML({ HTMLAttributes }) {
     return ['figure', mergeAttributes(HTMLAttributes), 0];
   },
 
@@ -99,11 +98,7 @@ export const TableFigure = Node.create({
 
           const newFigure = tableFigureType.create(null, figureContent);
 
-          tr.replaceWith(
-            tableNode.pos,
-            tableNode.pos + tableNode.node.nodeSize,
-            newFigure,
-          );
+          tr.replaceWith(tableNode.pos, tableNode.pos + tableNode.node.nodeSize, newFigure);
 
           if (dispatch) dispatch(tr);
 
@@ -114,7 +109,7 @@ export const TableFigure = Node.create({
         () =>
         ({ state, tr, dispatch }) => {
           const { selection } = state;
-          
+
           // Find the tableFigure node
           const figure = findParentNodeOfType(state.schema.nodes.tableFigure)(selection);
           if (!figure) {
@@ -137,11 +132,7 @@ export const TableFigure = Node.create({
           }
 
           // Replace the entire figure with just the table
-          tr.replaceWith(
-            figure.pos,
-            figure.pos + figure.node.nodeSize,
-            tableNode,
-          );
+          tr.replaceWith(figure.pos, figure.pos + figure.node.nodeSize, tableNode);
 
           if (dispatch) dispatch(tr);
 
@@ -152,10 +143,10 @@ export const TableFigure = Node.create({
         () =>
         ({ state, tr, dispatch }) => {
           const { selection } = state;
-          
+
           // Find the tableFigure node
           const figure = findParentNodeOfType(state.schema.nodes.tableFigure)(selection);
-          
+
           if (!figure) {
             console.warn('No tableFigure found to delete');
             return false;

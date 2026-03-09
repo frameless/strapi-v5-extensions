@@ -17,7 +17,7 @@ export const TableCaption = Paragraph.extend({
     return [{ tag: 'figcaption' }];
   },
 
-  renderHTML({ HTMLAttributes }) {    
+  renderHTML({ HTMLAttributes }) {
     return ['figcaption', HTMLAttributes, 0];
   },
 

@@ -43,9 +43,7 @@
       }
     },
     "layouts": {
-      "list": [
-        "id"
-      ],
+      "list": ["id"],
       "edit": [
         [
           {

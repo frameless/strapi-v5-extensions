@@ -57,11 +57,7 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "contentBlock",
-        "keywords"
-      ],
+      "list": ["id", "contentBlock", "keywords"],
       "edit": [
         [
           {

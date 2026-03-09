@@ -5,7 +5,6 @@ import { MediaAsset } from '../components/ui/MediaLib';
 
 import { useMediaLib } from './useMediaLib';
 
-
 const mockAsset: MediaAsset = {
   id: 1,
   name: 'test-image.jpg',
@@ -50,13 +49,12 @@ export const createMockEditor = () => {
   return editor as unknown as Editor;
 };
 
-
 describe('useMediaLib', () => {
   let mockEditor: Partial<Editor>;
 
   beforeEach(() => {
     jest.clearAllMocks();
-    mockEditor = createMockEditor() as any
+    mockEditor = createMockEditor() as any;
   });
 
   describe('State Management', () => {
@@ -112,9 +110,7 @@ describe('useMediaLib', () => {
     });
 
     it('should initialize with custom forceInsert value', () => {
-      const { result } = renderHook(() =>
-        useMediaLib({ editor: mockEditor as Editor, forceInsert: true })
-      );
+      const { result } = renderHook(() => useMediaLib({ editor: mockEditor as Editor, forceInsert: true }));
 
       (mockEditor.isActive as jest.Mock).mockReturnValue(true);
 
@@ -256,9 +252,7 @@ describe('useMediaLib', () => {
         result.current.handleSelectAssets([lazyAsset]);
       });
 
-      expect((mockEditor.commands as any).setImage).toHaveBeenCalledWith(
-        expect.objectContaining({ loading: 'lazy' })
-      );
+      expect((mockEditor.commands as any).setImage).toHaveBeenCalledWith(expect.objectContaining({ loading: 'lazy' }));
     });
 
     it('should add lazy loading when caption is "lazy"', () => {
@@ -269,9 +263,7 @@ describe('useMediaLib', () => {
         result.current.handleSelectAssets([lazyAsset]);
       });
 
-      expect((mockEditor.commands as any).setImage).toHaveBeenCalledWith(
-        expect.objectContaining({ loading: 'lazy' })
-      );
+      expect((mockEditor.commands as any).setImage).toHaveBeenCalledWith(expect.objectContaining({ loading: 'lazy' }));
     });
 
     it('should omit dimensions when not available', () => {

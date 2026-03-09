@@ -143,12 +143,7 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "siteName",
-        "favicon",
-        "siteDescription"
-      ],
+      "list": ["id", "siteName", "favicon", "siteDescription"],
       "edit": [
         [
           {

@@ -172,12 +172,7 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "name",
-        "releasedAt",
-        "scheduledAt"
-      ],
+      "list": ["id", "name", "releasedAt", "scheduledAt"],
       "edit": [
         [
           {

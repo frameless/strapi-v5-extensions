@@ -11,14 +11,8 @@
       "actionParameters": {},
       "subject": "api::additional-information.additional-information",
       "properties": {
-        "fields": [
-          "title",
-          "content.contentBlock.content",
-          "product"
-        ],
-        "locales": [
-          "en"
-        ]
+        "fields": ["title", "content.contentBlock.content", "product"],
+        "locales": ["en"]
       },
       "conditions": [],
       "locale": null
@@ -29,9 +23,7 @@
       "actionParameters": {},
       "subject": "api::additional-information.additional-information",
       "properties": {
-        "locales": [
-          "en"
-        ]
+        "locales": ["en"]
       },
       "conditions": [],
       "locale": null
@@ -42,9 +34,7 @@
       "actionParameters": {},
       "subject": "api::additional-information.additional-information",
       "properties": {
-        "locales": [
-          "en"
-        ]
+        "locales": ["en"]
       },
       "conditions": [],
       "locale": null
@@ -55,14 +45,8 @@
       "actionParameters": {},
       "subject": "api::additional-information.additional-information",
       "properties": {
-        "fields": [
-          "title",
-          "content.contentBlock.content",
-          "product"
-        ],
-        "locales": [
-          "en"
-        ]
+        "fields": ["title", "content.contentBlock.content", "product"],
+        "locales": ["en"]
       },
       "conditions": [],
       "locale": null
@@ -73,14 +57,8 @@
       "actionParameters": {},
       "subject": "api::additional-information.additional-information",
       "properties": {
-        "fields": [
-          "title",
-          "content.contentBlock.content",
-          "product"
-        ],
-        "locales": [
-          "en"
-        ]
+        "fields": ["title", "content.contentBlock.content", "product"],
+        "locales": ["en"]
       },
       "conditions": [],
       "locale": null
@@ -91,11 +69,7 @@
       "actionParameters": {},
       "subject": "api::category.category",
       "properties": {
-        "fields": [
-          "name",
-          "slug",
-          "description"
-        ]
+        "fields": ["name", "slug", "description"]
       },
       "conditions": [],
       "locale": null
@@ -124,11 +98,7 @@
       "actionParameters": {},
       "subject": "api::category.category",
       "properties": {
-        "fields": [
-          "name",
-          "slug",
-          "description"
-        ]
+        "fields": ["name", "slug", "description"]
       },
       "conditions": [],
       "locale": null
@@ -139,11 +109,7 @@
       "actionParameters": {},
       "subject": "api::category.category",
       "properties": {
-        "fields": [
-          "name",
-          "slug",
-          "description"
-        ]
+        "fields": ["name", "slug", "description"]
       },
       "conditions": [],
       "locale": null
@@ -154,15 +120,8 @@
       "actionParameters": {},
       "subject": "api::contact-information-internal.contact-information-internal",
       "properties": {
-        "fields": [
-          "title",
-          "contentBlock.content",
-          "internal_information",
-          "vacs"
-        ],
-        "locales": [
-          "en"
-        ]
+        "fields": ["title", "contentBlock.content", "internal_information", "vacs"],
+        "locales": ["en"]
       },
       "conditions": [],
       "locale": null
@@ -173,9 +132,7 @@
       "actionParameters": {},
       "subject": "api::contact-information-internal.contact-information-internal",
       "properties": {
-        "locales": [
-          "en"
-        ]
+        "locales": ["en"]
       },
       "conditions": [],
       "locale": null
@@ -186,9 +143,7 @@
       "actionParameters": {},
       "subject": "api::contact-information-internal.contact-information-internal",
       "properties": {
-        "locales": [
-          "en"
-        ]
+        "locales": ["en"]
       },
       "conditions": [],
       "locale": null
@@ -199,15 +154,8 @@
       "actionParameters": {},
       "subject": "api::contact-information-internal.contact-information-internal",
       "properties": {
-        "fields": [
-          "title",
-          "contentBlock.content",
-          "internal_information",
-          "vacs"
-        ],
-        "locales": [
-          "en"
-        ]
+        "fields": ["title", "contentBlock.content", "internal_information", "vacs"],
+        "locales": ["en"]
       },
       "conditions": [],
       "locale": null
@@ -218,15 +166,8 @@
       "actionParameters": {},
       "subject": "api::contact-information-internal.contact-information-internal",
       "properties": {
-        "fields": [
-          "title",
-          "contentBlock.content",
-          "internal_information",
-          "vacs"
-        ],
-        "locales": [
-          "en"
-        ]
+        "fields": ["title", "contentBlock.content", "internal_information", "vacs"],
+        "locales": ["en"]
       },
       "conditions": [],
       "locale": null
@@ -237,16 +178,8 @@
       "actionParameters": {},
       "subject": "api::contact-information-public.contact-information-public",
       "properties": {
-        "fields": [
-          "title",
-          "contentBlock.content",
-          "internal_information",
-          "vacs",
-          "products"
-        ],
-        "locales": [
-          "en"
-        ]
+        "fields": ["title", "contentBlock.content", "internal_information", "vacs", "products"],
+        "locales": ["en"]
       },
       "conditions": [],
       "locale": null
@@ -257,9 +190,7 @@
       "actionParameters": {},
       "subject": "api::contact-information-public.contact-information-public",
       "properties": {
-        "locales": [
-          "en"
-        ]
+        "locales": ["en"]
       },
       "conditions": [],
       "locale": null
@@ -270,9 +201,7 @@
       "actionParameters": {},
       "subject": "api::contact-information-public.contact-information-public",
       "properties": {
-        "locales": [
-          "en"
-        ]
+        "locales": ["en"]
       },
       "conditions": [],
       "locale": null
@@ -283,16 +212,8 @@
       "actionParameters": {},
       "subject": "api::contact-information-public.contact-information-public",
       "properties": {
-        "fields": [
-          "title",
-          "contentBlock.content",
-          "internal_information",
-          "vacs",
-          "products"
-        ],
-        "locales": [
-          "en"
-        ]
+        "fields": ["title", "contentBlock.content", "internal_information", "vacs", "products"],
+        "locales": ["en"]
       },
       "conditions": [],
       "locale": null
@@ -303,16 +224,8 @@
       "actionParameters": {},
       "subject": "api::contact-information-public.contact-information-public",
       "properties": {
-        "fields": [
-          "title",
-          "contentBlock.content",
-          "internal_information",
-          "vacs",
-          "products"
-        ],
-        "locales": [
-          "en"
-        ]
+        "fields": ["title", "contentBlock.content", "internal_information", "vacs", "products"],
+        "locales": ["en"]
       },
       "conditions": [],
       "locale": null
@@ -405,9 +318,7 @@
           "contact_information_public",
           "contact_information_internal"
         ],
-        "locales": [
-          "en"
-        ]
+        "locales": ["en"]
       },
       "conditions": [],
       "locale": null
@@ -418,9 +329,7 @@
       "actionParameters": {},
       "subject": "api::internal-field.internal-field",
       "properties": {
-        "locales": [
-          "en"
-        ]
+        "locales": ["en"]
       },
       "conditions": [],
       "locale": null
@@ -431,9 +340,7 @@
       "actionParameters": {},
       "subject": "api::internal-field.internal-field",
       "properties": {
-        "locales": [
-          "en"
-        ]
+        "locales": ["en"]
       },
       "conditions": [],
       "locale": null
@@ -454,9 +361,7 @@
           "contact_information_public",
           "contact_information_internal"
         ],
-        "locales": [
-          "en"
-        ]
+        "locales": ["en"]
       },
       "conditions": [],
       "locale": null
@@ -477,9 +382,7 @@
           "contact_information_public",
           "contact_information_internal"
         ],
-        "locales": [
-          "en"
-        ]
+        "locales": ["en"]
       },
       "conditions": [],
       "locale": null
@@ -490,15 +393,7 @@
       "actionParameters": {},
       "subject": "api::price.price",
       "properties": {
-        "fields": [
-          "title",
-          "price.label",
-          "price.currency",
-          "price.value",
-          "price.uuid",
-          "products",
-          "uuid"
-        ]
+        "fields": ["title", "price.label", "price.currency", "price.value", "price.uuid", "products", "uuid"]
       },
       "conditions": [],
       "locale": null
@@ -527,15 +422,7 @@
       "actionParameters": {},
       "subject": "api::price.price",
       "properties": {
-        "fields": [
-          "title",
-          "price.label",
-          "price.currency",
-          "price.value",
-          "price.uuid",
-          "products",
-          "uuid"
-        ]
+        "fields": ["title", "price.label", "price.currency", "price.value", "price.uuid", "products", "uuid"]
       },
       "conditions": [],
       "locale": null
@@ -546,15 +433,7 @@
       "actionParameters": {},
       "subject": "api::price.price",
       "properties": {
-        "fields": [
-          "title",
-          "price.label",
-          "price.currency",
-          "price.value",
-          "price.uuid",
-          "products",
-          "uuid"
-        ]
+        "fields": ["title", "price.label", "price.currency", "price.value", "price.uuid", "products", "uuid"]
       },
       "conditions": [],
       "locale": null
@@ -580,9 +459,7 @@
           "contact_information_public",
           "price"
         ],
-        "locales": [
-          "en"
-        ]
+        "locales": ["en"]
       },
       "conditions": [],
       "locale": null
@@ -593,9 +470,7 @@
       "actionParameters": {},
       "subject": "api::product.product",
       "properties": {
-        "locales": [
-          "en"
-        ]
+        "locales": ["en"]
       },
       "conditions": [],
       "locale": null
@@ -606,9 +481,7 @@
       "actionParameters": {},
       "subject": "api::product.product",
       "properties": {
-        "locales": [
-          "en"
-        ]
+        "locales": ["en"]
       },
       "conditions": [],
       "locale": null
@@ -634,9 +507,7 @@
           "contact_information_public",
           "price"
         ],
-        "locales": [
-          "en"
-        ]
+        "locales": ["en"]
       },
       "conditions": [],
       "locale": null
@@ -662,9 +533,7 @@
           "contact_information_public",
           "price"
         ],
-        "locales": [
-          "en"
-        ]
+        "locales": ["en"]
       },
       "conditions": [],
       "locale": null

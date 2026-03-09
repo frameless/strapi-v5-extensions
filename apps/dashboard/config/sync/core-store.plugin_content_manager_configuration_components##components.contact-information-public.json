@@ -44,10 +44,7 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "contact_information_public"
-      ],
+      "list": ["id", "contact_information_public"],
       "edit": [
         [
           {

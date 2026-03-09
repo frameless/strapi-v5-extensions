@@ -57,11 +57,7 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "kennisartikelCategorie",
-        "column"
-      ],
+      "list": ["id", "kennisartikelCategorie", "column"],
       "edit": [
         [
           {

@@ -35,9 +35,7 @@ const usePluginConfig = (): UsePluginConfigReturn => {
   const { toggleNotification } = useNotification();
   const { formatMessage } = useIntl();
 
-  const { isLoading, config, checks } = useSelector(
-    (state: RootState) => state[`${PLUGIN_ID}_config`]
-  );
+  const { isLoading, config, checks } = useSelector((state: RootState) => state[`${PLUGIN_ID}_config`]);
 
   const client = useFetchClient();
 
@@ -54,7 +52,7 @@ const usePluginConfig = (): UsePluginConfigReturn => {
         const { data } = await client.get<PluginData>(endpoint, {
           signal: abortController.signal,
         });
-        
+
         return data ?? null;
       } catch (err) {
         // eslint-disable-next-line no-console

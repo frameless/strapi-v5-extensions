@@ -19,22 +19,22 @@ export const getFormattingExtensions = ({ settings }: FormattingExtensionsOption
     StrikeExtension,
     UnderlineExtension,
     TextStyleExtension,
-    
+
     // Text alignment
     TextAlignExtension.configure({
       types: ['heading', 'paragraph'],
     }),
   ];
-  
+
   // Conditional formatting
   if (settings.code) {
     extensions.push(CodeExtension);
     extensions.push(CodeBlockExtension);
   }
-  
+
   if (settings.highlight) {
     extensions.push(HighlightExtension.configure({ multicolor: true }));
   }
-  
+
   return extensions;
 };

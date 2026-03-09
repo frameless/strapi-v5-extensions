@@ -1,4 +1,3 @@
-
 import { Mark, markInputRule, markPasteRule, mergeAttributes } from '@tiptap/core';
 
 import { getDirectionFromLanguageCode } from '../../../utils/getDirectionFromLanguageCode';

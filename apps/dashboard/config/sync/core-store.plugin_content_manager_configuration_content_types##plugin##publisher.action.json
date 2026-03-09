@@ -143,12 +143,7 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "executeAt",
-        "mode",
-        "entityId"
-      ],
+      "list": ["id", "executeAt", "mode", "entityId"],
       "edit": [
         [
           {

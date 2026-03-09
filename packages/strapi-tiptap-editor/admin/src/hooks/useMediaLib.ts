@@ -1,8 +1,7 @@
 import { useState, useCallback } from 'react';
 import type { Editor } from '@tiptap/react';
 
-import type{ FormattedImage, MediaAsset } from '../components/ui/MediaLib';
-
+import type { FormattedImage, MediaAsset } from '../components/ui/MediaLib';
 
 export interface UseMediaLibOptions {
   /** TipTap editor instance */
@@ -28,14 +27,14 @@ export interface UseMediaLibReturn {
 
 /**
  * Custom hook for managing media library state and image insertion
- * 
+ *
  * @example
  * ```tsx
  * const mediaLib = useMediaLib({ editor });
- * 
+ *
  * // In your toolbar
  * <button onClick={mediaLib.open}>Insert Image</button>
- * 
+ *
  * // In your component
  * <MediaLib
  *   editor={editor}
@@ -44,9 +43,9 @@ export interface UseMediaLibReturn {
  * />
  * ```
  */
-export const useMediaLib = ({ 
-  editor, 
-  forceInsert: initialForceInsert = false 
+export const useMediaLib = ({
+  editor,
+  forceInsert: initialForceInsert = false,
 }: UseMediaLibOptions): UseMediaLibReturn => {
   const [isOpen, setIsOpen] = useState(false);
   const [forceInsert, setForceInsert] = useState(initialForceInsert);
@@ -107,7 +106,7 @@ export const useMediaLib = ({
       setForceInsert(false);
       close();
     },
-    [editor, forceInsert, formatImageForEditor, close]
+    [editor, forceInsert, formatImageForEditor, close],
   );
 
   return {

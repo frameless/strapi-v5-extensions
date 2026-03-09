@@ -85,12 +85,7 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "keymatch",
-        "title",
-        "description"
-      ],
+      "list": ["id", "keymatch", "title", "description"],
       "edit": [
         [
           {

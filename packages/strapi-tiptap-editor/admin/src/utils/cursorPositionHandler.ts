@@ -12,7 +12,7 @@ export const cursorPositionHandler = ({ editor, position }: CursorPositionHandle
     const { state, dispatch } = editor.view;
     const { selection, schema } = state;
     const tableNode = findClosestTable({ selection });
-    
+
     if (tableNode) {
       const posAbove = tableNode.pos;
       const posBelow = tableNode.pos + tableNode.node.content.size;

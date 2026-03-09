@@ -158,12 +158,7 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "type",
-        "contentType",
-        "entryDocumentId"
-      ],
+      "list": ["id", "type", "contentType", "entryDocumentId"],
       "edit": [
         [
           {

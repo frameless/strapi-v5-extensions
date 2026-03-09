@@ -15,7 +15,6 @@ export default ({ strapi }: { strapi: Core.Strapi }) => {
     plugin: PLUGIN_ID,
     type: 'richtext',
   });
-   
-  strapi.admin.services.permission.actionProvider.registerMany(permissions.actions);
 
+  strapi.admin.services.permission.actionProvider.registerMany(permissions.actions);
 };

@@ -5,7 +5,6 @@ import { PriceTypes } from '../../../types';
 
 import Widget from './widget';
 
-
 declare module '@tiptap/core' {
   interface Commands<ReturnType> {
     priceWidget: {
@@ -15,7 +14,7 @@ declare module '@tiptap/core' {
 }
 
 export const Price = Node.create({
-name: 'priceWidget',
+  name: 'priceWidget',
   group: 'inline',
   content: 'inline*',
   atom: true,

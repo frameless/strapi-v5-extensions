@@ -71,12 +71,7 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "title",
-        "kennisartikelCategorie",
-        "logoButton"
-      ],
+      "list": ["id", "title", "kennisartikelCategorie", "logoButton"],
       "edit": [
         [
           {

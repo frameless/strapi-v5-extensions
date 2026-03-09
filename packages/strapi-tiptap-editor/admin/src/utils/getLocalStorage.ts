@@ -12,20 +12,20 @@ export const getLocalStorage = <T>(key: string, typeGuard: (arg: any) => arg is 
     console.warn('getLocalStorage: Empty key provided');
     return null;
   }
-  
+
   if (typeof window === 'undefined') {
     console.debug('getLocalStorage: Window not available (SSR environment)');
     return null;
   }
-  
+
   try {
     const rawValue = localStorage.getItem(key);
-    
+
     if (rawValue === null) {
       console.debug(`getLocalStorage: No value found for key '${key}'`);
       return null;
     }
-    
+
     let parsedValue: unknown;
     try {
       parsedValue = JSON.parse(rawValue);
@@ -33,7 +33,7 @@ export const getLocalStorage = <T>(key: string, typeGuard: (arg: any) => arg is 
       // If JSON parsing fails, use the raw string value
       parsedValue = rawValue;
     }
-    
+
     if (typeGuard(parsedValue)) {
       return parsedValue;
     } else {

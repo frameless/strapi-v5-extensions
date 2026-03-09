@@ -3,9 +3,8 @@ import type { Context } from 'koa';
 
 import { PLUGIN_ID } from '../../admin/src/pluginId';
 
-export default ({ strapi }: {strapi: Core.Strapi}) => ({
+export default ({ strapi }: { strapi: Core.Strapi }) => ({
   async config(ctx: Context) {
-
     try {
       const config = await strapi.plugin(PLUGIN_ID).service('plugin').getConfig();
 
