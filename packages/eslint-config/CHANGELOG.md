@@ -1,5 +1,11 @@
 # @frameless/eslint-config
 
+## 1.1.2
+
+### Patch Changes
+
+- ecc501c: # Update default ignores in eslint config
+
 ## 1.1.1
 
 ### Patch Changes
