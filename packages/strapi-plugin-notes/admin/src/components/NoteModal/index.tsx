@@ -12,8 +12,8 @@ interface NoteModalProps {
   documentId?: string;
   isEditing: boolean;
   onClose: () => void;
-  onCreateNote: (input: CreateNotesInput) => Promise<Notes>;
-  onUpdateNote: (input: UpdateNotesInput) => Promise<Notes>;
+  onCreateNote: (_input: CreateNotesInput) => Promise<Notes>;
+  onUpdateNote: (_input: UpdateNotesInput) => Promise<Notes>;
 }
 
 export const NoteModal = ({

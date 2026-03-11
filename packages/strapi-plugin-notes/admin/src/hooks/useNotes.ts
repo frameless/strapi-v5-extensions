@@ -26,8 +26,7 @@ export interface CreateNotesInput {
 }
 
 export interface UpdateNotesInput {
-  id?: number;
-  documentId?: string;
+  documentId: string;
   title: string;
   content: string;
 }
@@ -50,9 +49,9 @@ interface ApiResponse<T> {
 
 interface UseNotesReturn {
   notes: UseQueryResult<Notes[]>;
-  createNote: (input: CreateNotesInput) => Promise<Notes>;
-  updateNote: (input: UpdateNotesInput) => Promise<Notes>;
-  deleteNote: (id: string | number) => Promise<void>;
+  createNote: (_input: CreateNotesInput) => Promise<Notes>;
+  updateNote: (_input: UpdateNotesInput) => Promise<Notes>;
+  deleteNote: (_id: string | number) => Promise<void>;
 }
 
 const buildQueryKey = (...args: (string | number | undefined)[]): (string | number)[] =>
@@ -91,86 +90,22 @@ export const useNotes = ({ entitySlug, documentId }: UseNotesQueryParams): UseNo
   };
 
   /**
-   * FETCH DOCUMENT INFO - Get both old ID and new documentId
+   * FETCH NOTES WITH SERVER-SIDE LEGACY DATA SUPPORT
    *
-   * This solves the legacy data problem:
-   * - Old v4 notes store entityId: 44 (numeric ID)
-   * - After migration, document has: id: 44 AND documentId: "ohbcziti8lrm1lloobxaaxnv"
-   * - By fetching the document, we can match BOTH old and new notes
-   */
-  const { data: documentInfo } = useQuery({
-    queryKey: [PLUGIN_ID, 'document-info', entitySlug, documentId],
-    queryFn: async () => {
-      try {
-        if (!documentId) throw new Error('No documentId provided');
-        // Fetch the document to get BOTH the old id and new documentId
-        const { data } = await get<{ id: number; documentId: string }>(
-          `/content-manager/collection-types/${entitySlug}/${documentId}`,
-        );
-
-        return {
-          id: data.id, // Old numeric ID (e.g., 44)
-          documentId: data.documentId, // New UUID (e.g., "ohbcziti8lrm1lloobxaaxnv")
-        };
-      } catch (error) {
-        // eslint-disable-next-line no-console
-        console.warn('Could not fetch document info for legacy data support:', error);
-        // Fallback: just use the documentId provided
-        return { id: null, documentId };
-      }
-    },
-    enabled: !!documentId && !!entitySlug,
-  });
-
-  /**
-   * FETCH NOTES WITH LEGACY DATA SUPPORT
-   *
-   * Matches notes by checking BOTH:
-   * 1. New format: note.entityId === documentId (UUID match)
-   * 2. Legacy format: note.entityId === documentInfo.id (old numeric ID match)
+   * The server endpoint handles:
+   * 1. Document lookup to get legacy ID
+   * 2. Filtering by both new documentId and legacy numeric ID
+   * 3. Returns only relevant notes for this document
    */
   const notes = useQuery<ApiResponse<Notes[]>, Error, Notes[]>({
     queryKey,
     queryFn: async () => {
-      // Fetch all notes for this entitySlug
-      const query = stringify(
-        {
-          filters: {
-            entitySlug: {
-              $eq: entitySlug,
-            },
-          },
-          sort: ['title:asc'],
-          pagination: { pageSize: 1000 },
-        },
-        { encodeValuesOnly: true },
-      );
-
-      const response = await get<ApiResponse<Notes[]>>(`/${PLUGIN_ID}/notes?${query}`);
+      // Use the new server endpoint for efficient filtering
+      const query = stringify({ entitySlug, documentId }, { encodeValuesOnly: true });
+      const response = await get<ApiResponse<Notes[]>>(`/${PLUGIN_ID}/notes/by-document?${query}`);
       return response.data;
     },
-    select: (response: ApiResponse<Notes[]>) => {
-      return response.data.filter((note) => {
-        // CASE 1: NEW FORMAT - entityId stores documentId (UUID)
-        // Example: note.entityId = "ohbcziti8lrm1lloobxaaxnv" (new)
-        //          documentId = "ohbcziti8lrm1lloobxaaxnv"
-        if (note.entityId === documentId) {
-          return true;
-        }
-
-        // CASE 2: LEGACY FORMAT - entityId stores old numeric ID
-        // Example: note.entityId = 44 (old)
-        //          documentInfo.id = 44 (from the fetched document)
-        if (
-          documentInfo?.id &&
-          (note.entityId === documentInfo.id || String(note.entityId) === String(documentInfo.id))
-        ) {
-          return true;
-        }
-
-        return false;
-      });
-    },
+    select: (response: ApiResponse<Notes[]>) => response.data,
     enabled: !!documentId && !!entitySlug,
   });
 
