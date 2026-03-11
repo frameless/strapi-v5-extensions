@@ -1,6 +1,6 @@
 {
   "name": "@frameless/upl",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "sideEffects": true,
   "private": false,
   "main": "./dist/main.js",
