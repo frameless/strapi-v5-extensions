@@ -5,6 +5,11 @@ export default [
     handler: 'noteController.find',
   },
   {
+    method: 'GET',
+    path: '/notes/by-document',
+    handler: 'noteController.findByDocument',
+  },
+  {
     method: 'POST',
     path: '/notes',
     handler: 'noteController.create',

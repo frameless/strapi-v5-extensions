@@ -6,8 +6,8 @@ export default ({ env }) => ({
     },
   },
   'entity-notes': {
-		enabled: true,
-	},
+    enabled: true,
+  },
   'preview-button': {
     enabled: true,
     config: {

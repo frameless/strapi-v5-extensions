@@ -30,9 +30,14 @@ import React from 'react';
 
 import { useNotes } from './useNotes';
 
-// Get the mock for later use in tests
-// eslint-disable-next-line @typescript-eslint/no-require-imports
+// eslint-disable-next-line @typescript-eslint/no-require-imports, no-undef
 const mockUseFetchClient = require('@strapi/strapi/admin').useFetchClient as jest.Mock;
+// eslint-disable-next-line @typescript-eslint/no-require-imports, no-undef
+const mockUseNotification = require('@strapi/strapi/admin').useNotification as jest.Mock;
+
+// ============================================================================
+// TEST DATA
+// ============================================================================
 
 const LEGACY_NOTE = {
   id: 1,
@@ -40,7 +45,7 @@ const LEGACY_NOTE = {
   title: 'Legacy Note',
   content: 'This is a legacy note from v4',
   entitySlug: 'api::articles.article',
-  entityId: 44, //Old numeric ID
+  entityId: 44,
   createdAt: '2026-02-26T13:28:28.250Z',
   updatedAt: '2026-02-26T13:28:28.250Z',
   publishedAt: '2026-02-26T13:28:28.250Z',
@@ -52,41 +57,15 @@ const NEW_NOTE = {
   title: 'New Note',
   content: 'This is a new note from v5',
   entitySlug: 'api::articles.article',
-  entityId: 'ohbcziti8lrm1lloobxaaxnv', //New documentId format
+  entityId: 'ohbcziti8lrm1lloobxaaxnv',
   createdAt: '2026-02-27T08:45:00.180Z',
   updatedAt: '2026-02-27T08:45:00.180Z',
   publishedAt: '2026-02-27T08:45:00.180Z',
 };
 
-const LEGACY_NOTE_2 = {
-  id: 3,
-  documentId: 'doc-3',
-  title: 'Another Legacy Note',
-  content: 'Another old note',
-  entitySlug: 'api::articles.article',
-  entityId: 50, // Old numeric ID
-  createdAt: '2026-02-26T13:28:28.250Z',
-  updatedAt: '2026-02-26T13:28:28.250Z',
-  publishedAt: '2026-02-26T13:28:28.250Z',
-};
-
-const NOTE_DIFFERENT_SLUG = {
-  id: 4,
-  documentId: 'doc-4',
-  title: 'Different Article',
-  content: 'This note belongs to a different content type',
-  entitySlug: 'api::products.product',
-  entityId: 'xyz789',
-  createdAt: '2026-02-26T13:28:28.250Z',
-  updatedAt: '2026-02-26T13:28:28.250Z',
-  publishedAt: '2026-02-26T13:28:28.250Z',
-};
-
-const PRODUCT_WITH_LEGACY_ID = {
-  id: 44, //  Old numeric ID (v4)
-  documentId: 'ohbcziti8lrm1lloobxaaxnv', //  New documentId (v5)
-  name: 'Widget',
-};
+// ============================================================================
+// HELPERS
+// ============================================================================
 
 const createWrapper = () => {
   const queryClient = new QueryClient({
@@ -102,169 +81,51 @@ const createWrapper = () => {
   );
 };
 
-describe('useNote Hook - Legacy Data Support with Document Info Fetching', () => {
+describe('useNotes hook', () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
 
-  describe('Client-side filtering logic with document info', () => {
-    it('should filter legacy notes by numeric entityId using fetched document id', () => {
-      const allNotes = [LEGACY_NOTE, LEGACY_NOTE_2, NOTE_DIFFERENT_SLUG];
-      //  When viewing a MIGRATED document: has both old id and new documentId
-      const documentId = 'ohbcziti8lrm1lloobxaaxnv';
-      const documentInfo = { id: 44, documentId: 'ohbcziti8lrm1lloobxaaxnv' };
-
-      const filtered = allNotes.filter((note) => {
-        // Match numeric entityIds (legacy) against documentInfo.id
-        if (typeof note.entityId === 'number') {
-          if (documentInfo?.id && String(note.entityId) === String(documentInfo.id)) {
-            return true;
-          }
-        }
-        // Match string entityIds (new) against documentId
-        if (typeof note.entityId === 'string') {
-          if (String(note.entityId) === String(documentId)) {
-            return true;
-          }
-        }
-        return false;
+  // --------------------------------------------------------------------------
+  describe('Query — enabled guard', () => {
+    it('should NOT fetch when documentId is missing', () => {
+      const mockGet = jest.fn();
+      mockUseFetchClient.mockReturnValue({
+        get: mockGet,
+        post: jest.fn(),
+        put: jest.fn(),
+        del: jest.fn(),
       });
 
-      expect(filtered).toEqual([LEGACY_NOTE]);
-      expect(filtered).toHaveLength(1);
+      renderHook(() => useNotes({ entitySlug: 'api::articles.article', documentId: undefined }), {
+        wrapper: createWrapper(),
+      });
+
+      // query is disabled — get should never be called
+      expect(mockGet).not.toHaveBeenCalled();
     });
 
-    it('should filter new notes by documentId UUID', () => {
-      const allNotes = [NEW_NOTE, LEGACY_NOTE, NOTE_DIFFERENT_SLUG];
-      //  When viewing a NEW document: only has documentId, no old numeric id
-      const documentId = 'ohbcziti8lrm1lloobxaaxnv';
-      const documentInfo = { id: null, documentId: 'ohbcziti8lrm1lloobxaaxnv' };
-
-      const filtered = allNotes.filter((note) => {
-        // Match numeric entityIds (legacy) against documentInfo.id
-        if (typeof note.entityId === 'number') {
-          if (documentInfo?.id && String(note.entityId) === String(documentInfo.id)) {
-            return true;
-          }
-        }
-        // Match string entityIds (new) against documentId
-        if (typeof note.entityId === 'string') {
-          if (String(note.entityId) === String(documentId)) {
-            return true;
-          }
-        }
-        return false;
+    it('should NOT fetch when entitySlug is missing', () => {
+      const mockGet = jest.fn();
+      mockUseFetchClient.mockReturnValue({
+        get: mockGet,
+        post: jest.fn(),
+        put: jest.fn(),
+        del: jest.fn(),
       });
 
-      expect(filtered).toEqual([NEW_NOTE]);
-      expect(filtered).toHaveLength(1);
-    });
-
-    it('should handle mixed legacy and new notes', () => {
-      const allNotes = [LEGACY_NOTE, NEW_NOTE, LEGACY_NOTE_2];
-
-      // Test 1: Filter for legacy note (viewing old document before migration)
-      //  Use documentId of the legacy product (which was its old numeric id converted to string for the API)
-      const legacyDocumentId = '44'; // Old document id as string
-      const legacyDocumentInfo = { id: 44, documentId: '44' };
-      const legacyFiltered = allNotes.filter((note) => {
-        if (typeof note.entityId === 'number') {
-          if (legacyDocumentInfo?.id && String(note.entityId) === String(legacyDocumentInfo.id)) {
-            return true;
-          }
-        }
-        if (typeof note.entityId === 'string') {
-          if (String(note.entityId) === String(legacyDocumentId)) {
-            return true;
-          }
-        }
-        return false;
+      renderHook(() => useNotes({ entitySlug: '', documentId: 'ohbcziti8lrm1lloobxaaxnv' }), {
+        wrapper: createWrapper(),
       });
 
-      expect(legacyFiltered).toEqual([LEGACY_NOTE]);
-
-      // Test 2: Filter for new note (viewing new document)
-      //  Use documentId of the new document (UUID format)
-      const newDocumentId = 'ohbcziti8lrm1lloobxaaxnv';
-      const newDocumentInfo = { id: null, documentId: 'ohbcziti8lrm1lloobxaaxnv' };
-      const newFiltered = allNotes.filter((note) => {
-        if (typeof note.entityId === 'number') {
-          if (newDocumentInfo?.id && String(note.entityId) === String(newDocumentInfo.id)) {
-            return true;
-          }
-        }
-        if (typeof note.entityId === 'string') {
-          if (String(note.entityId) === String(newDocumentId)) {
-            return true;
-          }
-        }
-        return false;
-      });
-
-      expect(newFiltered).toEqual([NEW_NOTE]);
-    });
-
-    it('should return empty array when no notes match', () => {
-      const allNotes = [LEGACY_NOTE, LEGACY_NOTE_2];
-      const documentId = 'nonexistent-uuid';
-      const documentInfo = { id: 999, documentId: 'nonexistent-uuid' };
-
-      const filtered = allNotes.filter((note) => {
-        if (typeof note.entityId === 'number') {
-          if (documentInfo?.id && String(note.entityId) === String(documentInfo.id)) {
-            return true;
-          }
-        }
-        if (typeof note.entityId === 'string') {
-          if (String(note.entityId) === String(documentId)) {
-            return true;
-          }
-        }
-        return false;
-      });
-
-      expect(filtered).toEqual([]);
-    });
-
-    it('should only match notes from the specified entitySlug', () => {
-      const allNotes = [LEGACY_NOTE, NOTE_DIFFERENT_SLUG];
-      const documentId = 'ohbcziti8lrm1lloobxaaxnv';
-      const documentInfo = { id: 44, documentId: 'ohbcziti8lrm1lloobxaaxnv' };
-
-      const filtered = allNotes.filter((note) => {
-        const matchesSlug = note.entitySlug === 'api::articles.article';
-        let matchesId = false;
-
-        if (typeof note.entityId === 'number') {
-          if (documentInfo?.id && String(note.entityId) === String(documentInfo.id)) {
-            matchesId = true;
-          }
-        }
-        if (typeof note.entityId === 'string') {
-          if (String(note.entityId) === String(documentId)) {
-            matchesId = true;
-          }
-        }
-
-        return matchesSlug && matchesId;
-      });
-
-      expect(filtered).toEqual([LEGACY_NOTE]);
-      expect(filtered.every((n) => n.entitySlug === 'api::articles.article')).toBe(true);
+      expect(mockGet).not.toHaveBeenCalled();
     });
   });
 
-  describe('Document info fetching for legacy data', () => {
-    it('should fetch document info with both id and documentId', async () => {
-      const mockGet = jest
-        .fn()
-        .mockResolvedValueOnce({
-          data: PRODUCT_WITH_LEGACY_ID,
-        })
-        .mockResolvedValueOnce({
-          data: [LEGACY_NOTE],
-        });
-
+  // --------------------------------------------------------------------------
+  describe('Query — fetching notes', () => {
+    it('should call the by-document endpoint with encoded entitySlug and documentId', async () => {
+      const mockGet = jest.fn().mockResolvedValue({ data: { data: [LEGACY_NOTE] } });
       mockUseFetchClient.mockReturnValue({
         get: mockGet,
         post: jest.fn(),
@@ -281,25 +142,17 @@ describe('useNote Hook - Legacy Data Support with Document Info Fetching', () =>
         { wrapper: createWrapper() },
       );
 
-      await waitFor(() => {
-        expect(mockGet).toHaveBeenCalledTimes(2);
-      });
+      await waitFor(() => expect(mockGet).toHaveBeenCalledTimes(1));
 
-      const documentFetchCall = mockGet.mock.calls[0][0];
-      expect(documentFetchCall).toContain('/content-manager/collection-types/');
-      expect(documentFetchCall).toContain('ohbcziti8lrm1lloobxaaxnv');
+      const url: string = mockGet.mock.calls[0][0];
+      expect(url).toContain('/entity-notes/notes/by-document');
+      expect(url).toContain('entitySlug=api%3A%3Aarticles.article');
+      expect(url).toContain('documentId=ohbcziti8lrm1lloobxaaxnv');
     });
 
-    it('should handle document fetch errors gracefully', async () => {
-      const mockGet = jest
-        .fn()
-        .mockRejectedValueOnce(new Error('Document not found'))
-        .mockResolvedValueOnce({
-          data: [NEW_NOTE],
-        });
-
+    it('should return a flat Notes[] array from the server response', async () => {
       mockUseFetchClient.mockReturnValue({
-        get: mockGet,
+        get: jest.fn().mockResolvedValue({ data: { data: [LEGACY_NOTE, NEW_NOTE] } }),
         post: jest.fn(),
         put: jest.fn(),
         del: jest.fn(),
@@ -314,27 +167,65 @@ describe('useNote Hook - Legacy Data Support with Document Info Fetching', () =>
         { wrapper: createWrapper() },
       );
 
-      await waitFor(
-        () => {
-          expect(result.current.notes.isSuccess || result.current.notes.isError).toBe(true);
-        },
-        { timeout: 3000 },
+      await waitFor(() => expect(result.current.notes.isSuccess).toBe(true));
+
+      // Verify select() unwraps the wrapper — result must be a plain array
+      expect(result.current.notes.data).toEqual([LEGACY_NOTE, NEW_NOTE]);
+      expect(Array.isArray(result.current.notes.data)).toBe(true);
+    });
+
+    it('should return an empty array when the server returns no notes', async () => {
+      mockUseFetchClient.mockReturnValue({
+        get: jest.fn().mockResolvedValue({ data: { data: [] } }),
+        post: jest.fn(),
+        put: jest.fn(),
+        del: jest.fn(),
+      });
+
+      const { result } = renderHook(
+        () =>
+          useNotes({
+            entitySlug: 'api::articles.article',
+            documentId: 'ohbcziti8lrm1lloobxaaxnv',
+          }),
+        { wrapper: createWrapper() },
       );
 
-      if (result.current.notes.isSuccess) {
-        expect(result.current.notes.data).toEqual([NEW_NOTE]);
-      }
+      await waitFor(() => expect(result.current.notes.isSuccess).toBe(true));
+      expect(result.current.notes.data).toEqual([]);
     });
   });
 
-  describe('Mutation operations', () => {
-    it('should create a note with correct structure', async () => {
-      const mockPost = jest.fn().mockResolvedValue({
-        data: { data: NEW_NOTE },
+  // --------------------------------------------------------------------------
+  describe('Query — error handling', () => {
+    it('should set isError when the notes endpoint throws', async () => {
+      mockUseFetchClient.mockReturnValue({
+        get: jest.fn().mockRejectedValue(new Error('Network error')),
+        post: jest.fn(),
+        put: jest.fn(),
+        del: jest.fn(),
       });
 
+      const { result } = renderHook(
+        () =>
+          useNotes({
+            entitySlug: 'api::articles.article',
+            documentId: 'ohbcziti8lrm1lloobxaaxnv',
+          }),
+        { wrapper: createWrapper() },
+      );
+
+      await waitFor(() => expect(result.current.notes.isError).toBe(true), { timeout: 5000 });
+      expect(result.current.notes.error).toBeInstanceOf(Error);
+    });
+  });
+
+  // --------------------------------------------------------------------------
+  describe('Mutations — createNote', () => {
+    it('should POST to the notes endpoint with the correct payload', async () => {
+      const mockPost = jest.fn().mockResolvedValue({ data: { data: NEW_NOTE } });
       mockUseFetchClient.mockReturnValue({
-        get: jest.fn().mockResolvedValueOnce({ data: PRODUCT_WITH_LEGACY_ID }).mockResolvedValueOnce({ data: [] }),
+        get: jest.fn().mockResolvedValue({ data: { data: [] } }),
         post: mockPost,
         put: jest.fn(),
         del: jest.fn(),
@@ -349,7 +240,7 @@ describe('useNote Hook - Legacy Data Support with Document Info Fetching', () =>
         { wrapper: createWrapper() },
       );
 
-      const newNoteInput = {
+      const input = {
         title: 'Test Note',
         content: 'Test Content',
         entitySlug: 'api::articles.article',
@@ -357,25 +248,123 @@ describe('useNote Hook - Legacy Data Support with Document Info Fetching', () =>
       };
 
       await act(async () => {
-        await result.current.createNote(newNoteInput);
+        await result.current.createNote(input);
       });
 
-      expect(mockPost).toHaveBeenCalled();
-      const callArgs = mockPost.mock.calls[0];
-      expect(callArgs[1].data).toMatchObject(newNoteInput);
+      expect(mockPost).toHaveBeenCalledWith('/entity-notes/notes', { data: input });
     });
 
-    it('should update a note using documentId', async () => {
+    it('should return the created note', async () => {
+      mockUseFetchClient.mockReturnValue({
+        get: jest.fn().mockResolvedValue({ data: { data: [] } }),
+        post: jest.fn().mockResolvedValue({ data: { data: NEW_NOTE } }),
+        put: jest.fn(),
+        del: jest.fn(),
+      });
+
+      const { result } = renderHook(
+        () =>
+          useNotes({
+            entitySlug: 'api::articles.article',
+            documentId: 'ohbcziti8lrm1lloobxaaxnv',
+          }),
+        { wrapper: createWrapper() },
+      );
+
+      let created: unknown;
+      await act(async () => {
+        created = await result.current.createNote({
+          title: 'T',
+          content: 'C',
+          entitySlug: 'api::articles.article',
+          entityId: 'ohbcziti8lrm1lloobxaaxnv',
+        });
+      });
+
+      expect(created).toEqual(NEW_NOTE);
+    });
+
+    it('should invalidate the notes query after a successful create', async () => {
       const mockGet = jest
         .fn()
-        .mockResolvedValueOnce({ data: PRODUCT_WITH_LEGACY_ID })
-        .mockResolvedValueOnce({ data: [LEGACY_NOTE] });
-      const mockPut = jest.fn().mockResolvedValue({
-        data: { data: { ...LEGACY_NOTE, title: 'Updated' } },
-      });
+        // first fetch (initial load)
+        .mockResolvedValueOnce({ data: { data: [] } })
+        // second fetch (after invalidation)
+        .mockResolvedValueOnce({ data: { data: [NEW_NOTE] } });
 
       mockUseFetchClient.mockReturnValue({
         get: mockGet,
+        post: jest.fn().mockResolvedValue({ data: { data: NEW_NOTE } }),
+        put: jest.fn(),
+        del: jest.fn(),
+      });
+
+      const { result } = renderHook(
+        () =>
+          useNotes({
+            entitySlug: 'api::articles.article',
+            documentId: 'ohbcziti8lrm1lloobxaaxnv',
+          }),
+        { wrapper: createWrapper() },
+      );
+
+      await waitFor(() => expect(result.current.notes.isSuccess).toBe(true));
+
+      await act(async () => {
+        await result.current.createNote({
+          title: 'T',
+          content: 'C',
+          entitySlug: 'api::articles.article',
+          entityId: 'ohbcziti8lrm1lloobxaaxnv',
+        });
+      });
+
+      // After invalidation the query re-fetches — get should be called twice total
+      await waitFor(() => expect(mockGet).toHaveBeenCalledTimes(2));
+      expect(result.current.notes.data).toEqual([NEW_NOTE]);
+    });
+
+    it('should show a success notification after creating a note', async () => {
+      const toggleNotification = jest.fn();
+      mockUseNotification.mockReturnValue({ toggleNotification });
+
+      mockUseFetchClient.mockReturnValue({
+        get: jest.fn().mockResolvedValue({ data: { data: [] } }),
+        post: jest.fn().mockResolvedValue({ data: { data: NEW_NOTE } }),
+        put: jest.fn(),
+        del: jest.fn(),
+      });
+
+      const { result } = renderHook(
+        () =>
+          useNotes({
+            entitySlug: 'api::articles.article',
+            documentId: 'ohbcziti8lrm1lloobxaaxnv',
+          }),
+        { wrapper: createWrapper() },
+      );
+
+      await act(async () => {
+        await result.current.createNote({
+          title: 'T',
+          content: 'C',
+          entitySlug: 'api::articles.article',
+          entityId: 'ohbcziti8lrm1lloobxaaxnv',
+        });
+      });
+
+      expect(toggleNotification).toHaveBeenCalledWith(expect.objectContaining({ type: 'success' }));
+    });
+  });
+
+  // --------------------------------------------------------------------------
+  describe('Mutations — updateNote', () => {
+    it('should PUT to the correct documentId URL', async () => {
+      const mockPut = jest.fn().mockResolvedValue({
+        data: { data: { ...LEGACY_NOTE, title: 'Updated' } },
+      });
+      mockUseFetchClient.mockReturnValue({
+        get: jest.fn().mockResolvedValue({ data: { data: [LEGACY_NOTE] } }),
         post: jest.fn(),
         put: mockPut,
         del: jest.fn(),
@@ -398,20 +387,55 @@ describe('useNote Hook - Legacy Data Support with Document Info Fetching', () =>
         });
       });
 
-      expect(mockPut).toHaveBeenCalled();
-      const callUrl = mockPut.mock.calls[0][0];
-      expect(callUrl).toContain('/entity-notes/notes/doc-1');
+      expect(mockPut).toHaveBeenCalledWith('/entity-notes/notes/doc-1', {
+        data: { title: 'Updated Title', content: 'Updated Content' },
+      });
     });
 
-    it('should delete a note with correct ID', async () => {
+    it('should invalidate the notes query after a successful update', async () => {
+      const updatedNote = { ...LEGACY_NOTE, title: 'Updated' };
       const mockGet = jest
         .fn()
-        .mockResolvedValueOnce({ data: PRODUCT_WITH_LEGACY_ID })
-        .mockResolvedValueOnce({ data: [LEGACY_NOTE] });
-      const mockDel = jest.fn().mockResolvedValue({});
+        .mockResolvedValueOnce({ data: { data: [LEGACY_NOTE] } })
+        .mockResolvedValueOnce({ data: { data: [updatedNote] } });
 
       mockUseFetchClient.mockReturnValue({
         get: mockGet,
+        post: jest.fn(),
+        put: jest.fn().mockResolvedValue({ data: { data: updatedNote } }),
+        del: jest.fn(),
+      });
+
+      const { result } = renderHook(
+        () =>
+          useNotes({
+            entitySlug: 'api::articles.article',
+            documentId: 'ohbcziti8lrm1lloobxaaxnv',
+          }),
+        { wrapper: createWrapper() },
+      );
+
+      await waitFor(() => expect(result.current.notes.isSuccess).toBe(true));
+
+      await act(async () => {
+        await result.current.updateNote({
+          documentId: 'doc-1',
+          title: 'Updated',
+          content: 'Updated Content',
+        });
+      });
+
+      await waitFor(() => expect(mockGet).toHaveBeenCalledTimes(2));
+      expect(result.current.notes.data).toEqual([updatedNote]);
+    });
+  });
+
+  // --------------------------------------------------------------------------
+  describe('Mutations — deleteNote', () => {
+    it('should DELETE using the correct note ID', async () => {
+      const mockDel = jest.fn().mockResolvedValue({});
+      mockUseFetchClient.mockReturnValue({
+        get: jest.fn().mockResolvedValue({ data: { data: [LEGACY_NOTE] } }),
         post: jest.fn(),
         put: jest.fn(),
         del: mockDel,
@@ -432,80 +456,14 @@ describe('useNote Hook - Legacy Data Support with Document Info Fetching', () =>
 
       expect(mockDel).toHaveBeenCalledWith('/entity-notes/notes/1');
     });
-  });
 
-  describe('API call verification', () => {
-    it('should call the document endpoint with correct parameters', async () => {
-      const mockGet = jest
-        .fn()
-        .mockResolvedValueOnce({ data: PRODUCT_WITH_LEGACY_ID })
-        .mockResolvedValueOnce({ data: [LEGACY_NOTE] });
-
+    it('should also accept a string ID', async () => {
+      const mockDel = jest.fn().mockResolvedValue({});
       mockUseFetchClient.mockReturnValue({
-        get: mockGet,
+        get: jest.fn().mockResolvedValue({ data: { data: [LEGACY_NOTE] } }),
         post: jest.fn(),
         put: jest.fn(),
-        del: jest.fn(),
-      });
-
-      renderHook(
-        () =>
-          useNotes({
-            entitySlug: 'api::articles.article',
-            documentId: 'ohbcziti8lrm1lloobxaaxnv',
-          }),
-        { wrapper: createWrapper() },
-      );
-
-      await waitFor(() => {
-        expect(mockGet).toHaveBeenCalled();
-      });
-
-      const firstCall = mockGet.mock.calls[0][0];
-      expect(firstCall).toContain('/content-manager/collection-types/');
-      expect(firstCall).toContain('api::articles.article');
-      expect(firstCall).toContain('ohbcziti8lrm1lloobxaaxnv');
-    });
-
-    it('should fetch notes without documentId server filter', async () => {
-      const mockGet = jest
-        .fn()
-        .mockResolvedValueOnce({ data: PRODUCT_WITH_LEGACY_ID })
-        .mockResolvedValueOnce({ data: [LEGACY_NOTE, NEW_NOTE] });
-
-      mockUseFetchClient.mockReturnValue({
-        get: mockGet,
-        post: jest.fn(),
-        put: jest.fn(),
-        del: jest.fn(),
-      });
-
-      renderHook(
-        () =>
-          useNotes({
-            entitySlug: 'api::articles.article',
-            documentId: 'ohbcziti8lrm1lloobxaaxnv',
-          }),
-        { wrapper: createWrapper() },
-      );
-
-      await waitFor(() => {
-        expect(mockGet).toHaveBeenCalledTimes(2);
-      });
-
-      const notesCall = mockGet.mock.calls[1][0];
-      expect(notesCall).toContain('entity-notes/notes');
-      expect(notesCall).not.toContain('entityId');
-    });
-  });
-
-  describe('Error handling', () => {
-    it('should handle API errors gracefully', async () => {
-      mockUseFetchClient.mockReturnValue({
-        get: jest.fn().mockRejectedValue(new Error('API Error')),
-        post: jest.fn(),
-        put: jest.fn(),
-        del: jest.fn(),
+        del: mockDel,
       });
 
       const { result } = renderHook(
@@ -517,29 +475,24 @@ describe('useNote Hook - Legacy Data Support with Document Info Fetching', () =>
         { wrapper: createWrapper() },
       );
 
-      await waitFor(
-        () => {
-          expect(result.current.notes.isError).toBe(true);
-        },
-        { timeout: 5000 },
-      );
+      await act(async () => {
+        await result.current.deleteNote('doc-1');
+      });
 
-      expect(result.current.notes.error).toBeDefined();
+      expect(mockDel).toHaveBeenCalledWith('/entity-notes/notes/doc-1');
     });
 
-    it('should match legacy notes even when document fetch fails', async () => {
+    it('should invalidate the notes query after a successful delete', async () => {
       const mockGet = jest
         .fn()
-        .mockRejectedValueOnce(new Error('Document fetch failed'))
-        .mockResolvedValueOnce({
-          data: [LEGACY_NOTE, NEW_NOTE],
-        });
+        .mockResolvedValueOnce({ data: { data: [LEGACY_NOTE] } })
+        .mockResolvedValueOnce({ data: { data: [] } });
 
       mockUseFetchClient.mockReturnValue({
         get: mockGet,
         post: jest.fn(),
         put: jest.fn(),
-        del: jest.fn(),
+        del: jest.fn().mockResolvedValue({}),
       });
 
       const { result } = renderHook(
@@ -551,16 +504,45 @@ describe('useNote Hook - Legacy Data Support with Document Info Fetching', () =>
         { wrapper: createWrapper() },
       );
 
-      await waitFor(
-        () => {
-          expect(result.current.notes.isSuccess || result.current.notes.isError).toBe(true);
-        },
-        { timeout: 3000 },
+      await waitFor(() => expect(result.current.notes.isSuccess).toBe(true));
+
+      await act(async () => {
+        await result.current.deleteNote(1);
+      });
+
+      await waitFor(() => expect(mockGet).toHaveBeenCalledTimes(2));
+      expect(result.current.notes.data).toEqual([]);
+    });
+
+    it('should show a warning notification when delete fails', async () => {
+      const toggleNotification = jest.fn();
+      mockUseNotification.mockReturnValue({ toggleNotification });
+
+      mockUseFetchClient.mockReturnValue({
+        get: jest.fn().mockResolvedValue({ data: { data: [LEGACY_NOTE] } }),
+        post: jest.fn(),
+        put: jest.fn(),
+        del: jest.fn().mockRejectedValue(new Error('Delete failed')),
+      });
+
+      const { result } = renderHook(
+        () =>
+          useNotes({
+            entitySlug: 'api::articles.article',
+            documentId: 'ohbcziti8lrm1lloobxaaxnv',
+          }),
+        { wrapper: createWrapper() },
       );
 
-      if (result.current.notes.isSuccess) {
-        expect(result.current.notes.data).toEqual([NEW_NOTE]);
-      }
+      await act(async () => {
+        try {
+          await result.current.deleteNote(1);
+        } catch {
+          // mutation throws on error — we only care about the notification
+        }
+      });
+
+      expect(toggleNotification).toHaveBeenCalledWith(expect.objectContaining({ type: 'warning' }));
     });
   });
 });

@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import { PLUGIN_ID } from '../../pluginId';
 
 type InitializerProps = {
-  setPlugin: (id: string) => void;
+  setPlugin: (_id: string) => void;
 };
 
 const Initializer = ({ setPlugin }: InitializerProps) => {
