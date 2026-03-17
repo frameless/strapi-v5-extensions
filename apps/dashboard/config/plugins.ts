@@ -101,4 +101,7 @@ export default ({ env }) => ({
       ],
     },
   },
+  'content-compliance-checker': {
+    enabled: true,
+  },
 });
