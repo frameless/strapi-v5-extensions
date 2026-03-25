@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_components_faqs",
+  "info": {
+    "displayName": "FAQ koppelen",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "pdc_faq": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::pdc-faq.pdc-faq"
+    },
+    "kennisartikelCategorie": {
+      "type": "enumeration",
+      "enum": [
+        "inleiding",
+        "aanvraag",
+        "bewijs",
+        "voorwaarden",
+        "bezwaar",
+        "kosten",
+        "termijn",
+        "wat te doen bij geen reactie",
+        "bijzonderheden",
+        "contact"
+      ]
+    }
+  }
+}

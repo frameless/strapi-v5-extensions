@@ -1,9 +1,10 @@
 import { Route, Routes, NavLink } from 'react-router-dom';
 import { useIntl } from 'react-intl';
 import { styled } from 'styled-components';
-import { Box, Flex, SubNav as DSSubNav, Typography, DesignSystemProvider } from '@strapi/design-system';
+import { Box, Flex, SubNav as DSSubNav, Typography } from '@strapi/design-system';
 import { Filter, Information } from '@strapi/icons';
 import { QueryClientProvider } from '@tanstack/react-query';
+import '@utrecht/component-library-css/dist/html.css';
 
 import AdditionalInformationDetailPage from '../AdditionalInformationDetailPage';
 import AdditionalInformationFilterPage from '../AdditionalInformationFilterPage';
@@ -11,6 +12,7 @@ import ProductDetailPage from '../ProductDetailPage';
 import ProductFilterPage from '../ProductFilterPage';
 import getTrad from '../../utils/getTrad';
 import { queryClient } from '../../utils/queryClient';
+import { getLocalStorage } from '../../utils/getLocalStorage';
 
 const MainSubNav = styled(DSSubNav)`
   flex: 0 0 250px; /* fixed width for sidebar */
@@ -174,10 +176,15 @@ const Link = ({ to, label, icon }: LinkProps) => {
   );
 };
 
+type Theme = 'light' | 'dark' | 'system';
+
+const isValidTheme = (theme: Theme): theme is Theme => ['light', 'dark', 'system'].includes(theme);
 // Main App Component with Routing Diagnostics
 export const App = () => {
   const { formatMessage } = useIntl();
-
+  const localStorageTheme = getLocalStorage('STRAPI_THEME', isValidTheme);
+  const prefersDark = typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const isDarkMode = localStorageTheme === 'dark' || (localStorageTheme === 'system' && prefersDark);
   const navItems = [
     {
       to: '',
@@ -198,52 +205,50 @@ export const App = () => {
   ];
 
   return (
-    <div className="utrecht-theme utrecht-document">
+    <div className={`utrecht-theme utrecht-document ${isDarkMode ? 'utrecht-theme--color-scheme-dark' : ''}`}>
       <QueryClientProvider client={queryClient}>
-        <DesignSystemProvider>
-          <MainContainer>
-            <Flex height="100%" width="100%" alignItems="flex-start">
-              <MainSubNav>
-                <NavHeader>
-                  <Typography variant="beta" tag="h2">
+        <MainContainer>
+          <Flex height="100%" width="100%" alignItems="flex-start">
+            <MainSubNav>
+              <NavHeader>
+                <Typography variant="beta" tag="h2">
+                  {formatMessage({
+                    id: getTrad('navigation.header'),
+                    defaultMessage: 'Controle op inhoudsnaleving',
+                  })}
+                </Typography>
+              </NavHeader>
+
+              <NavSections>
+                <NavSection>
+                  <h3>
                     {formatMessage({
-                      id: getTrad('navigation.header'),
-                      defaultMessage: 'Controle op inhoudsnaleving',
+                      id: getTrad('navigation.section.filters'),
+                      defaultMessage: 'Filters',
                     })}
-                  </Typography>
-                </NavHeader>
+                  </h3>
+                  <NavLinksList>
+                    {navItems.map((item) => (
+                      <li key={item.to}>
+                        <Link to={item.to} label={item.label} icon={item.icon} />
+                      </li>
+                    ))}
+                  </NavLinksList>
+                </NavSection>
+              </NavSections>
+            </MainSubNav>
 
-                <NavSections>
-                  <NavSection>
-                    <h3>
-                      {formatMessage({
-                        id: getTrad('navigation.section.filters'),
-                        defaultMessage: 'Filters',
-                      })}
-                    </h3>
-                    <NavLinksList>
-                      {navItems.map((item) => (
-                        <li key={item.to}>
-                          <Link to={item.to} label={item.label} icon={item.icon} />
-                        </li>
-                      ))}
-                    </NavLinksList>
-                  </NavSection>
-                </NavSections>
-              </MainSubNav>
-
-              <MainContent>
-                <Routes>
-                  <Route index element={<ProductFilterPage />} />
-                  <Route path="product-filter/:id" element={<ProductDetailPage />} />
-                  <Route path="additional-information-filter" element={<AdditionalInformationFilterPage />} />
-                  <Route path="additional-information-filter/:id" element={<AdditionalInformationDetailPage />} />
-                  <Route path="*" element={<h1>Page is not found</h1>} />
-                </Routes>
-              </MainContent>
-            </Flex>
-          </MainContainer>
-        </DesignSystemProvider>
+            <MainContent>
+              <Routes>
+                <Route index element={<ProductFilterPage />} />
+                <Route path="product-filter/:id" element={<ProductDetailPage />} />
+                <Route path="additional-information-filter" element={<AdditionalInformationFilterPage />} />
+                <Route path="additional-information-filter/:id" element={<AdditionalInformationDetailPage />} />
+                <Route path="*" element={<h1>Page is not found</h1>} />
+              </Routes>
+            </MainContent>
+          </Flex>
+        </MainContainer>
       </QueryClientProvider>
     </div>
   );
