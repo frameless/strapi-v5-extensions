@@ -87,7 +87,7 @@ const defaultComponents = (config?: Components) => {
     table: ({ children, node }) => {
       delete node.properties?.style;
       return (
-        <TableContainer overflowInline>
+        <TableContainer>
           <Table {...node.properties}>{children}</Table>
         </TableContainer>
       );

@@ -4,7 +4,6 @@ import { Initializer } from './components/Initializer';
 import { PLUGIN_ID } from './pluginId';
 import './styles.css';
 import { PluginIcon } from './components/PluginIcon';
-
 type TranslateOptions = Record<string, string>;
 
 const prefixPluginTranslations = (translate: TranslateOptions, pluginId: string): TranslateOptions => {

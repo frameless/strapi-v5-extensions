@@ -13,6 +13,25 @@
         }
       },
       "customField": "plugin::strapi-tiptap-editor.strapi-tiptap-editor"
+    },
+    "kennisartikelCategorie": {
+      "type": "enumeration",
+      "enum": [
+        "inleiding",
+        "aanvraag",
+        "bewijs",
+        "voorwaarden",
+        "bezwaar",
+        "kosten",
+        "termijn",
+        "wat te doen bij geen reactie",
+        "bijzonderheden",
+        "contact"
+      ]
+    },
+    "label": {
+      "type": "customField",
+      "customField": "plugin::strapi-tiptap-editor.richtext-preview"
     }
   }
 }

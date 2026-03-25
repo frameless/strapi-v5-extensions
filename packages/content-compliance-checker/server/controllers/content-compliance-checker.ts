@@ -15,7 +15,7 @@ export default ({ strapi }: { strapi: Core.Strapi }) => ({
   async getProductBlocks(ctx: Context) {
     const { id } = ctx.params;
 
-    if (id === undefined || id === null || id === '') {
+    if (id === null || id === '') {
       ctx.badRequest('Product ID is required');
       return;
     }
