@@ -1,15 +1,19 @@
 import { mergeAttributes, Node } from '@tiptap/core';
 import { ReactNodeViewRenderer } from '@tiptap/react';
 
-import { PriceTypes } from '../../../types';
+import { PriceTypes, ProductPrice } from '../../../types';
 
 import Widget from './widget';
 
 declare module '@tiptap/core' {
   interface Commands<ReturnType> {
     priceWidget: {
-      insertPriceWidget: (price: PriceTypes) => ReturnType;
+      insertPriceWidget: (_price: PriceTypes) => ReturnType;
     };
+  }
+
+  interface Storage {
+    productPrices: ProductPrice | null;
   }
 }
 
@@ -20,6 +24,7 @@ export const Price = Node.create({
   atom: true,
   inline: true,
   draggable: false,
+
   addAttributes() {
     return {
       'data-strapi-idref': {

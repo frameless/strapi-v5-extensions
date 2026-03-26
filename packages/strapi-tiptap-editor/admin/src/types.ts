@@ -11,6 +11,13 @@ export type PriceTypes = {
   uuid?: string;
 };
 
+export interface ProductPrice {
+  title: string;
+  uuid: string;
+  price: PriceTypes[];
+  documentId?: string;
+}
+
 export type PriceListTypes = {
   title: string;
   price: PriceTypes[];
@@ -40,7 +47,7 @@ export interface InputProps {
   initialValue?: string;
   mainField?: string;
 
-  onChange: (event: unknown) => void;
+  onChange: (_event: unknown) => void;
   onBlur: () => void;
   onFocus: () => void;
 }

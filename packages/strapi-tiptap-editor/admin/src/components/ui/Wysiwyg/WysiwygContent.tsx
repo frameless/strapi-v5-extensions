@@ -11,6 +11,7 @@ import Editor from '../Editor';
 import { useSettings } from '../../../hooks/useSettings';
 import { InputProps, PriceListTypes } from '../../../types';
 import { useProductPrices } from '../../../hooks/useProductPrices';
+import { usePriceStore } from '../../../utils/usePriceStore';
 
 import { useExtensions } from '.';
 
@@ -108,6 +109,14 @@ const WysiwygContent = ({
     const { content, label, labelKey } = generateLabel({ name, content: value });
     dispatchLabel({ key: labelKey, label, name, content });
   }, [value, name]);
+
+  useEffect(() => {
+    if (productPrice) {
+      usePriceStore.getState().setPrices(productPrice.price);
+    } else {
+      usePriceStore.getState().setError();
+    }
+  }, [productPrice]);
 
   return (
     <Field.Root hint={hint} error={error} required={required}>

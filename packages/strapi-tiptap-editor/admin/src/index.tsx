@@ -8,7 +8,6 @@ import '@utrecht/design-tokens/dist/index.css';
 
 import { PLUGIN_ID } from './pluginId';
 import { Initializer } from './components/ui/Initializer';
-import { ProductPriceProvider } from './context/ProductPriceContext';
 import { queryClient } from './utils/queryClient';
 import { InputProps } from './types';
 import { UtrechtTheme } from './components/ui/UtrechtTheme';
@@ -92,11 +91,9 @@ export default {
 
             return (
               <QueryClientProvider client={queryClient}>
-                <ProductPriceProvider>
-                  <UtrechtTheme>
-                    <WysiwygComponent {...props} mediaLibraryComponent={components?.['media-library']} />
-                  </UtrechtTheme>
-                </ProductPriceProvider>
+                <UtrechtTheme>
+                  <WysiwygComponent {...props} mediaLibraryComponent={components?.['media-library']} />
+                </UtrechtTheme>
               </QueryClientProvider>
             );
           };
