@@ -104,7 +104,8 @@
     "react-router-dom": "6.30.3",
     "slugify": "1.6.6",
     "styled-components": "6.3.8",
-    "uuid": "13.0.0"
+    "uuid": "13.0.0",
+    "zustand": "5.0.12"
   },
   "devDependencies": {
     "@frameless/eslint-config": "workspace:*",

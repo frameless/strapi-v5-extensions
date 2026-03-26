@@ -3,9 +3,10 @@ import type { NodeViewWrapperProps, ReactNodeViewProps } from '@tiptap/react';
 import type { PropsWithChildren } from 'react';
 import { useIntl } from 'react-intl';
 import styled from 'styled-components';
+import { Loader } from '@strapi/design-system';
 
-import { useProductPriceContext } from '../../../context/ProductPriceContext';
-import { formatCurrency, getTranslation, isFreeProduct } from '../../../utils';
+import { formatCurrency, isFreeProduct, getTranslation } from '../../../utils';
+import { usePriceStore } from '../../../utils/usePriceStore';
 
 const StyledPriceWidgetWrapper = styled(NodeViewWrapper)`
   display: inline-block;
@@ -26,17 +27,31 @@ const PriceWidgetWrapper = ({ children }: PropsWithChildren<NodeViewWrapperProps
 
 const PriceWidget = ({ node }: ReactNodeViewProps<HTMLElement>) => {
   const { formatMessage } = useIntl();
-  const { productPrice, busy } = useProductPriceContext();
-  const price =
-    productPrice?.price && productPrice.price.find((price) => price?.uuid === node.attrs['data-strapi-idref']);
+  const { prices, status } = usePriceStore();
 
-  if (busy) return null;
+  if (status === 'loading')
+    return (
+      <PriceWidgetWrapper>
+        <Loader small />
+      </PriceWidgetWrapper>
+    );
+  if (status === 'error' || !prices)
+    return (
+      <PriceWidgetWrapper>
+        {formatMessage({
+          id: getTranslation('components.priceWidget.priceUnknown'),
+          defaultMessage: '€ #,##0 (price unknown)',
+        })}
+      </PriceWidgetWrapper>
+    );
+
+  const price = prices.find((p) => p.uuid === node.attrs['data-strapi-idref']);
   if (!price)
     return (
       <PriceWidgetWrapper>
         {formatMessage({
           id: getTranslation('components.priceWidget.priceUnknown'),
-          defaultMessage: '€\u00A0#,##0\u00A0(price\u00A0unknown)',
+          defaultMessage: '€ #,##0 (price unknown)',
         })}
       </PriceWidgetWrapper>
     );
@@ -48,4 +63,5 @@ const PriceWidget = ({ node }: ReactNodeViewProps<HTMLElement>) => {
     </PriceWidgetWrapper>
   );
 };
+
 export default PriceWidget;
