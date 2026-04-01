@@ -194,7 +194,7 @@ jobs:
           pnpm run --if-present build
 
       - name: Software Bill of Materials (SBoM)
-        uses: anchore/sbom-action@62ad5284b8ced813296287a0b63906cb364b73ee # v0.22.0
+        uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610 # v0.24.0
         # Permissions to add the SBoM to the GitHub Release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
