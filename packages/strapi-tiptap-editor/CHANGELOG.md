@@ -1,5 +1,13 @@
 # @frameless/strapi-tiptap-editor [2.3.0](https://github.com/frameless/strapi/compare/@frameless/strapi-tiptap-editor@2.2.0...@frameless/strapi-tiptap-editor@2.3.0) (2024-06-12)
 
+## 1.0.2
+
+### Patch Changes
+
+- f54718f: Switch price widget from React context to a Zustand store for managing
+  product prices. This ensures NodeViews have reliable access to prices,
+  handling loading, success, and error states consistently.
+
 ## 1.0.1
 
 ### Patch Changes
