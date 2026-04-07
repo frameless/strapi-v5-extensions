@@ -50,6 +50,11 @@ export const config = [
   eslintConfigPrettier,
   ...tseslint.configs.recommended,
   {
+    languageOptions: {
+      ecmaVersion: 2025,
+    },
+  },
+  {
     rules: {
       '@typescript-eslint/no-unused-vars': [
         'error',
