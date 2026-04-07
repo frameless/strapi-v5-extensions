@@ -1,5 +1,11 @@
 # @frameless/eslint-config
 
+## 1.2.0
+
+### Minor Changes
+
+- 34f32ab: Enable import attributes syntax (with { type: 'json' })
+
 ## 1.1.2
 
 ### Patch Changes
