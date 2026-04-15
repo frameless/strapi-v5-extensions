@@ -1,5 +1,13 @@
 # @frameless/strapi-plugin-env-label [1.1.0](https://github.com/frameless/strapi/compare/@frameless/strapi-plugin-env-label@1.0.0...@frameless/strapi-plugin-env-label@1.1.0) (2024-05-02)
 
+## 1.0.1
+
+### Patch Changes
+
+- dc2da25: Remove deprecated @strapi/helper-plugin (Strapi v5)
+
+  https://docs.strapi.io/cms/migration/v4-to-v5/breaking-changes/helper-plugin-deprecated#breaking-change-description
+
 ## 1.0.0
 
 ### Major Changes
