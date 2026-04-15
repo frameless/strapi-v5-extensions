@@ -1,5 +1,8 @@
 import { LinkButton } from '@strapi/design-system';
-import { unstable_useContentManagerContext as useContentManagerContext } from '@strapi/strapi/admin';
+import {
+  unstable_useContentManagerContext as useContentManagerContext,
+  unstable_useDocument as useDocument,
+} from '@strapi/strapi/admin';
 import { Eye } from '@strapi/icons';
 import { useIntl } from 'react-intl';
 import styled from 'styled-components';
@@ -15,9 +18,19 @@ const StyledLinkButton = styled(LinkButton)`
 const PreviewLink = () => {
   const context = useContentManagerContext();
   const locale = useContentLocale();
-  const { slug, id: documentId } = context;
+  const { slug, id: documentId, model } = context;
+  const data = useDocument({
+    model: model,
+    documentId,
+    collectionType: 'collection-types',
+  });
   const { config } = usePluginConfig();
   const { formatMessage } = useIntl();
+
+  const mappingStatus = {
+    modified: 'DRAFT',
+    published: 'PUBLISHED',
+  };
 
   const contentTypes = config?.data?.contentTypes || [];
   const isPreviewSupported = contentTypes.find((type: { uid: string }) => type.uid === slug);
@@ -39,6 +52,7 @@ const PreviewLink = () => {
     slug: isPreviewSupported.query.type,
     locale: locale ?? 'nl',
     uuid: documentId,
+    status: mappingStatus[(data.document as any)?.status as keyof typeof mappingStatus] ?? 'DRAFT',
   });
 
   return (
