@@ -180,7 +180,7 @@ type Theme = 'light' | 'dark' | 'system';
 
 const isValidTheme = (theme: Theme): theme is Theme => ['light', 'dark', 'system'].includes(theme);
 // Main App Component with Routing Diagnostics
-export const App = () => {
+const App = () => {
   const { formatMessage } = useIntl();
   const localStorageTheme = getLocalStorage('STRAPI_THEME', isValidTheme);
   const prefersDark = typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -253,3 +253,5 @@ export const App = () => {
     </div>
   );
 };
+
+export default App;

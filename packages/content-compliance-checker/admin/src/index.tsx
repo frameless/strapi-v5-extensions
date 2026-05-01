@@ -25,10 +25,7 @@ export default {
         id: `${PLUGIN_ID}.plugin.name`,
         defaultMessage: 'Content compliance checker',
       },
-      Component: async () => {
-        const { App } = await import('./pages/App');
-        return { default: App };
-      },
+      Component: async () => import('./pages/App'),
       permissions: [],
     });
     const plugin = {
