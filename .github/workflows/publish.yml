@@ -30,8 +30,7 @@ jobs:
       - name: Check for known security issues with npm packages
         run: |
           echo "Auditing npm dependencies before installing them. For more information."
-          # TODO: remove --ignore-registry-errors once pnpm#11265 is fixed
-          pnpm audit --audit-level critical --ignore-registry-errors
+          pnpm audit --audit-level critical
 
       - name: Install dependencies
         run: |
@@ -59,8 +58,7 @@ jobs:
       - name: Check for known security issues with npm packages
         run: |
           echo "Auditing npm dependencies before installing them. For more information."
-          # TODO: remove --ignore-registry-errors once pnpm#11265 is fixed
-          pnpm audit --audit-level critical --ignore-registry-errors
+          pnpm audit --audit-level critical
 
       - name: Install dependencies
         run: |
@@ -96,8 +94,7 @@ jobs:
       - name: Check for known security issues with npm packages
         run: |
           echo "Auditing npm dependencies before installing them. For more information."
-          # TODO: remove --ignore-registry-errors once pnpm#11265 is fixed
-          pnpm audit --audit-level critical --ignore-registry-errors
+          pnpm audit --audit-level critical
 
       - name: Install dependencies
         run: |
@@ -145,8 +142,7 @@ jobs:
       - name: Check for known security issues with npm packages
         run: |
           echo "Auditing npm dependencies before installing them. For more information."
-          # TODO: remove --ignore-registry-errors once pnpm#11265 is fixed
-          pnpm audit --audit-level critical --ignore-registry-errors
+          pnpm audit --audit-level critical
 
       - name: Install dependencies
         run: |
