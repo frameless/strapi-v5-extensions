@@ -1,5 +1,14 @@
 # @frameless/strapi-plugin-open-forms-embed [1.2.0](https://github.com/frameless/strapi/compare/@frameless/strapi-plugin-open-forms-embed@1.1.0...@frameless/strapi-plugin-open-forms-embed@1.2.0) (2024-06-03)
 
+## 1.0.1
+
+### Patch Changes
+
+- b5a1322: # Security updates
+  - Upgraded @strapi/strapi to 5.46.0 (validated in dashboard)
+  - Fixed critical security vulnerabilities in Strapi core and dependencies
+  - Ensured consistent dependency alignment across monorepo plugins
+
 ## 1.0.0
 
 ### Major Changes

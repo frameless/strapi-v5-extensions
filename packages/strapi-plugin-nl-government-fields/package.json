@@ -1,6 +1,6 @@
 {
   "name": "@frameless/strapi-plugin-nl-government-fields",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Strapi v5 plugin that provides reusable custom fields for Dutch government and public-sector product metadata.",
   "keywords": [],
   "private": false,
