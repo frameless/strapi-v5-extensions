@@ -15,7 +15,7 @@
   "common.action.generate": "Genereren",
   "components.languagesList.placeholder": "Selecteer een taal",
   "components.languagesList.removeLanguage": "Taal verwijderen",
-  "components.priceList.placeholder": "Selecteer prijs",
+  "components.priceList.placeholder": "Selecteer kosten",
   "components.priceList.option": "{label}: {value}",
   "components.priceList.option.errorMessage": "Sla alstublieft de kostencollectie op om de kosten weer te geven.",
   "components.priceWidget.priceUnknown": "€\u00A0#,##0\u00A0(prijs\u00A0onbekend)",

@@ -11,19 +11,19 @@
 
   "blocksWithoutCategory": "Blokken zonder \"kennisartikelCategorie\" ({count})",
 
-  "filterDashboardPage.title": "Dashboard voor inhoud naleving",
+  "filterDashboardPage.title": "Dashboard voor controle op KA-categorieën",
 
   "navigation.ariaLabel": "Navigatie van de content compliance checker",
-  "navigation.header": "Controle op inhoudsnaleving",
+  "navigation.header": "Controle op KA-categorieën",
   "navigation.section.filters": "Filters",
   "navigation.link.productFilters": "Productfilters",
   "navigation.link.additionalInfoFilters": "Aanvullende informatiefilters",
 
-  "additionalInformationFilterPage.subtitle": "Aanvullende informatie met blokken die niet gecategoriseerd zijn als 'kennisartikel'",
+  "additionalInformationFilterPage.subtitle": "Aanvullende informatie met contentonderdelen die geen kennisartikelcategorie hebben",
   "additionalInformationPage.error": "Fout bij het ophalen van aanvullende informatie",
   "additionalInformationDetailPage.notFound": "Aanvullende informatie niet gevonden",
 
-  "productFilterPage.subtitle": "Producten met blokken die niet gecategoriseerd zijn als 'kennisartikel'",
+  "productFilterPage.subtitle": "Producten met contentonderdelen die geen kennisartikelcategorie hebben",
   "product.error": "Fout bij het ophalen van product",
   "product.notFound": "Product niet gevonden",
 
