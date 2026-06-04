@@ -14,6 +14,13 @@
   "component.noteModal.content.input.placeholder": "Voer notitie-inhoud in",
   "component.noteModal.actions.save": "Opslaan",
   "component.noteModal.actions.cancel": "Annuleren",
+  "components.NoteList.preview": "Notitie bekijken",
   "components.NoteList.edit": "Notitie bewerken",
-  "components.NoteList.delete": "Notitie verwijderen"
+  "components.NoteList.delete": "Notitie verwijderen",
+  "components.NoteList.delete.confirm.title": "Notitie verwijderen",
+  "components.NoteList.delete.confirm.message": "Weet je zeker dat je deze notitie wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt.",
+  "components.NoteList.delete.confirm.cancel": "Annuleren",
+  "components.NoteList.delete.confirm.delete": "Verwijderen",
+  "component.noteModal.preview.title": "Notitie bekijken",
+  "component.noteModal.actions.close": "Sluiten"
 }

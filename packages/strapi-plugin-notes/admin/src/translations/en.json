@@ -14,6 +14,13 @@
   "component.noteModal.content.input.placeholder": "Enter note content",
   "component.noteModal.actions.save": "Save",
   "component.noteModal.actions.cancel": "Cancel",
+  "components.NoteList.preview": "Preview note",
   "components.NoteList.edit": "Edit note",
-  "components.NoteList.delete": "Delete note"
+  "components.NoteList.delete": "Delete note",
+  "components.NoteList.delete.confirm.title": "Delete note",
+  "components.NoteList.delete.confirm.message": "Are you sure you want to delete this note? This action cannot be undone.",
+  "components.NoteList.delete.confirm.cancel": "Cancel",
+  "components.NoteList.delete.confirm.delete": "Delete",
+  "component.noteModal.preview.title": "Preview note",
+  "component.noteModal.actions.close": "Close"
 }
