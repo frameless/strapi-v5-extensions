@@ -31,7 +31,7 @@
     "@frameless/strapi-plugin-open-forms-embed": "workspace:*",
     "@frameless/strapi-tiptap-editor": "workspace:*",
     "@strapi/admin": "5.46.0",
-    "@strapi/design-system": "2.1.2",
+    "@strapi/design-system": "2.2.0",
     "@strapi/plugin-graphql": "5.46.0",
     "@strapi/plugin-users-permissions": "5.46.0",
     "@strapi/strapi": "5.46.0",
