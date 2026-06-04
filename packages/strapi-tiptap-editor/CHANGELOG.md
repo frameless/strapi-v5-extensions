@@ -1,5 +1,17 @@
 # @frameless/strapi-tiptap-editor [2.3.0](https://github.com/frameless/strapi/compare/@frameless/strapi-tiptap-editor@2.2.0...@frameless/strapi-tiptap-editor@2.3.0) (2024-06-12)
 
+## 1.0.4
+
+### Patch Changes
+
+- 19d92e5: # Translate labels
+  - Translate Strapi dashboard labels from English to Dutch
+
+- b5a1322: # Security updates
+  - Upgraded @strapi/strapi to 5.46.0 (validated in dashboard)
+  - Fixed critical security vulnerabilities in Strapi core and dependencies
+  - Ensured consistent dependency alignment across monorepo plugins
+
 ## 1.0.3
 
 ### Patch Changes

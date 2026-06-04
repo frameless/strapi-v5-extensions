@@ -1,5 +1,17 @@
 # @frameless/content-compliance-checker
 
+## 1.0.2
+
+### Patch Changes
+
+- 19d92e5: # Translate labels
+  - Translate Strapi dashboard labels from English to Dutch
+
+- b5a1322: # Security updates
+  - Upgraded @strapi/strapi to 5.46.0 (validated in dashboard)
+  - Fixed critical security vulnerabilities in Strapi core and dependencies
+  - Ensured consistent dependency alignment across monorepo plugins
+
 ## 1.0.1
 
 ### Patch Changes

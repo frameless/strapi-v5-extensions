@@ -1,5 +1,14 @@
 # @frameless/strapi-plugin-notes
 
+## 1.0.1
+
+### Patch Changes
+
+- b5a1322: # Security updates
+  - Upgraded @strapi/strapi to 5.46.0 (validated in dashboard)
+  - Fixed critical security vulnerabilities in Strapi core and dependencies
+  - Ensured consistent dependency alignment across monorepo plugins
+
 ## 1.0.0
 
 ### Major Changes
