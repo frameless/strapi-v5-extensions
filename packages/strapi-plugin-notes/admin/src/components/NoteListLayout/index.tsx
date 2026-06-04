@@ -26,6 +26,7 @@ const NoteListContent = () => {
   const { formatMessage } = useIntl();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingNote, setEditingNote] = useState<string | number | null>(null);
+  const [isPreviewing, setIsPreviewing] = useState(false);
 
   const { notes, createNote, deleteNote, updateNote } = useNotes({
     entitySlug: slug,
@@ -40,6 +41,7 @@ const NoteListContent = () => {
   const handleCloseModal = () => {
     setIsModalOpen(false);
     setEditingNote(null);
+    setIsPreviewing(false);
   };
 
   const selectedNote = notes.data?.find((note) => note.documentId === editingNote);
@@ -78,8 +80,15 @@ const NoteListContent = () => {
             <NoteListItem
               key={note.documentId}
               note={note}
-              onEdit={() => handleOpenModal(note.documentId)}
+              onEdit={() => {
+                handleOpenModal(note.documentId);
+                setIsPreviewing(false);
+              }}
               onDelete={() => deleteNote(note.documentId)}
+              onPreview={() => {
+                handleOpenModal(note.documentId);
+                setIsPreviewing(true);
+              }}
             />
           ))}
         </Flex>
@@ -108,6 +117,7 @@ const NoteListContent = () => {
 
       {isModalOpen && (
         <NoteModal
+          isPreviewing={isPreviewing}
           note={selectedNote}
           entitySlug={slug}
           documentId={id}

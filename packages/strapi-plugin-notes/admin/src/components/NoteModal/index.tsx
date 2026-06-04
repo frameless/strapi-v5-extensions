@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useIntl } from 'react-intl';
-import { Dialog, Textarea, Button, Flex, Field } from '@strapi/design-system';
+import { Dialog, Textarea, Button, Flex, Field, Typography } from '@strapi/design-system';
 import { Check } from '@strapi/icons';
+import styled from 'styled-components';
 
 import { getTranslation } from '../../utils';
 import type { Notes, CreateNotesInput, UpdateNotesInput } from '../../hooks/useNotes';
@@ -14,8 +15,12 @@ interface NoteModalProps {
   onClose: () => void;
   onCreateNote: (_input: CreateNotesInput) => Promise<Notes>;
   onUpdateNote: (_input: UpdateNotesInput) => Promise<Notes>;
+  isPreviewing?: boolean;
 }
 
+const StyledDialogContent = styled(Dialog.Content)`
+  max-width: 900px;
+`;
 export const NoteModal = ({
   note,
   entitySlug,
@@ -24,6 +29,7 @@ export const NoteModal = ({
   onClose,
   onCreateNote,
   onUpdateNote,
+  isPreviewing,
 }: NoteModalProps) => {
   const { formatMessage } = useIntl();
   const [title, setTitle] = useState('');
@@ -64,9 +70,39 @@ export const NoteModal = ({
     }
   };
 
+  if (isPreviewing) {
+    return (
+      <Dialog.Root open onOpenChange={onClose}>
+        <StyledDialogContent>
+          <Dialog.Header width="100%">
+            {formatMessage({
+              id: getTranslation('component.noteModal.preview.title'),
+              defaultMessage: 'Preview note',
+            })}
+          </Dialog.Header>
+
+          <Dialog.Body>
+            <Flex direction="column" alignItems="stretch" gap={4} width="100%">
+              <Typography variant="beta" tag="h3">
+                {note?.title}
+              </Typography>
+              <Typography variant="delta">{note?.content}</Typography>
+            </Flex>
+          </Dialog.Body>
+
+          <Dialog.Footer>
+            <Button variant="tertiary" onClick={onClose}>
+              {formatMessage({ id: getTranslation('component.noteModal.actions.close'), defaultMessage: 'Close' })}
+            </Button>
+          </Dialog.Footer>
+        </StyledDialogContent>
+      </Dialog.Root>
+    );
+  }
+
   return (
     <Dialog.Root open onOpenChange={onClose}>
-      <Dialog.Content>
+      <StyledDialogContent>
         <Dialog.Header width="100%">
           {formatMessage({
             id: getTranslation(`component.noteModal.${isEditing ? 'edit' : 'create'}.title`),
@@ -107,6 +143,7 @@ export const NoteModal = ({
                   id: getTranslation('component.noteModal.content.input.placeholder'),
                   defaultMessage: 'Enter note content',
                 })}
+                rows={12}
               />
             </Field.Root>
           </Flex>
@@ -129,7 +166,7 @@ export const NoteModal = ({
             </Button>
           </Dialog.Action>
         </Dialog.Footer>
-      </Dialog.Content>
+      </StyledDialogContent>
     </Dialog.Root>
   );
 };
