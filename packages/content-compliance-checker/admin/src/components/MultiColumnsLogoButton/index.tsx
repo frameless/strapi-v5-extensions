@@ -1,5 +1,4 @@
 import { Heading } from '@utrecht/component-library-react';
-import kebabCase from 'lodash.kebabcase';
 import styled from 'styled-components';
 
 import { LogoButton, LogoButtonProps } from '../LogoButton';
@@ -75,7 +74,7 @@ export const MultiColumnsButton = ({ columns }: MultiColumnsButtonProps) => {
                 <LogoButton
                   headingLevel={title ? 4 : 3}
                   key={uuid}
-                  appearance={item?.appearance as string}
+                  appearance={item?.appearance}
                   label={item.label}
                   logo={item.logo}
                   href={`/form/${slug}`}
@@ -90,7 +89,7 @@ export const MultiColumnsButton = ({ columns }: MultiColumnsButtonProps) => {
                 headingLevel={title ? 4 : 3}
                 key={index}
                 href={item.href}
-                appearance={kebabCase(item.appearance)}
+                appearance={item.appearance}
                 label={item.label}
                 logo={item.logo}
               >

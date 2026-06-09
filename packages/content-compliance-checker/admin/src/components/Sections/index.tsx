@@ -32,7 +32,7 @@ export const Sections = ({ sections }: any) => (
                 <BlockDetail key={index} index={index} component={component.__component}>
                   <LogoButton
                     label={component.label}
-                    appearance={component?.appearance as string}
+                    appearance={component?.appearance}
                     logo={component.logo}
                     href={slug ?? '#'}
                   >
@@ -46,7 +46,7 @@ export const Sections = ({ sections }: any) => (
                 <BlockDetail key={index} index={index} component={component.__component}>
                   <LogoButton
                     href={component.href}
-                    appearance={component.appearance as string}
+                    appearance={component.appearance}
                     label={component.label}
                     logo={component.logo}
                   >
@@ -118,7 +118,7 @@ export const Sections = ({ sections }: any) => (
                             <LogoButton
                               key={button?.id}
                               href={button?.href}
-                              appearance={button?.appearance as string}
+                              appearance={button?.appearance}
                               label={button?.label}
                               logo={button?.logo}
                             >
