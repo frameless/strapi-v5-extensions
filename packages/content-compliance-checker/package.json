@@ -42,9 +42,9 @@
   ],
   "dependencies": {
     "@tanstack/react-query": "5.95.2",
-    "@utrecht/component-library-css": "7.2.2",
-    "@utrecht/component-library-react": "10.2.0",
-    "@utrecht/design-tokens": "3.2.0",
+    "@utrecht/component-library-css": "9.0.12",
+    "@utrecht/component-library-react": "14.0.1",
+    "@utrecht/design-tokens": "6.2.1",
     "is-absolute-url": "5.0.0",
     "react-icons": "5.6.0",
     "react-markdown": "10.1.0",
