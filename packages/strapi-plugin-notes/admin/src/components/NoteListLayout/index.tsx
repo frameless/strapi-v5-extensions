@@ -80,11 +80,6 @@ const NoteListContent = () => {
             <NoteListItem
               key={note.documentId}
               note={note}
-              onEdit={() => {
-                handleOpenModal(note.documentId);
-                setIsPreviewing(false);
-              }}
-              onDelete={() => deleteNote(note.documentId)}
               onPreview={() => {
                 handleOpenModal(note.documentId);
                 setIsPreviewing(true);
@@ -125,6 +120,11 @@ const NoteListContent = () => {
           onCreateNote={createNote}
           onUpdateNote={updateNote}
           isEditing={!!editingNote}
+          onEdit={() => setIsPreviewing(false)}
+          onDelete={() => {
+            if (selectedNote) deleteNote(selectedNote.documentId);
+            handleCloseModal();
+          }}
         />
       )}
     </Box>
