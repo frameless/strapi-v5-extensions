@@ -815,6 +815,9 @@ importers:
       '@tanstack/react-query':
         specifier: 5.90.21
         version: 5.90.21(react@18.3.1)
+      dayjs:
+        specifier: 1.11.21
+        version: 1.11.21
       react:
         specifier: ^18.0.0
         version: 18.3.1
@@ -7480,6 +7483,9 @@ packages:
 
   dayjs@1.11.20:
     resolution: {integrity: sha512-YbwwqR/uYpeoP4pu043q+LTDLFBLApUP6VxRihdfNTqu4ubqMlGDLd6ErXhEgsyvY0K6nCs7nggYumAN+9uEuQ==}
+
+  dayjs@1.11.21:
+    resolution: {integrity: sha512-98IT+HOahAisibz/yjKbzuOBwYcjJ7BCLPzARyHiyEBmRz4fatF+KPJszEHXsGYjUG234aH/cOjW1wwTbKUZlA==}
 
   debounce@1.2.1:
     resolution: {integrity: sha512-XRRe6Glud4rd/ZGQfiV1ruXSfbvfJedlV9Y6zOlP+2K04vBYiJEte6stfFkCP03aMnY5tsipamumUjL14fofug==}
@@ -27696,6 +27702,8 @@ snapshots:
       '@babel/runtime': 7.28.6
 
   dayjs@1.11.20: {}
+
+  dayjs@1.11.21: {}
 
   debounce@1.2.1: {}
 

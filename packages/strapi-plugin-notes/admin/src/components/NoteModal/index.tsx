@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useIntl } from 'react-intl';
 import { Dialog, Textarea, Button, Flex, Field, Typography } from '@strapi/design-system';
-import { Check } from '@strapi/icons';
+import { Check, Trash, Pencil } from '@strapi/icons';
 import styled from 'styled-components';
 
 import { getTranslation } from '../../utils';
@@ -16,6 +16,8 @@ interface NoteModalProps {
   onCreateNote: (_input: CreateNotesInput) => Promise<Notes>;
   onUpdateNote: (_input: UpdateNotesInput) => Promise<Notes>;
   isPreviewing?: boolean;
+  onEdit?: () => void;
+  onDelete?: () => void;
 }
 
 const StyledDialogContent = styled(Dialog.Content)`
@@ -30,11 +32,14 @@ export const NoteModal = ({
   onCreateNote,
   onUpdateNote,
   isPreviewing,
+  onEdit,
+  onDelete,
 }: NoteModalProps) => {
   const { formatMessage } = useIntl();
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [isConfirmingDelete, setIsConfirmingDelete] = useState(false);
 
   useEffect(() => {
     if (note) {
@@ -74,26 +79,49 @@ export const NoteModal = ({
     return (
       <Dialog.Root open onOpenChange={onClose}>
         <StyledDialogContent>
-          <Dialog.Header width="100%">
-            {formatMessage({
-              id: getTranslation('component.noteModal.preview.title'),
-              defaultMessage: 'Preview note',
-            })}
-          </Dialog.Header>
+          <Dialog.Header width="100%">{note?.title}</Dialog.Header>
 
           <Dialog.Body>
             <Flex direction="column" alignItems="stretch" gap={4} width="100%">
-              <Typography variant="beta" tag="h3">
-                {note?.title}
-              </Typography>
-              <Typography variant="delta">{note?.content}</Typography>
+              <Typography>{note?.content}</Typography>
             </Flex>
           </Dialog.Body>
 
           <Dialog.Footer>
-            <Button variant="tertiary" onClick={onClose}>
-              {formatMessage({ id: getTranslation('component.noteModal.actions.close'), defaultMessage: 'Close' })}
-            </Button>
+            {isConfirmingDelete ? (
+              <>
+                <Typography textColor="neutral600">
+                  {formatMessage({
+                    id: getTranslation('components.NoteList.delete.confirm.message'),
+                    defaultMessage: 'Are you sure you want to delete this note? This action cannot be undone.',
+                  })}
+                </Typography>
+                <Button variant="tertiary" onClick={() => setIsConfirmingDelete(false)}>
+                  {formatMessage({
+                    id: getTranslation('components.NoteList.delete.confirm.cancel'),
+                    defaultMessage: 'Cancel',
+                  })}
+                </Button>
+                <Button variant="danger" startIcon={<Trash />} onClick={onDelete}>
+                  {formatMessage({
+                    id: getTranslation('components.NoteList.delete.confirm.delete'),
+                    defaultMessage: 'Delete',
+                  })}
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button variant="tertiary" onClick={onClose}>
+                  {formatMessage({ id: getTranslation('component.noteModal.actions.close'), defaultMessage: 'Close' })}
+                </Button>
+                <Button variant="secondary" startIcon={<Pencil />} onClick={onEdit}>
+                  {formatMessage({ id: getTranslation('components.NoteList.edit'), defaultMessage: 'Edit note' })}
+                </Button>
+                <Button variant="danger-light" startIcon={<Trash />} onClick={() => setIsConfirmingDelete(true)}>
+                  {formatMessage({ id: getTranslation('components.NoteList.delete'), defaultMessage: 'Delete note' })}
+                </Button>
+              </>
+            )}
           </Dialog.Footer>
         </StyledDialogContent>
       </Dialog.Root>

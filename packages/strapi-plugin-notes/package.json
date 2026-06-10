@@ -43,8 +43,9 @@
     "provenance": true
   },
   "dependencies": {
-    "react-intl": "8.1.3",
-    "@tanstack/react-query": "5.90.21"
+    "@tanstack/react-query": "5.90.21",
+    "dayjs": "1.11.21",
+    "react-intl": "8.1.3"
   },
   "devDependencies": {
     "@babel/preset-typescript": "7.28.5",
