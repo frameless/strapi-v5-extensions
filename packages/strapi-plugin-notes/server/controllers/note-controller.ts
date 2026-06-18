@@ -33,7 +33,7 @@ export default factories.createCoreController('plugin::entity-notes.note', ({ st
           entitySlug: { $eq: entitySlug },
           entityId: { $in: entityIdFilters },
         },
-        orderBy: { title: 'asc' },
+        orderBy: [{ updatedAt: 'desc' }, { title: 'asc' }],
       });
 
       return { data: notes };
