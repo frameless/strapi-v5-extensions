@@ -1,6 +1,6 @@
 {
   "name": "@frameless/strapi-plugin-env-label",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Strapi plugin designed to visually represent the current environment.",
   "keywords": [],
   "private": false,
