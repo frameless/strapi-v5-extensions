@@ -1,12 +1,18 @@
+import { type TypedUseSelectorHook, useSelector } from 'react-redux';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { Typography, Box, Flex } from '@strapi/design-system';
+import type { Store } from '@strapi/admin/strapi-admin';
 import styled from 'styled-components';
+import 'dayjs/locale/nl';
+import 'dayjs/locale/en';
 
 import { Notes } from '../../hooks/useNotes';
 
 dayjs.extend(relativeTime);
 
+type RootState = ReturnType<Store['getState']>;
+const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector;
 interface NoteListItemProps {
   note: Notes;
   onPreview: () => void;
@@ -30,6 +36,7 @@ const NoteCard = styled(Box)`
 `;
 
 export const NoteListItem = ({ note, onPreview }: NoteListItemProps) => {
+  const currentLocale = useTypedSelector((state) => state.admin_app?.language?.locale);
   return (
     <NoteCard
       padding={4}
@@ -60,7 +67,9 @@ export const NoteListItem = ({ note, onPreview }: NoteListItemProps) => {
 
       <Box marginTop={3}>
         <Typography variant="sigma" textColor="neutral400">
-          {dayjs(note.updatedAt).fromNow()}
+          {dayjs(note.updatedAt)
+            .locale(currentLocale || 'nl')
+            .fromNow()}
         </Typography>
       </Box>
     </NoteCard>
