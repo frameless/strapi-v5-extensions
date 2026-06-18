@@ -1,6 +1,6 @@
 {
   "name": "@frameless/strapi-plugin-open-forms-embed",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Strapi custom field plugin that lets editors search and select OpenForms from a remote OpenForms API using a combobox interface.",
   "keywords": [],
   "private": false,
