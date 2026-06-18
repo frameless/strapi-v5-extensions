@@ -1,5 +1,11 @@
 # @frameless/strapi-plugin-notes
 
+## 1.1.1
+
+### Patch Changes
+
+- 3839762: Add localization support for the updatedAt date in the strapi-plugin-note user interface.
+
 ## 1.1.0
 
 ### Minor Changes
