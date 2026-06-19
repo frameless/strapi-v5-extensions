@@ -58,6 +58,7 @@ const PreviewLink = () => {
   return (
     <StyledLinkButton
       size="S"
+      variant="tertiary"
       startIcon={<Eye />}
       className="utrecht-preview-link"
       target="_blank"

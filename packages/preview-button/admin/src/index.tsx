@@ -1,5 +1,8 @@
+import type { StrapiApp } from '@strapi/admin/strapi-admin';
+import type { DescriptionReducer, PanelComponent } from '@strapi/content-manager/strapi-admin';
+
 import { Initializer } from './components/Initializer';
-import PreviewLink from './components/PreviewLink';
+import PreviewPanel from './components/PreviewPanel';
 import { PLUGIN_ID } from './pluginId';
 import reducers from './reducers';
 
@@ -16,7 +19,7 @@ const prefixPluginTranslations = (trad: TradOptions, pluginId: string): TradOpti
 };
 
 export default {
-  register(app: any) {
+  register(app: StrapiApp) {
     app.addReducers(reducers);
     app.registerPlugin({
       id: PLUGIN_ID,
@@ -26,11 +29,11 @@ export default {
     });
   },
 
-  bootstrap(app: any) {
-    app.getPlugin('content-manager').injectComponent('editView', 'right-links', {
-      name: 'PreviewButton',
-      Component: PreviewLink,
-    });
+  bootstrap(app: StrapiApp) {
+    const { addEditViewSidePanel } = app.getPlugin('content-manager').apis as {
+      addEditViewSidePanel(_reducer: DescriptionReducer<PanelComponent>): void;
+    };
+    addEditViewSidePanel((panels) => [...panels, PreviewPanel]);
   },
 
   async registerTrads({ locales }: { locales: string[] }) {
