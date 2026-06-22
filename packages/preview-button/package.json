@@ -1,6 +1,6 @@
 {
   "name": "@frameless/preview-button",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "A Strapi plugin that enable preview button",
   "private": false,
   "keywords": [],

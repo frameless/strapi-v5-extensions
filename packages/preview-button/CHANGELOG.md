@@ -1,5 +1,16 @@
 # @frameless/preview-button [1.3.0](https://github.com/frameless/strapi/compare/@frameless/preview-button@1.2.0...@frameless/preview-button@1.3.0) (2024-02-02)
 
+## 2.2.0
+
+### Minor Changes
+
+- 3172a90: # Render the preview button as a side panel below Strapi's native Preview panel
+
+  The button is now registered via `addEditViewSidePanel` and appears directly below Strapi's
+  built-in Preview panel in the edit view sidebar, instead of in the `right-links` zone above it.
+
+  The button variant is also updated to match Strapi's Preview panel button style.
+
 ## 2.1.1
 
 ### Patch Changes
