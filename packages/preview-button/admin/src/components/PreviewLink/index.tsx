@@ -3,7 +3,6 @@ import {
   unstable_useContentManagerContext as useContentManagerContext,
   unstable_useDocument as useDocument,
 } from '@strapi/strapi/admin';
-import { Eye } from '@strapi/icons';
 import { useIntl } from 'react-intl';
 import styled from 'styled-components';
 
@@ -37,7 +36,7 @@ const PreviewLink = () => {
 
   const previewInPageButtonLabel = formatMessage({
     id: getTranslation('button.pagePreview'),
-    defaultMessage: 'Voorbeeld op pagina',
+    defaultMessage: 'Voorbeeld',
   });
 
   const url = getUrl(config?.data?.domain);
@@ -59,7 +58,6 @@ const PreviewLink = () => {
     <StyledLinkButton
       size="S"
       variant="tertiary"
-      startIcon={<Eye />}
       className="utrecht-preview-link"
       target="_blank"
       href={previewUrl?.href}
