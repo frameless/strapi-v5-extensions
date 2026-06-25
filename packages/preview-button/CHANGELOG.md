@@ -1,5 +1,11 @@
 # @frameless/preview-button [1.3.0](https://github.com/frameless/strapi/compare/@frameless/preview-button@1.2.0...@frameless/preview-button@1.3.0) (2024-02-02)
 
+## 2.2.1
+
+### Patch Changes
+
+- 8577463: Rename preview-button label "Voorbeeld op pagina" naar "Voorbeeld" en oog-icoontje verwijderen
+
 ## 2.2.0
 
 ### Minor Changes
