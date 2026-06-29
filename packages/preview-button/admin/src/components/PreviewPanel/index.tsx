@@ -11,7 +11,7 @@ const PreviewPanel: PanelComponent = ({ model }) => {
   if (!isPreviewSupported) return null;
 
   return {
-    title: isPreviewSupported.button_label ?? 'Voorbeeld op pagina',
+    title: isPreviewSupported.button_label ?? 'Voorbeeld',
     content: <PreviewLink />,
   };
 };

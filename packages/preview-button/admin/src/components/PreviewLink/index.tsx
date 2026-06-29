@@ -65,7 +65,7 @@ const PreviewLink = () => {
       title={previewInPageButtonLabel}
       aria-label={previewInPageButtonLabel}
     >
-      {isPreviewSupported?.button_label ?? previewInPageButtonLabel}
+      {previewInPageButtonLabel}
     </StyledLinkButton>
   );
 };
