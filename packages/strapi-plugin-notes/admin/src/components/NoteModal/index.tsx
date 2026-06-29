@@ -96,16 +96,16 @@ export const NoteModal = ({
                     defaultMessage: 'Are you sure you want to delete this note? This action cannot be undone.',
                   })}
                 </Typography>
-                <Button variant="tertiary" onClick={() => setIsConfirmingDelete(false)}>
-                  {formatMessage({
-                    id: getTranslation('components.NoteList.delete.confirm.cancel'),
-                    defaultMessage: 'Cancel',
-                  })}
-                </Button>
                 <Button variant="danger" startIcon={<Trash />} onClick={onDelete}>
                   {formatMessage({
                     id: getTranslation('components.NoteList.delete.confirm.delete'),
                     defaultMessage: 'Delete',
+                  })}
+                </Button>
+                <Button variant="tertiary" onClick={() => setIsConfirmingDelete(false)}>
+                  {formatMessage({
+                    id: getTranslation('components.NoteList.delete.confirm.cancel'),
+                    defaultMessage: 'Cancel',
                   })}
                 </Button>
               </>
