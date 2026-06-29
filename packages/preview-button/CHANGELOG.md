@@ -1,5 +1,11 @@
 # @frameless/preview-button [1.3.0](https://github.com/frameless/strapi/compare/@frameless/preview-button@1.2.0...@frameless/preview-button@1.3.0) (2024-02-02)
 
+## 2.2.2
+
+### Patch Changes
+
+- b66be55: Fix the PreviewPanel label
+
 ## 2.2.1
 
 ### Patch Changes
