@@ -1,5 +1,13 @@
 # @frameless/strapi-plugin-notes
 
+## 1.1.2
+
+### Patch Changes
+
+- 47f3572: # Replace the “Delete Note” button with a “Cancel” button
+
+  This update is important to prevent users from accidentally deleting a note by clicking the delete button twice, as both buttons are positioned in the same place.
+
 ## 1.1.1
 
 ### Patch Changes
