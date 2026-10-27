@@ -1,3 +1,5 @@
 {
-  "button.pagePreview": "Voorbeeld"
+  "panel.title": "Voorbeeld",
+  "button.pagePreview": "Voorbeeld",
+  "notification.error": "Kon de voorbeeldconfiguratie niet laden"
 }

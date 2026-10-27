@@ -1,3 +1,5 @@
 {
-  "button.pagePreview": "Preview on Page"
+  "panel.title": "Live Preview",
+  "button.pagePreview": "Preview on Page",
+  "notification.error": "Could not load the preview configuration"
 }

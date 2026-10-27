@@ -36,7 +36,7 @@ const PreviewLink = () => {
 
   const previewInPageButtonLabel = formatMessage({
     id: getTranslation('button.pagePreview'),
-    defaultMessage: 'Voorbeeld',
+    defaultMessage: 'Preview on Page',
   });
 
   const url = getUrl(config?.data?.domain);
@@ -49,7 +49,7 @@ const PreviewLink = () => {
     apiToken: config.data.api_token,
     type: isPreviewSupported.query.type,
     slug: isPreviewSupported.query.type,
-    locale: locale ?? 'nl',
+    locale: locale ?? 'en',
     uuid: documentId,
     status: mappingStatus[(data.document as any)?.status as keyof typeof mappingStatus] ?? 'DRAFT',
   });
